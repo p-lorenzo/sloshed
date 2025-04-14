@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class DrunkEffectController : MonoBehaviour
 {
     public Material drunkMat;
-    [Range(0f, 1f)] public float drunkLevel = 0.5f;
-
+    [Range(0f, 1f)] public float drunkLevel = 0f;
+    
     void Update()
     {
         drunkMat.SetFloat("_Amplitude", drunkLevel * 0.03f);
