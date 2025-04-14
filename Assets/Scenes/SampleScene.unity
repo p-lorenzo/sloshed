@@ -576,7 +576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drunkMat: {fileID: 2100000, guid: f6f31824ced9ce7478fa97debc1ba2f6, type: 2}
-  drunkLevel: 0
+  drunkLevel: 0.1
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0

@@ -102,7 +102,7 @@ Material:
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _Amplitude: 0.01083
+    - _Amplitude: 0.01296
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -115,7 +115,7 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _GhostStrength: 0.361
+    - _GhostStrength: 0.432
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -130,7 +130,7 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _WaveSpeed: 4.249
+    - _WaveSpeed: 4.888
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
