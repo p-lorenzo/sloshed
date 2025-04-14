@@ -11,6 +11,8 @@ public class ThirdPersonController : MonoBehaviour
     public float gravity = -9.81f;
     public float groundedCheckDistance = 0.1f;
 
+    public Vector3 InputOffset = Vector3.zero;
+    
     private Vector3 verticalVelocity = Vector3.zero;
 
     private Animator animator;
@@ -26,15 +28,17 @@ public class ThirdPersonController : MonoBehaviour
     void Update()
     {
         Vector3 rawInput = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        float inputMagnitude = Mathf.Clamp01(rawInput.magnitude);
+        Vector3 offsettedInput = rawInput;
+        float inputMagnitude = Mathf.Clamp01(offsettedInput.magnitude);
 
         Vector3 moveDirection = Vector3.zero;
         if (inputMagnitude > 0.01f)
         {
+            offsettedInput += InputOffset;
             animator.SetBool("IsMoving", true);
             IsMoving = true;
             // Direzione relativa alla camera
-            moveDirection = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0) * rawInput.normalized;
+            moveDirection = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0) * offsettedInput.normalized;
 
             // Rotazione verso la direzione di movimento
             Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);

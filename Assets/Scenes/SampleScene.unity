@@ -575,9 +575,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf98ad10bf167a4f8b3ac7144071b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drunkFeature: {fileID: 0}
+  controller: {fileID: 1308137810}
+  thirdPersonController: {fileID: 1308137812}
   drunkMat: {fileID: 2100000, guid: f6f31824ced9ce7478fa97debc1ba2f6, type: 2}
   drunkLevel: 0
+  drunkGainRate: 0.01
+  drunkDecayRate: 0.01
+  driftMagnitude: 1.2
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,6 +1356,22 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!143 &1308137810 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 5659347225394155585, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+  m_PrefabInstance: {fileID: 5341178209785428453}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1308137812 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5771030303286818566, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+  m_PrefabInstance: {fileID: 5341178209785428453}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25adeae5a2dae34419e6b562d516ab87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1712631578 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1239323007484189642, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
@@ -1416,6 +1436,10 @@ PrefabInstance:
     - target: {fileID: 7210088894643215412, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472015391295838772, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: pinWeight
+      value: 0.939
       objectReference: {fileID: 0}
     - target: {fileID: 7864456242827261630, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
       propertyPath: onLoseBalance.unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
