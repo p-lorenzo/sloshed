@@ -314,8 +314,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.1521234, y: 0.0000000056366196, z: -8.6755886e-10, w: 0.98836154}
-  m_LocalPosition: {x: 0, y: 2.2948096, z: -2.273639}
+  m_LocalRotation: {x: 0.1521234, y: -1.3371735e-15, z: 2.0581073e-16, w: 0.98836154}
+  m_LocalPosition: {x: 0, y: 2.0916939, z: -2.2889209}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -582,6 +582,41 @@ MonoBehaviour:
   drunkGainRate: 0.01
   drunkDecayRate: 0.01
   driftMagnitude: 1.2
+  playerVisual: {fileID: 1308137809}
+  maxTiltAngle: 20
+  tiltSpeed: 0.2
+  tiltMagnitude: 2
+--- !u!1 &670801958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 670801959}
+  m_Layer: 8
+  m_Name: CameraTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &670801959
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670801958}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.37, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1308137809}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,7 +1108,7 @@ MonoBehaviour:
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
   OrbitStyle: 0
-  Radius: 2.47
+  Radius: 2.4
   Orbits:
     Top:
       Radius: 2
@@ -1085,7 +1120,7 @@ MonoBehaviour:
       Radius: 2.5
       Height: 0.1
     SplineCurvature: 0.5
-  RecenteringTarget: 2
+  RecenteringTarget: 1
   HorizontalAxis:
     Value: 0
     Center: 0
@@ -1136,7 +1171,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 1712631578}
+    TrackingTarget: {fileID: 670801959}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -1167,8 +1202,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051715967}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.1521234, y: 0.0000000056366196, z: -8.675587e-10, w: 0.98836154}
-  m_LocalPosition: {x: 0, y: 2.2948096, z: -2.273639}
+  m_LocalRotation: {x: 0.1521234, y: -1.3182897e-15, z: 8.312039e-17, w: 0.98836154}
+  m_LocalPosition: {x: 0, y: 2.0916939, z: -2.2889209}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1356,6 +1391,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!4 &1308137809 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8999876513985677339, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+  m_PrefabInstance: {fileID: 5341178209785428453}
+  m_PrefabAsset: {fileID: 0}
 --- !u!143 &1308137810 stripped
 CharacterController:
   m_CorrespondingSourceObject: {fileID: 5659347225394155585, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
@@ -1372,11 +1412,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25adeae5a2dae34419e6b562d516ab87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1712631578 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1239323007484189642, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
-  m_PrefabInstance: {fileID: 5341178209785428453}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5341178209785428453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1447,7 +1482,10 @@ PrefabInstance:
       objectReference: {fileID: 426311841}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8999876513985677339, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 670801959}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
 --- !u!1660057539 &9223372036854775807

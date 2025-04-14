@@ -11,9 +11,16 @@ public class DrunkEffectController : MonoBehaviour
     public float drunkGainRate = 0.01f;
     public float drunkDecayRate = 0.01f;
     private Vector3 targetDrift;
+    private Vector3 currentDrift;
     public float driftMagnitude = 1.2f;
     private float cooldown = 3f;
     private float timer = 0f;
+    
+    [Header("Player Tilt Settings")]
+    public Transform playerVisual; // riferimento alla mesh/visivo, NON il root
+    public float maxTiltAngle = 20f;
+    public float tiltSpeed = .2f;
+    public float tiltMagnitude = 2f;
 
     void Update()
     {
@@ -32,10 +39,27 @@ public class DrunkEffectController : MonoBehaviour
             PickNewDrift();
             timer = 0f;
         }
-        
-        thirdPersonController.InputOffset = targetDrift * (drunkLevel * driftMagnitude);
+        currentDrift = Vector3.Lerp(currentDrift, targetDrift, Time.deltaTime * tiltSpeed);
+        thirdPersonController.InputOffset = currentDrift * (drunkLevel * driftMagnitude);
         
         drunkLevel = Mathf.Clamp(drunkLevel, 0f, .5f);
+        
+        if (playerVisual && targetDrift != Vector3.zero)
+        {
+            Vector3 localDrift = transform.InverseTransformDirection(targetDrift);
+
+            float tiltX = -localDrift.z * drunkLevel * maxTiltAngle * tiltMagnitude;
+    
+            float tiltZ = localDrift.x * drunkLevel * maxTiltAngle * tiltMagnitude;
+
+            Quaternion targetTilt = Quaternion.Euler(tiltX, 0f, tiltZ);
+
+            playerVisual.localRotation = Quaternion.Slerp(
+                playerVisual.localRotation,
+                targetTilt,
+                Time.deltaTime * tiltSpeed
+            );
+        }
         
         drunkMat.SetFloat("_Amplitude", drunkLevel * 0.03f);
         drunkMat.SetFloat("_GhostStrength", drunkLevel);
