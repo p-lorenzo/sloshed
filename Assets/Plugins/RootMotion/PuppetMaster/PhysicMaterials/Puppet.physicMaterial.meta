@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 6d32fedfdb4984e6abc6a0e91980d57a
+NativeFormatImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/PhysicMaterials/Puppet.physicMaterial
+  uploadId: 725639

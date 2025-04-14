@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: b1ff14ea6a6b8934bb8c559cb8166c56
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Assets/Humanoid Animations/Die
+    Backwards Fall.anim
+  uploadId: 725639

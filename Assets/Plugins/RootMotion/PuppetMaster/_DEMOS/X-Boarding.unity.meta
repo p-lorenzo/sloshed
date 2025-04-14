@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 850c391f3c44765429ffb535022ec019
+timeCreated: 1510922432
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/X-Boarding.unity
+  uploadId: 725639

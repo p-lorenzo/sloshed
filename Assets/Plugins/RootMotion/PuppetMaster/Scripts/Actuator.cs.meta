@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 2e119f4bc0f7fcf4d90e1874b91ad857
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/Scripts/Actuator.cs
+  uploadId: 725639

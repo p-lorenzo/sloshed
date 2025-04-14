@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b3fd366f1d0a0ee4ea71b532f0b8cf27
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 112000000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Scaling/LightingData.asset
+  uploadId: 725639

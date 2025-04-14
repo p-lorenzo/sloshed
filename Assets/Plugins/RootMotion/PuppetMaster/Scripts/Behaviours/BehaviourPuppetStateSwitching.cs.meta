@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 6b749367930f7464eba4d8cad81f261d
+timeCreated: 1438866601
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/Scripts/Behaviours/BehaviourPuppetStateSwitching.cs
+  uploadId: 725639

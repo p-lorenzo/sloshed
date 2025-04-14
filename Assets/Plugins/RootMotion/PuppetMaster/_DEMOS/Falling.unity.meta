@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 35caaf6b639c846aba78eff3e279fc82
+timeCreated: 1435614932
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Falling.unity
+  uploadId: 725639

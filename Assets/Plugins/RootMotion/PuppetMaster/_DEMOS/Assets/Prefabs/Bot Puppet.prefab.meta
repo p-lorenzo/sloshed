@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1e22fb9c61de8487fb293247bf5b788c
+timeCreated: 1444291348
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Assets/Prefabs/Bot Puppet.prefab
+  uploadId: 725639

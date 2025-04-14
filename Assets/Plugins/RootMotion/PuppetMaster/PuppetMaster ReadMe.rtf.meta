@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c66aa931027064313b219c28f8c216c6
+timeCreated: 1446126506
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/PuppetMaster ReadMe.rtf
+  uploadId: 725639

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 41748357290d0413b84cf60946704c65
+timeCreated: 1452521360
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Creating Ragdolls In Runtime.unity
+  uploadId: 725639

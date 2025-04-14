@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e19ae6787d767d749b846a5901016165
+timeCreated: 1485251184
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/Prefabs/Behaviours/Puppet.prefab
+  uploadId: 725639

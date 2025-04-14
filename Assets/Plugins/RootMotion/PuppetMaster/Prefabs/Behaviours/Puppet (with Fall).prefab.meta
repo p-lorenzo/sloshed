@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: bdc15cb97660141638eaeea7afbe7591
+timeCreated: 1452174511
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/Prefabs/Behaviours/Puppet (with
+    Fall).prefab
+  uploadId: 725639

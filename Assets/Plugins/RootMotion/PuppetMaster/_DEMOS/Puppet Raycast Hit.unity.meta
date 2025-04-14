@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 443494982687c45dda09333a87cc71b8
+timeCreated: 1438171440
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Puppet Raycast Hit.unity
+  uploadId: 725639

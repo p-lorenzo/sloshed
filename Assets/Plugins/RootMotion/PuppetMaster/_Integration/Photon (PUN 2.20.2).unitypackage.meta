@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cdc2ee51082970d4b84b28798bf84e82
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/_Integration/Photon (PUN 2.20.2).unitypackage
+  uploadId: 725639

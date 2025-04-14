@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: c088fb43c7fa040fdb96ac4e2e2c78f2
+timeCreated: 1436432414
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/Scripts/PuppetMasterTargetMappedState.cs
+  uploadId: 725639

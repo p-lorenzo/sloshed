@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 216522512ea384e9ca71983ca475f4b8
+timeCreated: 1435743912
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/IK Before Physics (Animator
+    IK).unity
+  uploadId: 725639

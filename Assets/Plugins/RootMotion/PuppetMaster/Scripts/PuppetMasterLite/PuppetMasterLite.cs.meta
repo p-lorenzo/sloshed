@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: dfa99b7dc1d41d64a81076f31b22e249
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 10101
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/Scripts/PuppetMasterLite/PuppetMasterLite.cs
+  uploadId: 725639

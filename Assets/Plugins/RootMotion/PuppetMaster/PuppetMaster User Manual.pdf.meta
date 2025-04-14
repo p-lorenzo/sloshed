@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 45eb4cc3199cf48388e0d2d7adaca558
+timeCreated: 1446126425
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/PuppetMaster User Manual.pdf
+  uploadId: 725639

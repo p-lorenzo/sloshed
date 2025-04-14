@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d63c5bd59fb5541eeb1098d1f4a6d01c
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/Editor/PuppetMaster/PuppetMasterInspector.cs
+  uploadId: 725639

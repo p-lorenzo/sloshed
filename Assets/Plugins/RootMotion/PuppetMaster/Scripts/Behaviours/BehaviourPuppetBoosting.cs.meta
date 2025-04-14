@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: dfbba8c5a98ca4de682ccf628687b20c
+timeCreated: 1438863362
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/Scripts/Behaviours/BehaviourPuppetBoosting.cs
+  uploadId: 725639

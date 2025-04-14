@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 962f634d5fa0d4e5097066ee82eefa8a
+timeCreated: 1435578966
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Punching.unity
+  uploadId: 725639

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d47046c4415204650b2ee35c479c7998
+timeCreated: 1435743587
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Assets/Prefabs/Prop M4.prefab
+  uploadId: 725639

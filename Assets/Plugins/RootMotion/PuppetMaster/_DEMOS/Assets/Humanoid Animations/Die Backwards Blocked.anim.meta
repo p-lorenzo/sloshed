@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 0f0c2156dec48e74a8514914006ebf82
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Assets/Humanoid Animations/Die
+    Backwards Blocked.anim
+  uploadId: 725639

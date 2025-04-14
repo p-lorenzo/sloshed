@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: fe2c77ddd67024017957c2105841f024
+timeCreated: 1471954925
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Assets/FX/Bone Splinters/Bone
+    Splinters 2.mat
+  uploadId: 725639

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0bd8d9a8cbacde343967c95c4458318e
+timeCreated: 1517387718
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/Baker/_DEMOS/Humanoid Baker.unity
+  uploadId: 725639

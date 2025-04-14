@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1ab2a2d504a297d4c886c776c3942e37
+timeCreated: 1490860612
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Scaling.unity
+  uploadId: 725639

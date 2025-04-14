@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0763c4b89286d49acaa9fdf15769756f
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/Scripts/Behaviours/SubBehaviours/SubBehaviourCOM.cs
+  uploadId: 725639

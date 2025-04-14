@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f882d03cc62ed40c7b8febce6ef4a0de
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/Editor/PuppetMaster/WeightDrawer.cs
+  uploadId: 725639

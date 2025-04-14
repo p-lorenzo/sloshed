@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0c4d35e4a407e6e4fbe3575b46ae2cdf
+timeCreated: 1485257433
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Humanoid Config.unity
+  uploadId: 725639

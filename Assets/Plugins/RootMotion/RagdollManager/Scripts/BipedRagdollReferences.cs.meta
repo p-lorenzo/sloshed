@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a0a96d624395a4a41af2560dbc09832b
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/RagdollManager/Scripts/BipedRagdollReferences.cs
+  uploadId: 725639

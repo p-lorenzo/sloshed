@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3b2499df0a36f124aa2230899757587b
+timeCreated: 1536571879
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/NavMeshAgent.unity
+  uploadId: 725639

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: df75c9b4717ec4cf996ae3055c26373e
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/Editor/RagdollManager/CharacterJointInspector.cs
+  uploadId: 725639

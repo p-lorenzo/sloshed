@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5c49a237763c444bda35d3387fed6c35
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/Editor/RagdollManager/ConvertToConfigurableJoints.cs
+  uploadId: 725639

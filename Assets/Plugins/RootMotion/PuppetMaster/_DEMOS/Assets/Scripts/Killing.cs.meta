@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 12f1cf71115144397bdbcaf8f1ce0c6b
+timeCreated: 1452670161
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/PuppetMaster/_DEMOS/Assets/Scripts/Killing.cs
+  uploadId: 725639
