@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -7,6 +8,7 @@ public class DrunkEffectController : MonoBehaviour
     public CharacterController controller;
     public ThirdPersonController thirdPersonController;
     public Material drunkMat;
+    public TextMeshProUGUI drunknessMeter;
     [Range(0f, .5f)] public float drunkLevel = 0f;
     public float drunkGainRate = 0.01f;
     public float drunkDecayRate = 0.01f;
@@ -15,15 +17,19 @@ public class DrunkEffectController : MonoBehaviour
     public float driftMagnitude = 1.2f;
     private float cooldown = 3f;
     private float timer = 0f;
-    
-    [Header("Player Tilt Settings")]
+
+    [Header("Player Tilt Settings")] 
+    public bool isTiltingEnabled = true;
     public Transform playerVisual; // riferimento alla mesh/visivo, NON il root
     public float maxTiltAngle = 20f;
     public float tiltSpeed = .2f;
     public float tiltMagnitude = 2f;
-
+    
     void Update()
     {
+        int drunknessPercent = Mathf.RoundToInt((drunkLevel / 0.5f) * 100f);
+        drunknessMeter.text = $"Drunkness: {drunknessPercent}%";
+        
         if (controller.velocity.magnitude < 0.1f)
         {
             drunkLevel -= drunkDecayRate * Time.deltaTime;
@@ -44,7 +50,7 @@ public class DrunkEffectController : MonoBehaviour
         
         drunkLevel = Mathf.Clamp(drunkLevel, 0f, .5f);
         
-        if (playerVisual && targetDrift != Vector3.zero)
+        if (playerVisual && targetDrift != Vector3.zero && isTiltingEnabled)
         {
             Vector3 localDrift = transform.InverseTransformDirection(targetDrift);
 

@@ -1,21 +1,24 @@
+using System;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    private PlayerFinishTracker _playerFinishTracker;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        _playerFinishTracker = FindFirstObjectByType<PlayerFinishTracker>();
     }
 
     public void Fallen()
     {
-        Debug.Log("Fallen");
+        if (_playerFinishTracker != null && _playerFinishTracker.IsOnBed())
+        {
+            Debug.Log("Fallen On Bed!");
+        }
+        else
+        {
+            Debug.Log("Fallen not on Bed!");
+        }
     }
 }
