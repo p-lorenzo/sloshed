@@ -4,12 +4,15 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class ThirdPersonController : MonoBehaviour
 {
-    public Transform cameraTransform;
-    public float rotationSpeed = 10f;
-    public float moveSpeed = 2f;
-    public float runSpeed = 4f;
-    public float gravity = -9.81f;
-    public float groundedCheckDistance = 0.1f;
+    [Header("References")]
+    [SerializeField] private Transform cameraTransform;
+    
+    [Header("Movement Settings")]
+    [SerializeField] private float rotationSpeed = 10f;
+    [SerializeField] private float moveSpeed = 2f;
+    [SerializeField] private float runSpeed = 4f;
+    [SerializeField] private float gravity = -9.81f;
+    [SerializeField] private float groundedCheckDistance = 0.1f;
 
     public Vector3 InputOffset = Vector3.zero;
     

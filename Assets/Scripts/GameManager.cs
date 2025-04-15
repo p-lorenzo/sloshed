@@ -7,20 +7,24 @@ using UnityEngine.Rendering.Universal;
 [RequireComponent(typeof(AudioSource))]
 public class GameManager : MonoBehaviour
 {
-    public TextMeshProUGUI timerText;
+    [Header("Game Timer")]
+    [SerializeField] private TextMeshProUGUI timerText;
     private float timer;
     private bool finished = false;
     
     private PlayerFinishTracker _playerFinishTracker;
 
-    public GameObject winPanel;
+    [Header("Winscreen Elements")]
+    [SerializeField] private GameObject winPanel;
+    [SerializeField] private TextMeshProUGUI winText;
     private float winTimer = 0f;
-    public TextMeshProUGUI winText;
     
-    public GameObject losePanel;
+    [Header("Loosescreen Elements")]
+    [SerializeField] private GameObject losePanel;
     AudioSource audioData;
     
-    public Volume globalVolume;
+    [Header("Endgame blur")]
+    [SerializeField] private Volume globalVolume;
     private DepthOfField _depthOfField;
     private void Start()
     {
@@ -48,7 +52,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void Update()
+    private void Update()
     {
         if (!finished)
         {

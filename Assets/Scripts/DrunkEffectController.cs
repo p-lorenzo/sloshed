@@ -6,28 +6,34 @@ using Random = UnityEngine.Random;
 
 public class DrunkEffectController : MonoBehaviour
 {
-    public CinemachineBasicMultiChannelPerlin cameraNoise;
-    public float cameraNoiseDrunknessMultiplier = 1.5f;
-    public CharacterController controller;
-    public ThirdPersonController thirdPersonController;
-    public Material drunkMat;
-    public TextMeshProUGUI drunknessMeter;
-    [Range(0f, .5f)] public float drunkLevel = 0f;
-    public float drunkGainRate = 0.01f;
-    public float drunkDecayRate = 0.01f;
+    [Header("Camera Noise Settings")]
+    [SerializeField] private  CinemachineBasicMultiChannelPerlin cameraNoise;
+    [SerializeField] private  float cameraNoiseDrunknessMultiplier = 1.5f;
+    
+    [Header("References")]
+    [SerializeField] private  CharacterController controller;
+    [SerializeField] private  ThirdPersonController thirdPersonController;
+    [SerializeField] private  Material drunkMat;
+    [SerializeField] private  TextMeshProUGUI drunknessMeter;
+    
+    [Header("Drunkness Settings")]
+    [Range(0f, .5f)] [SerializeField] private  float drunkLevel = 0f;
+    [SerializeField] private  float drunkGainRate = 0.01f;
+    [SerializeField] private  float drunkDecayRate = 0.01f;
+    
+    [Header("Player Drift Settings")]
     private Vector3 targetDrift;
     private Vector3 currentDrift;
-    public float driftMagnitude = 1.2f;
+    [SerializeField] private  float driftMagnitude = 1.2f;
     private float driftCooldown = 3f;
     private float driftTimer = 0f;
 
     [Header("Player Tilt Settings")] 
-    public bool isTiltingEnabled = true;
-    public Transform playerVisual; // riferimento alla mesh/visivo, NON il root
-    public float maxTiltAngle = 20f;
-    public float tiltSpeed = .2f;
-    public float tiltMagnitude = 2f;
-
+    [SerializeField] private  bool isTiltingEnabled = true;
+    [SerializeField] private  Transform playerVisual;
+    [SerializeField] private  float maxTiltAngle = 20f;
+    [SerializeField] private  float tiltSpeed = .2f;
+    [SerializeField] private  float tiltMagnitude = 2f;
     
     void Update()
     {
