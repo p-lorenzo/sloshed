@@ -18,8 +18,8 @@ public class DrunkEffectController : MonoBehaviour
     private Vector3 targetDrift;
     private Vector3 currentDrift;
     public float driftMagnitude = 1.2f;
-    private float cooldown = 3f;
-    private float timer = 0f;
+    private float driftCooldown = 3f;
+    private float driftTimer = 0f;
 
     [Header("Player Tilt Settings")] 
     public bool isTiltingEnabled = true;
@@ -27,6 +27,7 @@ public class DrunkEffectController : MonoBehaviour
     public float maxTiltAngle = 20f;
     public float tiltSpeed = .2f;
     public float tiltMagnitude = 2f;
+
     
     void Update()
     {
@@ -43,12 +44,12 @@ public class DrunkEffectController : MonoBehaviour
             drunkLevel += drunkGainRate * Time.deltaTime;
         }
         
-        timer += Time.deltaTime;
+        driftTimer += Time.deltaTime;
 
-        if (timer >= cooldown)
+        if (driftTimer >= driftCooldown)
         {
             PickNewDrift();
-            timer = 0f;
+            driftTimer = 0f;
         }
         currentDrift = Vector3.Lerp(currentDrift, targetDrift, Time.deltaTime * tiltSpeed);
         thirdPersonController.InputOffset = currentDrift * (drunkLevel * driftMagnitude);
