@@ -7,6 +7,7 @@ public class PlayerFinishTracker : MonoBehaviour
     private readonly HashSet<Collider> activeFinishTriggers = new();
     [SerializeField] private BehaviourPuppet behaviourPuppet;
     [SerializeField] private PuppetMaster puppetMaster;
+    [SerializeField] private float launchForce = 5f;
     /// <summary>
     /// Ritorna true se il player sta toccando almeno un trigger con tag "Finish"
     /// </summary>
@@ -44,6 +45,6 @@ public class PlayerFinishTracker : MonoBehaviour
     public void DiveOntoBed()
     {
         Vector3 diveDir = transform.forward + Vector3.up * 0.5f;
-        LaunchPuppet(diveDir.normalized, 3f);
+        LaunchPuppet(diveDir.normalized, launchForce);
     }
 }
