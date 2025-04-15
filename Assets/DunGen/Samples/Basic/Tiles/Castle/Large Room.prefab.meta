@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 624411d0ce56b0044926fa2cf269ba96
+NativeFormatImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 15682
+  packageName: DunGen
+  packageVersion: 2.17.4
+  assetPath: Assets/DunGen/Samples/Basic/Tiles/Castle/Large Room.prefab
+  uploadId: 700618

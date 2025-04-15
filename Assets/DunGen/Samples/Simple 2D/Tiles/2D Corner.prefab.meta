@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 52d230f4d60b827438b6932636d9e4da
+NativeFormatImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 15682
+  packageName: DunGen
+  packageVersion: 2.17.4
+  assetPath: Assets/DunGen/Samples/Simple 2D/Tiles/2D Corner.prefab
+  uploadId: 700618

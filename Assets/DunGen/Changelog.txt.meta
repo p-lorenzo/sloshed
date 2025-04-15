@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 556db07425653964ca502ffec1498c38
+timeCreated: 1579618079
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 15682
+  packageName: DunGen
+  packageVersion: 2.17.4
+  assetPath: Assets/DunGen/Changelog.txt
+  uploadId: 700618

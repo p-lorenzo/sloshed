@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 8630ba0c71381684e8e53bccdaa59c23
+NativeFormatImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 15682
+  packageName: DunGen
+  packageVersion: 2.17.4
+  assetPath: Assets/DunGen/Samples/Basic/Tiles/Special.prefab
+  uploadId: 700618

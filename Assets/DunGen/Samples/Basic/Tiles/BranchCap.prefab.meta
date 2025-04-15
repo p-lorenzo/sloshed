@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 8a3ad7f32fde042499f389956004f522
+NativeFormatImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 15682
+  packageName: DunGen
+  packageVersion: 2.17.4
+  assetPath: Assets/DunGen/Samples/Basic/Tiles/BranchCap.prefab
+  uploadId: 700618
