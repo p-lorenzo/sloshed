@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI timerText;
     private float timer;
     public bool finished = false;
+    public bool started = false;
     
     private PlayerFinishTracker _playerFinishTracker;
 
@@ -54,7 +55,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (!finished)
+        if (!finished && started)
         {
             timer += Time.deltaTime;
             timerText.text = timer.ToString("0.00 s");
