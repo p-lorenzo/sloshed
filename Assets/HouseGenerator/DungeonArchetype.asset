@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89377a5c2dcb66b40af385ad8492cda9, type: 3}
   m_Name: DungeonArchetype
   m_EditorClassIdentifier: 
-  TileSets: []
+  TileSets:
+  - {fileID: 11400000, guid: 8094467e6d324794cb4984c6f65cb1d5, type: 2}
+  - {fileID: 11400000, guid: 52c3b0cbe5450b14499828a68c4af3f2, type: 2}
   BranchStartTileSets: []
   BranchStartType: 0
   BranchCapTileSets: []

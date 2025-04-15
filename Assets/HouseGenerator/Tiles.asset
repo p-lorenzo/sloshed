@@ -16,7 +16,7 @@ MonoBehaviour:
     Weights:
     - Value: {fileID: 4269353908883325358, guid: 167b47507b66e324aa9d0440758496c9, type: 3}
       MainPathWeight: 1
-      BranchPathWeight: 1
+      BranchPathWeight: 0
       DepthWeightScale:
         serializedVersion: 2
         m_Curve:
@@ -41,5 +41,5 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-      TileSet: {fileID: 0}
+      TileSet: {fileID: 11400000}
   LockPrefabs: []
