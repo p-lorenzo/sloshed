@@ -702,6 +702,7 @@ GameObject:
   - component: {fileID: 426311843}
   - component: {fileID: 426311844}
   - component: {fileID: 426311845}
+  - component: {fileID: 426311846}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -927,6 +928,18 @@ MonoBehaviour:
   animator: {fileID: 6863942788630538676}
   idleStateName: Idle
   globalVolume: {fileID: 832575518}
+--- !u!114 &426311846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426311839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f549d10486494147881699994cf2f39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &607262915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1999,7 +2012,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1302936816
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3470,6 +3483,18 @@ MonoBehaviour:
       - m_Target: {fileID: 426311845}
         m_TargetAssemblyTypeName: UILevelManager, Assembly-CSharp
         m_MethodName: StartLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 426311846}
+        m_TargetAssemblyTypeName: CursorManager, Assembly-CSharp
+        m_MethodName: LockCursor
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

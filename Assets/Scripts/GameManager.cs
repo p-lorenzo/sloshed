@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject losePanel;
     AudioSource audioData;
     
+    private CursorManager cursorManager;
+    
     [Header("Endgame blur")]
     [SerializeField] private Volume globalVolume;
     private DepthOfField _depthOfField;
@@ -31,12 +33,14 @@ public class GameManager : MonoBehaviour
     {
         _playerFinishTracker = FindFirstObjectByType<PlayerFinishTracker>();
         globalVolume.profile.TryGet<DepthOfField>(out _depthOfField);
+        cursorManager = FindAnyObjectByType<CursorManager>();
     }
 
     public void Fallen()
     {
         finished = true;
         _depthOfField.active = true;
+        cursorManager.UnlockCursor();
         if (_playerFinishTracker != null && _playerFinishTracker.IsOnBed())
         {
             Debug.Log("Fallen On Bed!");
