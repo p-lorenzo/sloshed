@@ -15,6 +15,7 @@ public class DrunkEffectController : MonoBehaviour
     [SerializeField] private  ThirdPersonController thirdPersonController;
     [SerializeField] private  Material drunkMat;
     [SerializeField] private  TextMeshProUGUI drunknessMeter;
+    [SerializeField] private  GameManager gameManager;
     
     [Header("Drunkness Settings")]
     [Range(0f, .5f)] [SerializeField] private  float drunkLevel = 0f;
@@ -33,6 +34,8 @@ public class DrunkEffectController : MonoBehaviour
     
     void Update()
     {
+        if (gameManager.finished)
+            return;
         int drunknessPercent = Mathf.RoundToInt((drunkLevel / 0.5f) * 100f);
         cameraNoise.AmplitudeGain = 1 + drunkLevel * cameraNoiseDrunknessMultiplier;
         cameraNoise.FrequencyGain = 1 + drunkLevel * cameraNoiseDrunknessMultiplier;
@@ -43,7 +46,7 @@ public class DrunkEffectController : MonoBehaviour
             drunkLevel -= drunkDecayRate * Time.deltaTime;
         } else if (controller.velocity.magnitude > 0.1f)
         {
-            drunkLevel += drunkGainRate * Time.deltaTime;
+            drunkLevel += drunkGainRate * Time.deltaTime * controller.velocity.magnitude;
         }
         
         driftTimer += Time.deltaTime;
@@ -60,7 +63,7 @@ public class DrunkEffectController : MonoBehaviour
 
         playerTilt.drunkLevel = drunkLevel;
         
-        drunkMat.SetFloat("_Amplitude", drunkLevel * 0.03f);
+        drunkMat.SetFloat("_Amplitude", drunkLevel * 0.01f);
         drunkMat.SetFloat("_GhostStrength", drunkLevel);
         drunkMat.SetFloat("_WaveSpeed", Mathf.Lerp(1f, 10f, drunkLevel));
     }

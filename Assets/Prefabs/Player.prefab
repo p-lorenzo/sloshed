@@ -1396,7 +1396,7 @@ MonoBehaviour:
     target: {fileID: 4992372949795061731}
     props:
       group: 0
-      mappingWeight: 0.375
+      mappingWeight: 1
       pinWeight: 1
       muscleWeight: 1
       muscleDamper: 1
@@ -1627,7 +1627,7 @@ MonoBehaviour:
     target: {fileID: 2549786922880401473}
     props:
       group: 1
-      mappingWeight: 0.341
+      mappingWeight: 1
       pinWeight: 1
       muscleWeight: 1
       muscleDamper: 1
@@ -1759,7 +1759,7 @@ MonoBehaviour:
     target: {fileID: 1847726278626536722}
     props:
       group: 2
-      mappingWeight: 0.278
+      mappingWeight: 1
       pinWeight: 1
       muscleWeight: 1
       muscleDamper: 1
@@ -1904,6 +1904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puppetMaster: {fileID: 7472015391295838772}
   characterController: {fileID: 441156208132325195}
+  gameManager: {fileID: 0}
   maxTiltForce: 240
   maxPinWeightOffset: 2
   tiltSmoothing: 5

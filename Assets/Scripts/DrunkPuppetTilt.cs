@@ -6,7 +6,8 @@ public class DrunkPuppetTilt : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private PuppetMaster puppetMaster;
-    [SerializeField] private CharacterController characterController; // Per leggere il movimento del player
+    [SerializeField] private CharacterController characterController;
+    [SerializeField] private GameManager gameManager;
 
     [Header("Tilt Settings")]
     [SerializeField] private float maxTiltForce = 50f;
@@ -44,8 +45,18 @@ public class DrunkPuppetTilt : MonoBehaviour
     void FixedUpdate()
     {
         if (puppetMaster == null || targetIndices.Count == 0) return;
+        if (gameManager.finished)
+        {
+            foreach (int i in targetIndices)
+            {
+                float newPin = Mathf.Clamp01(originalPinWeights[i] - drunkLevel * maxPinWeightOffset);
+                puppetMaster.muscles[i].props.pinWeight = 1;
+            }
 
-        // 1. Ottieni la direzione opposta al movimento
+            return;
+        }
+
+    // 1. Ottieni la direzione opposta al movimento
         Vector3 velocity = characterController.velocity;
         smoothedVelocity = Vector3.Lerp(smoothedVelocity, velocity, Time.deltaTime * tiltSmoothing);
 

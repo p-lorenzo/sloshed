@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     [Header("Game Timer")]
     [SerializeField] private TextMeshProUGUI timerText;
     private float timer;
-    private bool finished = false;
+    public bool finished = false;
     
     private PlayerFinishTracker _playerFinishTracker;
 

@@ -701,6 +701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 346906857}
+  finished: 0
   winPanel: {fileID: 2121498100}
   winText: {fileID: 1963931163}
   losePanel: {fileID: 607262915}
@@ -723,6 +724,7 @@ MonoBehaviour:
   thirdPersonController: {fileID: 6863942788630538672}
   drunkMat: {fileID: 2100000, guid: f6f31824ced9ce7478fa97debc1ba2f6, type: 2}
   drunknessMeter: {fileID: 1361252739}
+  gameManager: {fileID: 426311841}
   drunkLevel: 0
   drunkGainRate: 0.05
   drunkDecayRate: 0.1
@@ -2789,6 +2791,10 @@ PrefabInstance:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 330585546}
+    - target: {fileID: 7016120002358305749, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 426311841}
     - target: {fileID: 7210088894643215412, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
       propertyPath: m_Name
       value: Player
