@@ -512,8 +512,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8509516, y: 2.0122995, z: 0.089309216}
-  m_Center: {x: 0.45068422, y: 1.0596938, z: -0.021915026}
+  m_Size: {x: 0.8509516, y: 2.0122995, z: 0}
+  m_Center: {x: 0.45068422, y: 1.0596938, z: -0.039013468}
 --- !u!54 &2193402846162461207
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -565,12 +565,12 @@ HingeJoint:
     targetVelocity: 0
     force: 0
     freeSpin: 0
-  m_UseLimits: 1
+  m_UseLimits: 0
   m_ExtendedLimits: 0
   m_UseAcceleration: 0
   m_Limits:
-    min: -50
-    max: 230
+    min: 0.3
+    max: 182.8
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
