@@ -39,7 +39,7 @@ public class DrunkEffectController : MonoBehaviour
         int drunknessPercent = Mathf.RoundToInt((drunkLevel / 0.5f) * 100f);
         cameraNoise.AmplitudeGain = 1 + drunkLevel * cameraNoiseDrunknessMultiplier;
         cameraNoise.FrequencyGain = 1 + drunkLevel * cameraNoiseDrunknessMultiplier;
-        drunknessMeter.text = $"Drunkness: {drunknessPercent}%";
+        drunknessMeter.text = $"Confusion: {drunknessPercent}%";
         
         if (controller.velocity.magnitude < 0.1f)
         {

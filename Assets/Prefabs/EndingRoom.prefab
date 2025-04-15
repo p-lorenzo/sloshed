@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6437209986629902164}
   - component: {fileID: 8301532140849479479}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FinishTrigger
   m_TagString: Finish
   m_Icon: {fileID: 0}
@@ -51,8 +51,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.270174, y: 1, z: 1.6109885}
-  m_Center: {x: 0.30993223, y: 0, z: 0.042362273}
+  m_Size: {x: 2.5199118, y: 1, z: 1.9425781}
+  m_Center: {x: 0.18506336, y: 0, z: 0.07759833}
 --- !u!1 &410460876190742517
 GameObject:
   m_ObjectHideFlags: 0

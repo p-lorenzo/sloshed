@@ -619,9 +619,9 @@ MonoBehaviour:
   drunknessMeter: {fileID: 1361252739}
   gameManager: {fileID: 426311841}
   drunkLevel: 0
-  drunkGainRate: 0.05
+  drunkGainRate: 0.03
   drunkDecayRate: 0.1
-  driftMagnitude: 2
+  driftMagnitude: 1.5
   playerTilt: {fileID: 776658013776429761}
 --- !u!82 &426311843
 AudioSource:
