@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4898711983173729602}
   - component: {fileID: 574093269441482549}
   - component: {fileID: 8043929168627816622}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor4m (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 6429663477296591397}
   - component: {fileID: 1380410252998275761}
   - component: {fileID: 5732702716427862941}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall4m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 881158561499105068}
   - component: {fileID: 4293437455744223369}
   - component: {fileID: 2049610447126871107}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SofaCusion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 1322663521571002278}
   - component: {fileID: 3951895435127924157}
   - component: {fileID: 4326864874572710355}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LightBulb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 9221132874198911541}
   - component: {fileID: 7738184346538614011}
   - component: {fileID: 6976508366908108358}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -601,7 +601,7 @@ GameObject:
   - component: {fileID: 3477037214129253126}
   - component: {fileID: 1703519155588440012}
   - component: {fileID: 6567791852327103017}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ShelvesTallA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -710,7 +710,7 @@ GameObject:
   - component: {fileID: 1022992440667773405}
   - component: {fileID: 2121218374075262889}
   - component: {fileID: 4126605209718126474}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall1m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -818,7 +818,7 @@ GameObject:
   - component: {fileID: 7805165107718139620}
   - component: {fileID: 7611018167429079183}
   - component: {fileID: 7735216249377725089}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LampSelfStanding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -904,7 +904,7 @@ GameObject:
   - component: {fileID: 449347858815800692}
   - component: {fileID: 3572406644644207313}
   - component: {fileID: 1618845757154242075}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlantPotMedium (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -989,7 +989,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 494860311992712503}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall2m (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1023,7 +1023,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4711256401108209545}
   - component: {fileID: 5405545729669327459}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Doorway (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1094,7 +1094,7 @@ GameObject:
   - component: {fileID: 7499319810328167483}
   - component: {fileID: 4970371033817231008}
   - component: {fileID: 7294068116764129603}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall4mSkirting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1224,7 +1224,7 @@ GameObject:
   - component: {fileID: 278680483477537116}
   - component: {fileID: 8596119444860204565}
   - component: {fileID: 2568352097252028858}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LampShadeTube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1311,7 +1311,7 @@ GameObject:
   - component: {fileID: 8432339190528016390}
   - component: {fileID: 6782120429257537362}
   - component: {fileID: 5337120614312982865}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WallWindowBay4mSkirting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1420,7 +1420,7 @@ GameObject:
   - component: {fileID: 407635123891808352}
   - component: {fileID: 8325012289844574245}
   - component: {fileID: 3718784464582488452}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall2m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1526,7 +1526,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 304935695155474200}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall2m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1559,7 +1559,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 354075553473700443}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WallWindowBay4m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1601,7 +1601,7 @@ GameObject:
   - component: {fileID: 1547537164123832301}
   - component: {fileID: 7382683141564137950}
   - component: {fileID: 7370989317707592614}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WindowBayFrame4m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1710,7 +1710,7 @@ GameObject:
   - component: {fileID: 3340031377101854165}
   - component: {fileID: 702240066533089567}
   - component: {fileID: 8082033419731486566}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ChairDinningA (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1819,7 +1819,7 @@ GameObject:
   - component: {fileID: 3418468396605119237}
   - component: {fileID: 618156075729612751}
   - component: {fileID: 679008851958658187}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor4m (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1928,7 +1928,7 @@ GameObject:
   - component: {fileID: 2912640814523776590}
   - component: {fileID: 1121167791230978692}
   - component: {fileID: 8509777067276020989}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ChairDinningA (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2037,7 +2037,7 @@ GameObject:
   - component: {fileID: 3019291031798590357}
   - component: {fileID: 1009468753595883359}
   - component: {fileID: 1151277886460380187}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor4m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2145,7 +2145,7 @@ GameObject:
   - component: {fileID: 4214682877302905952}
   - component: {fileID: 2774049236978931209}
   - component: {fileID: 6646135927976275019}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DoorHandle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2232,7 +2232,7 @@ GameObject:
   - component: {fileID: 6084333825457358242}
   - component: {fileID: 6571536539688321983}
   - component: {fileID: 7775543699621935398}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall2mSkirting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2338,7 +2338,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2062411766610381681}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2375,7 +2375,7 @@ GameObject:
   - component: {fileID: 2711750093087126962}
   - component: {fileID: 164070355336937848}
   - component: {fileID: 6917990114535569603}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SofaArmChair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2485,7 +2485,7 @@ GameObject:
   - component: {fileID: 2718646913903584887}
   - component: {fileID: 170685707956753085}
   - component: {fileID: 8919828430138225860}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ChairDinningA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2593,7 +2593,7 @@ GameObject:
   - component: {fileID: 1165082593640823689}
   - component: {fileID: 2847664641599648812}
   - component: {fileID: 27048735580897510}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlantPotRoundMedium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2680,7 +2680,7 @@ GameObject:
   - component: {fileID: 1695287984880966846}
   - component: {fileID: 2317388868961063707}
   - component: {fileID: 562373449067964369}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SofaCusion (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2764,7 +2764,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3394549843326634848}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall3m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2801,7 +2801,7 @@ GameObject:
   - component: {fileID: 9103664856340225175}
   - component: {fileID: 3766212043867806723}
   - component: {fileID: 7557832470269570351}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall4m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2933,7 +2933,7 @@ GameObject:
   - component: {fileID: 9054616153697332480}
   - component: {fileID: 4015669873235504532}
   - component: {fileID: 7718064793611787448}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall4m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3064,7 +3064,7 @@ GameObject:
   - component: {fileID: 1456680383805175410}
   - component: {fileID: 3734570815290360504}
   - component: {fileID: 3615175567275973116}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor4m (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3173,7 +3173,7 @@ GameObject:
   - component: {fileID: 7676534465162629593}
   - component: {fileID: 7337959897655875524}
   - component: {fileID: 6129159124710436189}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall2mSkirting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3283,7 +3283,7 @@ GameObject:
   - component: {fileID: 5512504988407782174}
   - component: {fileID: 6947079132776067461}
   - component: {fileID: 4731886796454897254}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall4mSkirting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3415,7 +3415,7 @@ GameObject:
   - component: {fileID: 5728184600998718089}
   - component: {fileID: 7175984865024409618}
   - component: {fileID: 4779949125451339761}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall4mSkirting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3546,7 +3546,7 @@ GameObject:
   - component: {fileID: 7524889210648019958}
   - component: {fileID: 7435700359814743531}
   - component: {fileID: 6334986270009343858}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall2mSkirting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3654,7 +3654,7 @@ GameObject:
   - component: {fileID: 8790600775680490143}
   - component: {fileID: 5064521099622883817}
   - component: {fileID: 894933955216465787}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WallDoor2mSkirting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3741,7 +3741,7 @@ GameObject:
   - component: {fileID: 1319287816671996292}
   - component: {fileID: 3867459644929400142}
   - component: {fileID: 5493273359145958199}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ChairDinningA (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3847,7 +3847,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2702762055661139091}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall4m (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3881,7 +3881,7 @@ GameObject:
   - component: {fileID: 4273731259748023323}
   - component: {fileID: 5579679140224314462}
   - component: {fileID: 971832799460222463}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall2m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3987,7 +3987,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4173538818200153710}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall4m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4023,7 +4023,7 @@ GameObject:
   - component: {fileID: 4155158082585161268}
   - component: {fileID: 5731465146999357041}
   - component: {fileID: 1124181897915791312}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall2m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4132,7 +4132,7 @@ GameObject:
   - component: {fileID: 1129776991759726058}
   - component: {fileID: 2902905833919578400}
   - component: {fileID: 5425716759346200516}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TableRectangleShort
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4241,7 +4241,7 @@ GameObject:
   - component: {fileID: 1117261308625220136}
   - component: {fileID: 2910935544533092066}
   - component: {fileID: 197446369503683695}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TableNarrowDoubleDraw (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4347,7 +4347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4051404410923510092}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall2m (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4383,7 +4383,7 @@ GameObject:
   - component: {fileID: 5545908921053020656}
   - component: {fileID: 2770787050884846148}
   - component: {fileID: 579735349135750218}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorBayWindow (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4541,6 +4541,7 @@ Transform:
   - {fileID: 1300917706133355031}
   - {fileID: 2257923432973185747}
   - {fileID: 3325025449797792601}
+  - {fileID: 1656680338084397144}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4948319088945641375
@@ -4618,7 +4619,7 @@ GameObject:
   - component: {fileID: 3513721582969564842}
   - component: {fileID: 535053954246582543}
   - component: {fileID: 2344145550722061765}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlantPotMedium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4706,7 +4707,7 @@ GameObject:
   - component: {fileID: 4461069356464070583}
   - component: {fileID: 2199346542457167546}
   - component: {fileID: 8935859293326673561}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall3mSkirting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4815,7 +4816,7 @@ GameObject:
   - component: {fileID: 8579781390757834454}
   - component: {fileID: 27527814002627345}
   - component: {fileID: 1113878833544161908}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WallWindowBay4m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4924,7 +4925,7 @@ GameObject:
   - component: {fileID: 171051370156238855}
   - component: {fileID: 2718842775713963213}
   - component: {fileID: 2612991863876667273}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor4m (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5033,7 +5034,7 @@ GameObject:
   - component: {fileID: 9118623599508294110}
   - component: {fileID: 6444418588831874324}
   - component: {fileID: 7784245651707941989}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RugRectangleMedium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5142,7 +5143,7 @@ GameObject:
   - component: {fileID: 319102560137714388}
   - component: {fileID: 806288218633133257}
   - component: {fileID: 4317277189714699856}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall2mSkirting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5251,7 +5252,7 @@ GameObject:
   - component: {fileID: 8404865452802467326}
   - component: {fileID: 5999045189793911092}
   - component: {fileID: 8953532644414833702}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RugRectangleSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5359,7 +5360,7 @@ GameObject:
   - component: {fileID: 2670246340132214077}
   - component: {fileID: 1888099298631412158}
   - component: {fileID: 7457481091022242761}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CurtainPole4m001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5446,7 +5447,7 @@ GameObject:
   - component: {fileID: 8448805322172621547}
   - component: {fileID: 5955123083983951393}
   - component: {fileID: 3112873451102777432}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ChairDinningA (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5555,7 +5556,7 @@ GameObject:
   - component: {fileID: 2178812933454266848}
   - component: {fileID: 6871120191963296994}
   - component: {fileID: 1740233341597003043}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WindowBayGlass4m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5661,7 +5662,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5065083748007494962}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall1m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5697,7 +5698,7 @@ GameObject:
   - component: {fileID: 125413196768090624}
   - component: {fileID: 6765760099399479553}
   - component: {fileID: 5096822942040821115}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FloorBayWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5806,7 +5807,7 @@ GameObject:
   - component: {fileID: 5549675928642600469}
   - component: {fileID: 765960579449554462}
   - component: {fileID: 5167400213953990275}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall1mSkirting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5914,7 +5915,7 @@ GameObject:
   - component: {fileID: 4885735451679827992}
   - component: {fileID: 5825523431646339523}
   - component: {fileID: 1350470378591249035}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LampShadeMedium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6000,7 +6001,7 @@ GameObject:
   - component: {fileID: 5860306380742168238}
   - component: {fileID: 7420848135709688075}
   - component: {fileID: 4690729110736500161}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlantSnakeLarge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6084,7 +6085,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5895407400850745273}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall4m (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6117,7 +6118,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6227509427987604017}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LampTall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6155,7 +6156,7 @@ GameObject:
   - component: {fileID: 6172885374648563478}
   - component: {fileID: 2560905411844171603}
   - component: {fileID: 7176923280073600754}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall2m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6264,7 +6265,7 @@ GameObject:
   - component: {fileID: 7187334195177710384}
   - component: {fileID: 4925386681219356666}
   - component: {fileID: 5295459982971772698}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TableRectangleMedium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6373,7 +6374,7 @@ GameObject:
   - component: {fileID: 1025652891008737602}
   - component: {fileID: 5316537625908961267}
   - component: {fileID: 2587473487516229603}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor4m (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6479,7 +6480,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7510651427168024122}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall2m (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6512,7 +6513,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8004025603645667350}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WallWindowBay4mCurtain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6547,7 +6548,7 @@ GameObject:
   - component: {fileID: 7934768477537069176}
   - component: {fileID: 6463279502131685341}
   - component: {fileID: 9103702563304215319}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6635,7 +6636,7 @@ GameObject:
   - component: {fileID: 11607649503956460}
   - component: {fileID: 3225031044522862455}
   - component: {fileID: 937433669345161364}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall4mSkirting
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6763,7 +6764,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7911644850021142088}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WallDoor2m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6799,7 +6800,7 @@ GameObject:
   - component: {fileID: 7921687894469246504}
   - component: {fileID: 6503381197120795021}
   - component: {fileID: 9053451276100437319}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlantSnakeLarge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6883,7 +6884,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7382045044836351699}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6932,7 +6933,7 @@ GameObject:
   - component: {fileID: 6079898359580829499}
   - component: {fileID: 8324011182970852337}
   - component: {fileID: 6439043594926584188}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TableNarrowDoubleDraw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7041,7 +7042,7 @@ GameObject:
   - component: {fileID: 6336859286850711829}
   - component: {fileID: 8076639388631549407}
   - component: {fileID: 5823523210597875186}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SofaDouble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7153,7 +7154,7 @@ GameObject:
   - component: {fileID: 3531123816483109874}
   - component: {fileID: 8868679985203886950}
   - component: {fileID: 2861320706064173642}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall4m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7283,7 +7284,7 @@ GameObject:
   - component: {fileID: 7470528179017217392}
   - component: {fileID: 5765590869165144789}
   - component: {fileID: 8640025116085980703}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlantSnakeLarge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7369,7 +7370,7 @@ GameObject:
   - component: {fileID: 7379679233581853276}
   - component: {fileID: 5892459545518024185}
   - component: {fileID: 8512594898030350643}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SofaCusion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7456,7 +7457,7 @@ GameObject:
   - component: {fileID: 5366280568266669769}
   - component: {fileID: 1427009657758847069}
   - component: {fileID: 5174392713150595630}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall3m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7565,7 +7566,7 @@ GameObject:
   - component: {fileID: 1606765620221848162}
   - component: {fileID: 5240338270409725021}
   - component: {fileID: 222849777404568459}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor4m (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7673,7 +7674,7 @@ GameObject:
   - component: {fileID: 8464085549552335253}
   - component: {fileID: 5742034306659752180}
   - component: {fileID: 263465617235167363}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WallDoor2m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7760,7 +7761,7 @@ GameObject:
   - component: {fileID: 1192359541156685124}
   - component: {fileID: 1965123204207023865}
   - component: {fileID: 1061183644171176816}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor4m (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7868,7 +7869,7 @@ GameObject:
   - component: {fileID: 1910687860537180293}
   - component: {fileID: 4943019588674404265}
   - component: {fileID: 6225527664027786414}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DoorHandle001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7955,7 +7956,7 @@ GameObject:
   - component: {fileID: 2604628351529522681}
   - component: {fileID: 4376353013602679912}
   - component: {fileID: 3727708678671722196}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WallWindowBay4mCeling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8063,7 +8064,7 @@ GameObject:
   - component: {fileID: 2541109616687043134}
   - component: {fileID: 8557666624536898075}
   - component: {fileID: 4872540519860900347}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CurtainBay4m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8150,7 +8151,7 @@ GameObject:
   - component: {fileID: 5320577696861526286}
   - component: {fileID: 7940561307443195332}
   - component: {fileID: 1703899415912303549}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ChairDinningA (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8258,7 +8259,7 @@ GameObject:
   - component: {fileID: 8600912754617098677}
   - component: {fileID: 4680171307459620368}
   - component: {fileID: 7428608729866296026}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: VaseSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8342,7 +8343,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8555933166717094155}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall4m (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8375,7 +8376,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8449320786939787420}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wall4m (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8399,6 +8400,81 @@ Transform:
   - {fileID: 6701491309041428691}
   m_Father: {fileID: 7382045044836351699}
   m_LocalEulerAnglesHint: {x: 0, y: -360, z: 0}
+--- !u!1001 &936898094309962410
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2839467225800938924}
+    m_Modifications:
+    - target: {fileID: 667585620304472964, guid: db6118a4db8aba94fbfeb08b9a64b4d4, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667585620304472964, guid: db6118a4db8aba94fbfeb08b9a64b4d4, type: 3}
+      propertyPath: m_Constraints
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204399040171649096, guid: db6118a4db8aba94fbfeb08b9a64b4d4, type: 3}
+      propertyPath: m_Name
+      value: Hoover
+      objectReference: {fileID: 0}
+    - target: {fileID: 1204399040171649096, guid: db6118a4db8aba94fbfeb08b9a64b4d4, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016823351887065842, guid: db6118a4db8aba94fbfeb08b9a64b4d4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.814775
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016823351887065842, guid: db6118a4db8aba94fbfeb08b9a64b4d4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.084
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016823351887065842, guid: db6118a4db8aba94fbfeb08b9a64b4d4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.9553938
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016823351887065842, guid: db6118a4db8aba94fbfeb08b9a64b4d4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016823351887065842, guid: db6118a4db8aba94fbfeb08b9a64b4d4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016823351887065842, guid: db6118a4db8aba94fbfeb08b9a64b4d4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016823351887065842, guid: db6118a4db8aba94fbfeb08b9a64b4d4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016823351887065842, guid: db6118a4db8aba94fbfeb08b9a64b4d4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016823351887065842, guid: db6118a4db8aba94fbfeb08b9a64b4d4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016823351887065842, guid: db6118a4db8aba94fbfeb08b9a64b4d4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4331969532495544657, guid: db6118a4db8aba94fbfeb08b9a64b4d4, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: db6118a4db8aba94fbfeb08b9a64b4d4, type: 3}
+--- !u!4 &1656680338084397144 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2016823351887065842, guid: db6118a4db8aba94fbfeb08b9a64b4d4, type: 3}
+  m_PrefabInstance: {fileID: 936898094309962410}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6258294053077541247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8407,9 +8483,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2839467225800938924}
     m_Modifications:
+    - target: {fileID: 3118685615554589467, guid: a38f60b20ea9d8e4086d5859b8def0db, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350086824361344191, guid: a38f60b20ea9d8e4086d5859b8def0db, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462549457953316097, guid: a38f60b20ea9d8e4086d5859b8def0db, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4812092362940844310, guid: a38f60b20ea9d8e4086d5859b8def0db, type: 3}
       propertyPath: m_Name
       value: LightCeliing
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812092362940844310, guid: a38f60b20ea9d8e4086d5859b8def0db, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5299659440637989804, guid: a38f60b20ea9d8e4086d5859b8def0db, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8568,9 +8660,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2839467225800938924}
     m_Modifications:
+    - target: {fileID: 3118685615554589467, guid: a38f60b20ea9d8e4086d5859b8def0db, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4350086824361344191, guid: a38f60b20ea9d8e4086d5859b8def0db, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462549457953316097, guid: a38f60b20ea9d8e4086d5859b8def0db, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4812092362940844310, guid: a38f60b20ea9d8e4086d5859b8def0db, type: 3}
       propertyPath: m_Name
       value: LightCeliing (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812092362940844310, guid: a38f60b20ea9d8e4086d5859b8def0db, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5299659440637989804, guid: a38f60b20ea9d8e4086d5859b8def0db, type: 3}
       propertyPath: m_LocalPosition.x
