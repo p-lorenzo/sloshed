@@ -1,10 +1,13 @@
 using System;
 using TMPro;
+using Unity.Cinemachine;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class DrunkEffectController : MonoBehaviour
 {
+    public CinemachineBasicMultiChannelPerlin cameraNoise;
+    public float cameraNoiseDrunknessMultiplier = 1.5f;
     public CharacterController controller;
     public ThirdPersonController thirdPersonController;
     public Material drunkMat;
@@ -28,6 +31,8 @@ public class DrunkEffectController : MonoBehaviour
     void Update()
     {
         int drunknessPercent = Mathf.RoundToInt((drunkLevel / 0.5f) * 100f);
+        cameraNoise.AmplitudeGain = 1 + drunkLevel * cameraNoiseDrunknessMultiplier;
+        cameraNoise.FrequencyGain = 1 + drunkLevel * cameraNoiseDrunknessMultiplier;
         drunknessMeter.text = $"Drunkness: {drunknessPercent}%";
         
         if (controller.velocity.magnitude < 0.1f)
