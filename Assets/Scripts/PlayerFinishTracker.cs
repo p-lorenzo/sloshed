@@ -1,10 +1,12 @@
 using UnityEngine;
 using System.Collections.Generic;
+using RootMotion.Dynamics;
 
 public class PlayerFinishTracker : MonoBehaviour
 {
     private readonly HashSet<Collider> activeFinishTriggers = new();
-
+    [SerializeField] private BehaviourPuppet behaviourPuppet;
+    [SerializeField] private PuppetMaster puppetMaster;
     /// <summary>
     /// Ritorna true se il player sta toccando almeno un trigger con tag "Finish"
     /// </summary>
@@ -18,6 +20,8 @@ public class PlayerFinishTracker : MonoBehaviour
         if (other.CompareTag("Finish"))
         {
             activeFinishTriggers.Add(other);
+            behaviourPuppet.SetState(BehaviourPuppet.State.Unpinned);
+            DiveOntoBed();
         }
     }
 
@@ -27,5 +31,19 @@ public class PlayerFinishTracker : MonoBehaviour
         {
             activeFinishTriggers.Remove(other);
         }
+    }
+    
+    public void LaunchPuppet(Vector3 direction, float force)
+    {
+        foreach (var muscle in puppetMaster.muscles)
+        {
+            muscle.rigidbody.AddForce(direction * force, ForceMode.Impulse);
+        }
+    }
+    
+    public void DiveOntoBed()
+    {
+        Vector3 diveDir = transform.forward + Vector3.up * 0.5f;
+        LaunchPuppet(diveDir.normalized, 3f);
     }
 }
