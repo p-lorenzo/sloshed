@@ -12,7 +12,6 @@ public class ThirdPersonController : MonoBehaviour
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private float runSpeed = 4f;
     [SerializeField] private float gravity = -9.81f;
-    [SerializeField] private float groundedCheckDistance = 0.1f;
 
     public Vector3 InputOffset = Vector3.zero;
     

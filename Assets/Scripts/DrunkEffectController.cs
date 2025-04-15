@@ -28,12 +28,8 @@ public class DrunkEffectController : MonoBehaviour
     private float driftCooldown = 3f;
     private float driftTimer = 0f;
 
-    [Header("Player Tilt Settings")] 
-    [SerializeField] private  bool isTiltingEnabled = true;
-    [SerializeField] private  Transform playerVisual;
-    [SerializeField] private  float maxTiltAngle = 20f;
-    [SerializeField] private  float tiltSpeed = .2f;
-    [SerializeField] private  float tiltMagnitude = 2f;
+    [Header("Player Tilt Reference")] 
+    [SerializeField] private DrunkPuppetTilt playerTilt;
     
     void Update()
     {
@@ -57,27 +53,12 @@ public class DrunkEffectController : MonoBehaviour
             PickNewDrift();
             driftTimer = 0f;
         }
-        currentDrift = Vector3.Lerp(currentDrift, targetDrift, Time.deltaTime * tiltSpeed);
+        currentDrift = Vector3.Lerp(currentDrift, targetDrift, Time.deltaTime);
         thirdPersonController.InputOffset = currentDrift * (drunkLevel * driftMagnitude);
         
         drunkLevel = Mathf.Clamp(drunkLevel, 0f, .5f);
-        
-        if (playerVisual && targetDrift != Vector3.zero && isTiltingEnabled)
-        {
-            Vector3 localDrift = transform.InverseTransformDirection(targetDrift);
 
-            float tiltX = -localDrift.z * drunkLevel * maxTiltAngle * tiltMagnitude;
-    
-            float tiltZ = localDrift.x * drunkLevel * maxTiltAngle * tiltMagnitude;
-
-            Quaternion targetTilt = Quaternion.Euler(tiltX, 0f, tiltZ);
-
-            playerVisual.localRotation = Quaternion.Slerp(
-                playerVisual.localRotation,
-                targetTilt,
-                Time.deltaTime * tiltSpeed
-            );
-        }
+        playerTilt.drunkLevel = drunkLevel;
         
         drunkMat.SetFloat("_Amplitude", drunkLevel * 0.03f);
         drunkMat.SetFloat("_GhostStrength", drunkLevel);
