@@ -129,7 +129,24 @@ public class ThirdPersonController : MonoBehaviour
 
     public void OnRun(InputAction.CallbackContext context)
     {
-        isRunning = context.ReadValueAsButton();
+        if (context.started)
+        {
+            isRunning = true;
+        }
+        else if (context.canceled)
+        {
+            isRunning = false;
+        }
+    }
+    
+    public void StartSprintUI()
+    {
+        isRunning = true;
+    }
+
+    public void StopSprintUI()
+    {
+        isRunning = false;
     }
 
     public void OnDive(InputAction.CallbackContext context)
