@@ -35,6 +35,11 @@ public class ThirdPersonController : MonoBehaviour
 
     private Vector2 moveInput = Vector2.zero;
     private bool isRunning = false;
+    
+    [Header("Sounds")]
+    [SerializeField] private AudioClip LandingAudioClip;
+    [SerializeField] private AudioClip[] FootstepAudioClips;
+    [Range(0, 1)] [SerializeField] private float FootstepAudioVolume = 0.5f;
 
     void Start()
     {
@@ -154,6 +159,18 @@ public class ThirdPersonController : MonoBehaviour
         if (context.performed)
         {
             Dive();
+        }
+    }
+    
+    private void OnFootstep(AnimationEvent animationEvent)
+    {
+        if (animationEvent.animatorClipInfo.weight > 0.5f)
+        {
+            if (FootstepAudioClips.Length > 0)
+            {
+                var index = Random.Range(0, FootstepAudioClips.Length);
+                AudioSource.PlayClipAtPoint(FootstepAudioClips[index], transform.TransformPoint(controller.center), FootstepAudioVolume);
+            }
         }
     }
 }
