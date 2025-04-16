@@ -39,7 +39,6 @@ public class GameManager : MonoBehaviour
         finished = true;
         cursorManager.UnlockCursor();
         puppetMaster.state = PuppetMaster.State.Dead;
-        Debug.Log("Fallen");
         StartCoroutine(EndAfterDelay());
     }
     

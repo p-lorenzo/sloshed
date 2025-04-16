@@ -1276,6 +1276,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 607262915}
   m_CullTransparentMesh: 1
+--- !u!1 &769977034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 769977036}
+  - component: {fileID: 769977035}
+  m_Layer: 0
+  m_Name: SoundFxManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &769977035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769977034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9aa7e78dbd2af4ebdb0d9c33466867, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundFXObject: {fileID: 8959611000594146768, guid: afde12ff356366b4e85d9e60f3f37185, type: 3}
+--- !u!4 &769977036
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769977034}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0966464, y: 0.9471943, z: 0.52685696}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -2308,6 +2353,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174173341}
   m_CullTransparentMesh: 1
+--- !u!1 &1182757831 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5913949458806742698, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+  m_PrefabInstance: {fileID: 8702206931244047185}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1220077708
 GameObject:
   m_ObjectHideFlags: 0
@@ -3279,7 +3329,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: f07822e5e89650d4abc310a49dd0456c, type: 3}
   m_Resource: {fileID: 8300000, guid: f07822e5e89650d4abc310a49dd0456c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.02
+  m_Volume: 0.04
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4796,7 +4846,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7149130971690745151, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
   m_PrefabInstance: {fileID: 8702206931244047185}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1182757831}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25adeae5a2dae34419e6b562d516ab87, type: 3}
@@ -4926,6 +4976,10 @@ PrefabInstance:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 330585546}
+    - target: {fileID: 7149130971690745151, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: FootstepAudioVolume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7266291925878285594, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.75
@@ -4973,6 +5027,176 @@ PrefabInstance:
     - target: {fileID: 8182149910986026570, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_Actions
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionId
+      value: 351f2ccd-1f9f-44bf-9bec-d62ac5c5f408
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
+      value: 6b444451-8a00-4d00-a97e-f47457f736a8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: 6c2ab1b8-8984-453a-af3d-a3c78ae1679a
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionId
+      value: 852140f2-7766-474d-8707-702459ba45f3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_ActionName
+      value: 'Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow,/Shaul
+        Eizikovich vJoy - Virtual Joystick/stick,/FreeJoy SIMGRADE Pedals/stick]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
+      value: 'Player/Look[/Mouse/delta]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: 'Player/Attack[/Mouse/leftButton,/Shaul Eizikovich vJoy - Virtual Joystick/trigger,/FreeJoy
+        SIMGRADE Pedals/trigger,/Keyboard/enter]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionName
+      value: 'Player/Interact[/Keyboard/e]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
+      value: 'Player/Crouch[/Keyboard/c]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionName
+      value: 'Player/Jump[/Keyboard/space]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionName
+      value: 'Player/Previous[/Keyboard/1]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionName
+      value: 'Player/Next[/Keyboard/2]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_ActionName
+      value: 'Player/Sprint[/Keyboard/leftShift]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[9].m_ActionName
+      value: 'UI/Navigate[/Shaul Eizikovich vJoy - Virtual Joystick/stick/up,/FreeJoy
+        SIMGRADE Pedals/stick/up,/Shaul Eizikovich vJoy - Virtual Joystick/stick/down,/FreeJoy
+        SIMGRADE Pedals/stick/down,/Shaul Eizikovich vJoy - Virtual Joystick/stick/left,/FreeJoy
+        SIMGRADE Pedals/stick/left,/Shaul Eizikovich vJoy - Virtual Joystick/stick/right,/FreeJoy
+        SIMGRADE Pedals/stick/right,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_ActionName
+      value: 'UI/Submit[/Keyboard/enter,/FreeJoy SIMGRADE Pedals/trigger]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_ActionName
+      value: 'UI/Cancel[/Keyboard/escape]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5796948189594155714}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1182757831}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5796948189594155714}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5796948189594155714}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMove
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnDive
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnRun
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ThirdPersonController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ThirdPersonController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ThirdPersonController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5103,3 +5327,4 @@ SceneRoots:
   - {fileID: 1983976740}
   - {fileID: 1827398159}
   - {fileID: 186182885}
+  - {fileID: 769977036}

@@ -164,13 +164,10 @@ public class ThirdPersonController : MonoBehaviour
     
     private void OnFootstep(AnimationEvent animationEvent)
     {
-        if (animationEvent.animatorClipInfo.weight > 0.5f)
-        {
-            if (FootstepAudioClips.Length > 0)
-            {
-                var index = Random.Range(0, FootstepAudioClips.Length);
-                AudioSource.PlayClipAtPoint(FootstepAudioClips[index], transform.TransformPoint(controller.center), FootstepAudioVolume);
-            }
-        }
+        if (!(animationEvent.animatorClipInfo.weight > 0.5f)) return;
+        if (FootstepAudioClips.Length <= 0) return;
+        
+        var index = Random.Range(0, FootstepAudioClips.Length);
+        SoundFXManager.instance.PlaySoundFxClip(FootstepAudioClips[index], transform, FootstepAudioVolume);
     }
 }

@@ -16,11 +16,9 @@ public class PlayerFinishTracker : MonoBehaviour
     
     [Header("Loosescreen Elements")]
     [SerializeField] private GameObject losePanel;
-    AudioSource audioData;
 
     private void Start()
     {
-        audioData = GetComponent<AudioSource>();
         _gameManager = FindAnyObjectByType<GameManager>();
     }
 
@@ -63,6 +61,5 @@ public class PlayerFinishTracker : MonoBehaviour
         }        
         _gameManager.AddDepthOfField();
         losePanel.SetActive(true);
-        audioData.Play(0);
     }
 }

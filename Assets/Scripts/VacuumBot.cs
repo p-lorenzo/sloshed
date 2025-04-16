@@ -45,8 +45,7 @@ public class VacuumBot : MonoBehaviour
     private void SteerTowardPlayer()
     {
         if (player == null) return;
-
-        Debug.Log("Steer Toward Player");
+        
         Vector3 toPlayer = (player.position - transform.position).normalized;
         float angleToPlayer = Vector3.SignedAngle(transform.up, toPlayer, Vector3.forward); // Z-axis for 2D
         float randomOffset = Random.Range(-randomAngleRange, randomAngleRange);

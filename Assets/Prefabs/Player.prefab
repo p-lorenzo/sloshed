@@ -3930,17 +3930,18 @@ MonoBehaviour:
   InputOffset: {x: 0, y: 0, z: 0}
   LandingAudioClip: {fileID: 8300000, guid: ff697d3070687ce4583faa0561a145a2, type: 3}
   FootstepAudioClips:
-  - {fileID: 8300000, guid: 72f526a6a9890f643a88e85a61c86c8a, type: 3}
-  - {fileID: 8300000, guid: 85016e0f2b01da248b9663dd49a161b0, type: 3}
-  - {fileID: 8300000, guid: 186de84b3207156479abe98f4958fed0, type: 3}
-  - {fileID: 8300000, guid: 1a91fcd19acf1e54bba0945d9f390849, type: 3}
-  - {fileID: 8300000, guid: 14e8a8d2158bec840b56c54f5266e692, type: 3}
-  - {fileID: 8300000, guid: 29841e7d5bbfb5b419c9ad16ca8bc4c1, type: 3}
-  - {fileID: 8300000, guid: dd1af302b8902684d9381de1f2d3a5af, type: 3}
-  - {fileID: 8300000, guid: 67c8b33e424ccdc4486edf538ab91c5a, type: 3}
-  - {fileID: 8300000, guid: 274649b0e221539409070ebf6c18918b, type: 3}
-  - {fileID: 8300000, guid: a3194b8bbc96ef84fab1f98f4b7dae3e, type: 3}
-  FootstepAudioVolume: 0.5
+  - {fileID: 8300000, guid: 366d177ef3e58d043b0aa3b3c2fc94b0, type: 3}
+  - {fileID: 8300000, guid: 793f046683907be489e7eafe76d96341, type: 3}
+  - {fileID: 8300000, guid: ce67369983962c144b4b56fa8df74e9b, type: 3}
+  - {fileID: 8300000, guid: de4f9c78158693b4f93c58355fa95608, type: 3}
+  - {fileID: 8300000, guid: a4bd51f83530c604f9fc35a6f33c091c, type: 3}
+  - {fileID: 8300000, guid: d489d71bb8d3c234e87ef91fd1d7b4bd, type: 3}
+  - {fileID: 8300000, guid: 4cff2b7e3aa42de4ba339dab19b16261, type: 3}
+  - {fileID: 8300000, guid: 0619d86aed103c54a911cbab1ad31223, type: 3}
+  - {fileID: 8300000, guid: 91f2aaff94f1be64eb23de5a24e588bb, type: 3}
+  - {fileID: 8300000, guid: f8c0003689a06614f96cbca71e678a13, type: 3}
+  - {fileID: 8300000, guid: a272a0fc2c0bb5d47b00d7a5328ad43e, type: 3}
+  FootstepAudioVolume: 0.4
 --- !u!95 &8242605174557178696
 Animator:
   serializedVersion: 7
@@ -4039,7 +4040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_Actions: {fileID: 0}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
