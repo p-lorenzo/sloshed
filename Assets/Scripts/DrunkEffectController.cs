@@ -2,36 +2,45 @@ using System;
 using TMPro;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Audio;
 using Random = UnityEngine.Random;
 
 public class DrunkEffectController : MonoBehaviour
 {
-    [Header("Camera Noise Settings")]
-    [SerializeField] private  CinemachineBasicMultiChannelPerlin cameraNoise;
-    [SerializeField] private  float cameraNoiseDrunknessMultiplier = 1.5f;
-    
-    [Header("References")]
-    [SerializeField] private  CharacterController controller;
-    [SerializeField] private  ThirdPersonController thirdPersonController;
-    [SerializeField] private  Material drunkMat;
-    [SerializeField] private  TextMeshProUGUI drunknessMeter;
-    [SerializeField] private  GameManager gameManager;
-    
-    [Header("Drunkness Settings")]
-    [Range(0f, .5f)] [SerializeField] private  float drunkLevel = 0f;
-    [SerializeField] private  float drunkGainRate = 0.01f;
-    [SerializeField] private  float drunkDecayRate = 0.01f;
-    
-    [Header("Player Drift Settings")]
+    [Header("Camera Noise Settings")] 
+    [SerializeField] private CinemachineBasicMultiChannelPerlin cameraNoise;
+    [SerializeField] private float cameraNoiseDrunknessMultiplier = 1.5f;
+
+    [Header("References")] 
+    [SerializeField] private CharacterController controller;
+    [SerializeField] private ThirdPersonController thirdPersonController;
+    [SerializeField] private Material drunkMat;
+    [SerializeField] private TextMeshProUGUI drunknessMeter;
+    [SerializeField] private GameManager gameManager;
+
+    [Header("Audio Settings")] 
+    [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private float minCutoffFreq = 100f;
+    [SerializeField] private float maxCutoffFreq = 22000f;
+    [SerializeField] private AudioSource ringingSound;
+    [SerializeField] private float maxRingingSound = 0.01f;
+    [SerializeField] private float minRingingSound = 0f;
+
+    [Header("Drunkness Settings")] 
+    [Range(0f, .5f)] [SerializeField] private float drunkLevel = 0f;
+    [SerializeField] private float drunkGainRate = 0.01f;
+    [SerializeField] private float drunkDecayRate = 0.01f;
+
+    [Header("Player Drift Settings")] 
     private Vector3 targetDrift;
     private Vector3 currentDrift;
-    [SerializeField] private  float driftMagnitude = 1.2f;
+    [SerializeField] private float driftMagnitude = 1.2f;
     private float driftCooldown = 3f;
     private float driftTimer = 0f;
 
     [Header("Player Tilt Reference")] 
     [SerializeField] private DrunkPuppetTilt playerTilt;
-    
+
     void Update()
     {
         if (gameManager.finished)
@@ -40,15 +49,16 @@ public class DrunkEffectController : MonoBehaviour
         cameraNoise.AmplitudeGain = 1 + drunkLevel * cameraNoiseDrunknessMultiplier;
         cameraNoise.FrequencyGain = 1 + drunkLevel * cameraNoiseDrunknessMultiplier;
         drunknessMeter.text = $"Confusion: {drunknessPercent}%";
-        
+
         if (controller.velocity.magnitude < 0.1f)
         {
             drunkLevel -= drunkDecayRate * Time.deltaTime;
-        } else if (controller.velocity.magnitude > 0.1f)
+        }
+        else if (controller.velocity.magnitude > 0.1f)
         {
             drunkLevel += drunkGainRate * Time.deltaTime * controller.velocity.magnitude;
         }
-        
+
         driftTimer += Time.deltaTime;
 
         if (driftTimer >= driftCooldown)
@@ -56,16 +66,20 @@ public class DrunkEffectController : MonoBehaviour
             PickNewDrift();
             driftTimer = 0f;
         }
+
         currentDrift = Vector3.Lerp(currentDrift, targetDrift, Time.deltaTime);
         thirdPersonController.InputOffset = currentDrift * (drunkLevel * driftMagnitude);
-        
+
         drunkLevel = Mathf.Clamp(drunkLevel, 0f, .5f);
 
         playerTilt.drunkLevel = drunkLevel;
-        
+
         drunkMat.SetFloat("_Amplitude", drunkLevel * 0.01f);
         drunkMat.SetFloat("_GhostStrength", drunkLevel);
         drunkMat.SetFloat("_WaveSpeed", Mathf.Lerp(1f, 10f, drunkLevel));
+
+        audioMixer.SetFloat("_CutoffFreq", DrunknessToAudioValue(maxCutoffFreq, minCutoffFreq));
+        ringingSound.volume = DrunknessToAudioValue(minRingingSound, maxRingingSound);
     }
 
     private void OnDestroy()
@@ -79,5 +93,11 @@ public class DrunkEffectController : MonoBehaviour
     {
         Vector2 randomDir = Random.insideUnitCircle.normalized;
         targetDrift = new Vector3(randomDir.x, 0, randomDir.y);
+    }
+
+    private float DrunknessToAudioValue(float maxValue, float minValue)
+    {
+        var invertedDrunkLevel = 1f - (drunkLevel / .5f);
+        return Mathf.Lerp(minValue, maxValue, Mathf.Pow(invertedDrunkLevel, 2f));
     }
 }
