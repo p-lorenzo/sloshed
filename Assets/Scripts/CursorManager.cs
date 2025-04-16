@@ -26,9 +26,9 @@ public class CursorManager : MonoBehaviour
 
     public void LockCursor()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        /*Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        cursorLocked = true;
+        cursorLocked = true;*/
     }
 
     public void UnlockCursor()

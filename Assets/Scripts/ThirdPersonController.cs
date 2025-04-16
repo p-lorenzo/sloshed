@@ -1,6 +1,7 @@
 using System.Collections;
-using RootMotion.Dynamics;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using RootMotion.Dynamics;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(CharacterController))]
@@ -12,26 +13,28 @@ public class ThirdPersonController : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private Transform cameraTransform;
-    
+
     [Header("Puppet stuff")]
     [SerializeField] private BehaviourPuppet behaviourPuppet;
     [SerializeField] private PuppetMaster puppetMaster;
-    
+
     [Header("Movement Settings")]
     [SerializeField] private float rotationSpeed = 10f;
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private float runSpeed = 4f;
-    [SerializeField] private float gravity = -9.81f;    
+    [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float launchForce = 5f;
 
     public Vector3 InputOffset = Vector3.zero;
-    
-    private Vector3 verticalVelocity = Vector3.zero;
 
+    private Vector3 verticalVelocity = Vector3.zero;
     private Animator animator;
     private CharacterController controller;
     private bool IsMoving = false;
     private bool hasJumped = false;
+
+    private Vector2 moveInput = Vector2.zero;
+    private bool isRunning = false;
 
     void Start()
     {
@@ -41,11 +44,7 @@ public class ThirdPersonController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Dive();
-        }
-        Vector3 rawInput = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        Vector3 rawInput = new Vector3(moveInput.x, 0, moveInput.y);
         Vector3 offsettedInput = rawInput;
         float inputMagnitude = Mathf.Clamp01(offsettedInput.magnitude);
 
@@ -55,6 +54,7 @@ public class ThirdPersonController : MonoBehaviour
             offsettedInput += InputOffset;
             animator.SetBool(Moving, true);
             IsMoving = true;
+
             // Direzione relativa alla camera
             moveDirection = Quaternion.Euler(0, cameraTransform.eulerAngles.y, 0) * offsettedInput.normalized;
 
@@ -67,38 +67,36 @@ public class ThirdPersonController : MonoBehaviour
             animator.SetBool(Moving, false);
             IsMoving = false;
         }
+
         if (IsMoving)
         {
-            float targetSpeed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : moveSpeed;
+            float targetSpeed = isRunning ? runSpeed : moveSpeed;
             float speedParam = inputMagnitude * (targetSpeed / runSpeed);
             animator.SetFloat(InputMovement, speedParam, 0.1f, Time.deltaTime);
         }
-        
     }
-    
+
     void OnAnimatorMove()
     {
         if (animator.applyRootMotion)
         {
             Vector3 rootMotion = animator.deltaPosition;
-            rootMotion.y = 0f; // Root Motion non controlla la Y
+            rootMotion.y = 0f;
 
-            // Gravità
             if (controller.isGrounded)
             {
-                verticalVelocity.y = -1f; // Assicura che il controller resti incollato al terreno
+                verticalVelocity.y = -1f;
             }
             else
             {
                 verticalVelocity.y += gravity * Time.deltaTime;
             }
 
-            // Applica Root Motion + Gravità
             Vector3 finalMotion = rootMotion + verticalVelocity * Time.deltaTime;
             controller.Move(finalMotion);
         }
     }
-    
+
     public void LaunchPuppet(Vector3 direction, float force)
     {
         foreach (var muscle in puppetMaster.muscles)
@@ -106,7 +104,7 @@ public class ThirdPersonController : MonoBehaviour
             muscle.rigidbody.AddForce(direction * force, ForceMode.Impulse);
         }
     }
-    
+
     public void Dive()
     {
         if (hasJumped) return;
@@ -114,12 +112,31 @@ public class ThirdPersonController : MonoBehaviour
         animator.SetBool(Diving, true);
         StartCoroutine(DieAfterJumping());
     }
-    
+
     private IEnumerator DieAfterJumping()
     {
         yield return new WaitForSeconds(0.6f);
         behaviourPuppet.SetState(BehaviourPuppet.State.Unpinned);
         Vector3 diveDir = transform.forward + Vector3.up * 0.5f;
         LaunchPuppet(diveDir, launchForce);
+    }
+
+    // 🎮 New Input System handlers (connect via PlayerInput)
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        moveInput = context.ReadValue<Vector2>();
+    }
+
+    public void OnRun(InputAction.CallbackContext context)
+    {
+        isRunning = context.ReadValueAsButton();
+    }
+
+    public void OnDive(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Dive();
+        }
     }
 }
