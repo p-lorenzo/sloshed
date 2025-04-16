@@ -31,6 +31,7 @@ public class ThirdPersonController : MonoBehaviour
     private Animator animator;
     private CharacterController controller;
     private bool IsMoving = false;
+    private bool hasJumped = false;
 
     void Start()
     {
@@ -108,13 +109,15 @@ public class ThirdPersonController : MonoBehaviour
     
     public void Dive()
     {
+        if (hasJumped) return;
+        hasJumped = true;
         animator.SetBool(Diving, true);
         StartCoroutine(DieAfterJumping());
     }
     
     private IEnumerator DieAfterJumping()
     {
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.6f);
         behaviourPuppet.SetState(BehaviourPuppet.State.Unpinned);
         Vector3 diveDir = transform.forward + Vector3.up * 0.5f;
         LaunchPuppet(diveDir, launchForce);
