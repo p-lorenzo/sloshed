@@ -7,17 +7,20 @@ using Random = UnityEngine.Random;
 public class VacuumBot : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 2f;
-    [SerializeField] private LayerMask obstacleLayerMask;
-    [SerializeField] private BehaviourPuppet behaviourPuppet;
-    private Collider _lastCollider;
+    [SerializeField] private Transform player;
+    [SerializeField] private float randomAngleRange = 60f;
     
+    private Collider _lastCollider;
     private Rigidbody rb;
+    
+    private Vector3 lastDesiredDirection = Vector3.zero;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.constraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationX;
-        behaviourPuppet = FindAnyObjectByType<BehaviourPuppet>();
+        if (player == null)
+            player = GameObject.FindWithTag("Player")?.transform;
     }
 
     void FixedUpdate()
@@ -25,37 +28,46 @@ public class VacuumBot : MonoBehaviour
         rb.MovePosition(rb.position + transform.up * (moveSpeed * Time.fixedDeltaTime));
     }
 
-    public void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other == _lastCollider) return;
+        if (other.CompareTag("Player") || other == _lastCollider) return;
         _lastCollider = other;
-        Debug.Log("OnTriggerEnter: " + other.name);
-        if (!other.CompareTag("Player"))
-        {
-            Debug.Log("Obstacle detected!");
-            float randomTurn = Random.Range(-90f, 90f);
-            transform.Rotate(0f, 0f, randomTurn);  
-        }
-        else
-        {
-            behaviourPuppet.SetState(BehaviourPuppet.State.Unpinned);
-        }
+        SteerTowardPlayer();
     }
 
-    public void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other == _lastCollider) return;
+        if (other.CompareTag("Player") || other == _lastCollider) return;
         _lastCollider = other;
-        Debug.Log("OnTriggerStay: " + other.name);
-        if (!other.CompareTag("Player"))
-        {
-            Debug.Log("Obstacle detected!");
-            float randomTurn = Random.Range(-90f, 90f);
-            transform.Rotate(0f, 0f, randomTurn);  
-        }
-        else
-        {
-            behaviourPuppet.SetState(BehaviourPuppet.State.Unpinned);
-        }
+        SteerTowardPlayer();
+    }
+    
+    private void SteerTowardPlayer()
+    {
+        if (player == null) return;
+
+        Debug.Log("Steer Toward Player");
+        Vector3 toPlayer = (player.position - transform.position).normalized;
+        float angleToPlayer = Vector3.SignedAngle(transform.up, toPlayer, Vector3.forward); // Z-axis for 2D
+        float randomOffset = Random.Range(-randomAngleRange, randomAngleRange);
+        float finalAngle = angleToPlayer + randomOffset;
+
+        transform.Rotate(0f, 0f, finalAngle);
+
+        // Store direction after rotation for Gizmo
+        lastDesiredDirection = Quaternion.Euler(0f, 0f, finalAngle) * transform.up;
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (!Application.isPlaying) return;
+
+        // Bot's current forward direction
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(transform.position, transform.position + transform.up * 1.5f);
+
+        // Last calculated "desired" direction
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + lastDesiredDirection * 1.5f);
     }
 }
