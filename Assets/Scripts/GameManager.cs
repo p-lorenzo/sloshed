@@ -1,4 +1,7 @@
 using System;
+using System.Collections;
+using System.Threading.Tasks;
+using RootMotion.Dynamics;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -9,26 +12,21 @@ public class GameManager : MonoBehaviour
 {
     [Header("Game Timer")]
     [SerializeField] private TextMeshProUGUI timerText;
-    private float timer;
+    public float timer;
     public bool finished = false;
     public bool started = false;
     
     private PlayerFinishTracker _playerFinishTracker;
-
-    [Header("Winscreen Elements")]
-    [SerializeField] private GameObject winPanel;
-    [SerializeField] private TextMeshProUGUI winText;
-    private float winTimer = 0f;
-    
-    [Header("Loosescreen Elements")]
-    [SerializeField] private GameObject losePanel;
-    AudioSource audioData;
     
     private CursorManager cursorManager;
     
     [Header("Endgame blur")]
     [SerializeField] private Volume globalVolume;
     private DepthOfField _depthOfField;
+    
+    [Header("Puppet stuff")]
+    [SerializeField] private BehaviourPuppet behaviourPuppet;
+    [SerializeField] private PuppetMaster puppetMaster;
     private void Start()
     {
         _playerFinishTracker = FindFirstObjectByType<PlayerFinishTracker>();
@@ -39,22 +37,21 @@ public class GameManager : MonoBehaviour
     public void Fallen()
     {
         finished = true;
-        _depthOfField.active = true;
         cursorManager.UnlockCursor();
-        if (_playerFinishTracker != null && _playerFinishTracker.IsOnBed())
-        {
-            Debug.Log("Fallen On Bed!");
-            winTimer = timer;
-            winPanel.SetActive(true);
-            winText.text = "It only took you " + winTimer.ToString("0.00") + " seconds.";
-        }
-        else
-        {
-            Debug.Log("Fallen not on Bed!");
-            losePanel.SetActive(true);
-            audioData = GetComponent<AudioSource>();
-            audioData.Play(0);
-        }
+        puppetMaster.state = PuppetMaster.State.Dead;
+        Debug.Log("Fallen");
+        StartCoroutine(EndAfterDelay());
+    }
+    
+    private IEnumerator EndAfterDelay()
+    {
+        yield return new WaitForSeconds(3f);
+        _playerFinishTracker.EndGame();
+    }
+
+    public void AddDepthOfField()
+    {
+        _depthOfField.active = true;
     }
 
     private void Update()
