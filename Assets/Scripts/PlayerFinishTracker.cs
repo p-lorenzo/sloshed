@@ -1,19 +1,27 @@
-using UnityEngine;
+using System;
 using System.Collections.Generic;
-using RootMotion.Dynamics;
+using UnityEngine;
+using TMPro;
 
 public class PlayerFinishTracker : MonoBehaviour
 {
     private readonly HashSet<Collider> activeFinishTriggers = new();
-    [SerializeField] private BehaviourPuppet behaviourPuppet;
-    [SerializeField] private PuppetMaster puppetMaster;
-    [SerializeField] private float launchForce = 5f;
-    /// <summary>
-    /// Ritorna true se il player sta toccando almeno un trigger con tag "Finish"
-    /// </summary>
-    public bool IsOnBed()
+
+    private GameManager _gameManager;
+    [Header("Winscreen Elements")]
+    [SerializeField] private GameObject winPanel;
+    [SerializeField] private TextMeshProUGUI winText;
+    private float winTimer = 0f;
+    public bool win = false;
+    
+    [Header("Loosescreen Elements")]
+    [SerializeField] private GameObject losePanel;
+    AudioSource audioData;
+
+    private void Start()
     {
-        return activeFinishTriggers.Count > 0;
+        audioData = GetComponent<AudioSource>();
+        _gameManager = FindAnyObjectByType<GameManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -21,11 +29,23 @@ public class PlayerFinishTracker : MonoBehaviour
         if (other.CompareTag("Finish"))
         {
             activeFinishTriggers.Add(other);
-            behaviourPuppet.SetState(BehaviourPuppet.State.Unpinned);
-            DiveOntoBed();
+            if (_gameManager.finished)
+            {
+                WinGame();
+            }
         }
     }
 
+    private void WinGame()
+    {
+        if (win) return;
+        winTimer = _gameManager.timer;
+        winPanel.SetActive(true);
+        winText.text = "It only took you " + winTimer.ToString("0.00") + " seconds.";
+        win = true;
+        _gameManager.AddDepthOfField();
+    }
+    
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Finish"))
@@ -34,17 +54,15 @@ public class PlayerFinishTracker : MonoBehaviour
         }
     }
     
-    public void LaunchPuppet(Vector3 direction, float force)
+    public void EndGame()
     {
-        foreach (var muscle in puppetMaster.muscles)
+        if (activeFinishTriggers.Count > 0 || win)
         {
-            muscle.rigidbody.AddForce(direction * force, ForceMode.Impulse);
-        }
-    }
-    
-    public void DiveOntoBed()
-    {
-        Vector3 diveDir = transform.forward + Vector3.up * 0.5f;
-        LaunchPuppet(diveDir.normalized, launchForce);
+            WinGame();
+            return;
+        }        
+        _gameManager.AddDepthOfField();
+        losePanel.SetActive(true);
+        audioData.Play(0);
     }
 }

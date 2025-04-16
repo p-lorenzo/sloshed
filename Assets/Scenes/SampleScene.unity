@@ -738,12 +738,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 346906857}
+  timer: 0
   finished: 0
   started: 0
-  winPanel: {fileID: 2121498100}
-  winText: {fileID: 1963931163}
-  losePanel: {fileID: 607262915}
   globalVolume: {fileID: 832575518}
+  behaviourPuppet: {fileID: 1016805886}
+  puppetMaster: {fileID: 776658013776429762}
 --- !u!114 &426311842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3647,6 +3647,18 @@ PrefabInstance:
       value: 0.000000033527613
       objectReference: {fileID: 0}
     - target: {fileID: 4331308956721970726, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: winText
+      value: 
+      objectReference: {fileID: 1963931163}
+    - target: {fileID: 4331308956721970726, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: winPanel
+      value: 
+      objectReference: {fileID: 2121498100}
+    - target: {fileID: 4331308956721970726, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: losePanel
+      value: 
+      objectReference: {fileID: 607262915}
+    - target: {fileID: 4331308956721970726, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
       propertyPath: launchForce
       value: 7
       objectReference: {fileID: 0}
@@ -3662,6 +3674,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.09608839
       objectReference: {fileID: 0}
+    - target: {fileID: 5855737968950540371, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: launchForce
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5855737968950540371, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: puppetMaster
+      value: 
+      objectReference: {fileID: 776658013776429762}
+    - target: {fileID: 5855737968950540371, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: behaviourPuppet
+      value: 
+      objectReference: {fileID: 1016805886}
     - target: {fileID: 5855737968950540371, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
       propertyPath: cameraTransform
       value: 
