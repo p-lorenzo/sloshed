@@ -988,7 +988,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 125e845f63e2fd84ebd2aa9e05b7f012, type: 3}
+  m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 125e845f63e2fd84ebd2aa9e05b7f012, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -2176,7 +2176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CollideAgainst:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 65
   IgnoreTag: 
   TransparentLayers:
     serializedVersion: 2
@@ -4956,6 +4956,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4115511940448367885, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.24018095
+      objectReference: {fileID: 0}
+    - target: {fileID: 4115511940448367885, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0000000919099
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266893704199173574, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.24493971
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266893704199173574, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00000007916245
+      objectReference: {fileID: 0}
     - target: {fileID: 6320376429870600677, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
       propertyPath: winText
       value: 
