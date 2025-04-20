@@ -1,0 +1,162 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6714451423678953837
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4912641394462116263}
+  - component: {fileID: 4639587317808991717}
+  - component: {fileID: 6035871081333933418}
+  - component: {fileID: 5022510513389329018}
+  - component: {fileID: 5457212169588091631}
+  - component: {fileID: 6450102759690154121}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4912641394462116263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6714451423678953837}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4639587317808991717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6714451423678953837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaccceae9f1376240adab84a5430d56d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerText: {fileID: 0}
+  timer: 0
+  finished: 0
+  started: 0
+  globalVolume: {fileID: 0}
+  behaviourPuppet: {fileID: 0}
+  puppetMaster: {fileID: 0}
+--- !u!114 &6035871081333933418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6714451423678953837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bf98ad10bf167a4f8b3ac7144071b7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraNoise: {fileID: 0}
+  cameraNoiseDrunknessMultiplier: 1.5
+  controller: {fileID: 0}
+  thirdPersonController: {fileID: 0}
+  drunkMat: {fileID: 2100000, guid: f6f31824ced9ce7478fa97debc1ba2f6, type: 2}
+  drunknessMeter: {fileID: 0}
+  gameManager: {fileID: 4639587317808991717}
+  audioMixer: {fileID: 24100000, guid: be9ff178be75e4546aa1bebe249bd1d0, type: 2}
+  minCutoffFreq: 100
+  maxCutoffFreq: 22000
+  ringingSound: {fileID: 0}
+  maxRingingSound: 0.01
+  minRingingSound: 0
+  drunkLevel: 0
+  drunkGainRate: 0.03
+  drunkDecayRate: 0.1
+  driftMagnitude: 1.5
+  playerTilt: {fileID: 0}
+--- !u!114 &5022510513389329018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6714451423678953837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 510e6e61902a25245878393904bd5d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Generator:
+    allowImmediateRepeats: 0
+    Seed: 0
+    ShouldRandomizeSeed: 1
+    MaxAttemptCount: 20
+    UseMaximumPairingAttempts: 0
+    MaxPairingAttempts: 5
+    IgnoreSpriteBounds: 0
+    UpDirection: 2
+    OverrideRepeatMode: 0
+    RepeatMode: 0
+    OverrideAllowTileRotation: 0
+    AllowTileRotation: 0
+    DebugRender: 0
+    LengthMultiplier: 1
+    PlaceTileTriggers: 1
+    TileTriggerLayer: 2
+    GenerateAsynchronously: 0
+    MaxAsyncFrameMilliseconds: 50
+    PauseBetweenRooms: 0
+    RestrictDungeonToBounds: 0
+    TilePlacementBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 5, y: 5, z: 5}
+    OverlapThreshold: 0.01
+    Padding: 0
+    DisallowOverhangs: 0
+    AvoidCollisionsWithOtherDungeons: 1
+    Root: {fileID: 0}
+    DungeonFlow: {fileID: 11400000, guid: 3464eb91688c444468e3f803019bb4a8, type: 2}
+    fileVersion: 1
+  GenerateOnStart: 1
+  Root: {fileID: 6714451423678953837}
+--- !u!114 &5457212169588091631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6714451423678953837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c8dbbf5779c73a4fac8e68eaf6f96ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPanel: {fileID: 0}
+  loadingPanel: {fileID: 0}
+  gameManager: {fileID: 4639587317808991717}
+  animator: {fileID: 0}
+  idleStateName: Idle
+  globalVolume: {fileID: 0}
+--- !u!114 &6450102759690154121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6714451423678953837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f549d10486494147881699994cf2f39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -24,7 +24,6 @@ public class DoorSoundFx : MonoBehaviour
     }
     public void OnCollisionEnter(Collision other)
     {
-        Debug.Log($"{other.collider.name} - {other.collider.tag}");
         if (!other.collider.CompareTag("Player") || doorOpen) return;
         SoundFXManager.instance.PlaySoundFxClip(soundFxClip, transform, clipVolume);
         doorOpen = true;

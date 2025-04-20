@@ -7,7 +7,6 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-[RequireComponent(typeof(AudioSource))]
 public class GameManager : MonoBehaviour
 {
     [Header("Game Timer")]
