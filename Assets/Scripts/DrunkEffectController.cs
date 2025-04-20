@@ -104,6 +104,7 @@ public class DrunkEffectController : MonoBehaviour
         drunkMat.SetFloat("_Amplitude", 0f);
         drunkMat.SetFloat("_GhostStrength", 1f);
         drunkMat.SetFloat("_WaveSpeed", 0f);
+        drunkMat.SetFloat("_ChromaticAberration", 0f);
     }
 
     private void PickNewDrift()
