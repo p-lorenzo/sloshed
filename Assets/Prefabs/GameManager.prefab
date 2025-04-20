@@ -74,6 +74,7 @@ MonoBehaviour:
   drunkMat: {fileID: 2100000, guid: f6f31824ced9ce7478fa97debc1ba2f6, type: 2}
   drunknessMeter: {fileID: 0}
   gameManager: {fileID: 4639587317808991717}
+  globalVolume: {fileID: 0}
   audioMixer: {fileID: 24100000, guid: be9ff178be75e4546aa1bebe249bd1d0, type: 2}
   minCutoffFreq: 100
   maxCutoffFreq: 22000
@@ -92,7 +93,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6714451423678953837}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 510e6e61902a25245878393904bd5d0d, type: 3}
   m_Name: 

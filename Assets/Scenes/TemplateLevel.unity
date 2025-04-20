@@ -153,7 +153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -25.839966, y: -24.609985}
+  m_AnchoredPosition: {x: -25.839844, y: -24.609985}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &114839239
@@ -1636,7 +1636,7 @@ Transform:
   m_GameObject: {fileID: 833662776}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.1, z: 0}
   m_LocalScale: {x: 1000, y: 1, z: 1000}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1804,7 +1804,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927993927}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.15212342, y: -0.0000000018261428, z: 2.8107033e-10, w: 0.98836154}
+  m_LocalRotation: {x: 0.15212344, y: -0.00000003291214, z: 0.0000000050656643, w: 0.98836154}
   m_LocalPosition: {x: 0.75, y: 1.7218258, z: -1.1158488}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1834,7 +1834,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -3716,7 +3716,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -27.292114, y: 240.25}
+  m_AnchoredPosition: {x: -27.291992, y: 240.25}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1682500986
@@ -4136,15 +4136,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5511789674578895227, guid: c01e79eef58ddf54d80cb82b6a17aab4, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.15212342
+      value: 0.15212344
       objectReference: {fileID: 0}
     - target: {fileID: 5511789674578895227, guid: c01e79eef58ddf54d80cb82b6a17aab4, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000018261432
+      value: -0.000000032912137
       objectReference: {fileID: 0}
     - target: {fileID: 5511789674578895227, guid: c01e79eef58ddf54d80cb82b6a17aab4, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 2.8107242e-10
+      value: 0.000000005065663
       objectReference: {fileID: 0}
     - target: {fileID: 5511789674578895227, guid: c01e79eef58ddf54d80cb82b6a17aab4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4238,10 +4238,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5022510513389329018, guid: 326408c6c2d415448943de3e685e0490, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5457212169588091631, guid: 326408c6c2d415448943de3e685e0490, type: 3}
       propertyPath: animator
       value: 
@@ -4270,6 +4266,10 @@ PrefabInstance:
       propertyPath: cameraNoise
       value: 
       objectReference: {fileID: 1893542086}
+    - target: {fileID: 6035871081333933418, guid: 326408c6c2d415448943de3e685e0490, type: 3}
+      propertyPath: globalVolume
+      value: 
+      objectReference: {fileID: 1477348052}
     - target: {fileID: 6035871081333933418, guid: 326408c6c2d415448943de3e685e0490, type: 3}
       propertyPath: ringingSound
       value: 
