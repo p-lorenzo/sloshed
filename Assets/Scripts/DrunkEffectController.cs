@@ -48,7 +48,11 @@ public class DrunkEffectController : MonoBehaviour
 
     private void Start()
     {
-        globalVolume.profile.TryGet<Bloom>(out _bloom);
+        if (globalVolume.profile.TryGet(out _bloom))
+        {
+            _bloom.intensity.value = .5f;
+            _bloom.threshold.value = 1.1f;
+        }
     }
 
     void Update()
@@ -90,8 +94,8 @@ public class DrunkEffectController : MonoBehaviour
 
         audioMixer.SetFloat("_CutoffFreq", DrunknessToAudioValue(maxCutoffFreq, minCutoffFreq));
         ringingSound.volume = DrunknessToAudioValue(minRingingSound, maxRingingSound);
-        /*_bloom.threshold = new MinFloatParameter(0.5f / drunkLevel, 0);
-        _bloom.intensity = new MinFloatParameter(drunkLevel * 10, 0);*/
+        _bloom.threshold.value = .5f - drunkLevel;
+        _bloom.intensity.value = drunkLevel * 50;
     }
 
     private void OnDestroy()
