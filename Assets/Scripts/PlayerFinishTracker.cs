@@ -7,6 +7,9 @@ public class PlayerFinishTracker : MonoBehaviour
 {
     private readonly HashSet<Collider> activeFinishTriggers = new();
 
+    [Header("References")] 
+    [SerializeField] private GameObject hud;
+    
     private GameManager _gameManager;
     [Header("Winscreen Elements")]
     [SerializeField] private GameObject winPanel;
@@ -54,6 +57,7 @@ public class PlayerFinishTracker : MonoBehaviour
     
     public void EndGame()
     {
+        hud.SetActive(false);
         if (activeFinishTriggers.Count > 0 || win)
         {
             WinGame();

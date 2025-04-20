@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Threading.Tasks;
+using LootLocker.Requests;
 using RootMotion.Dynamics;
 using TMPro;
 using UnityEngine;
@@ -31,12 +32,28 @@ public class GameManager : MonoBehaviour
     
     [Header("Leaderboard")]
     [SerializeField] private TMP_InputField nameInputField;
+    [SerializeField] private GameObject leaderboardInsertScorePanel;
+    [SerializeField] private GameObject leaderboardPanel;
+    [SerializeField] private GameObject leaderboardButton;
+    [SerializeField] private GameObject winPanel;
+    string leaderboardKey = "30765";
     
     private void Start()
     {
         _playerFinishTracker = FindFirstObjectByType<PlayerFinishTracker>();
         globalVolume.profile.TryGet<DepthOfField>(out _depthOfField);
         cursorManager = FindAnyObjectByType<CursorManager>();
+        LootLockerSDKManager.StartGuestSession((response) =>
+        {
+            if (!response.success)
+            {
+                Debug.Log(response.text);
+
+                return;
+            }
+
+            Debug.Log("successfully started LootLocker session");
+        });
     }
 
     public void Fallen()
@@ -75,17 +92,57 @@ public class GameManager : MonoBehaviour
     public void LeaderboardSend()
     {
         Debug.Log($"Leaderboard Send {nameInputField.text} in {timer}");
-        StartCoroutine(SendScore(nameInputField.text, timer));
+        SendScore(nameInputField.text, timer);
+        leaderboardInsertScorePanel.SetActive(false);
+        leaderboardButton.SetActive(true);
     }
     
-    IEnumerator SendScore(string leaderboardName, float time)
+    private void SendScore(string leaderboardName, float time)
     {
-        string url = "http://dreamlo.com/lb/Arj4UvPYVkmX5z2QsHIx8QhbjfOPFOZ0a_duZaffDvIA/add/" + UnityWebRequest.EscapeURL(leaderboardName) + "/" + Mathf.FloorToInt(time*100.0f);
-        using (UnityWebRequest www = UnityWebRequest.Get(url))
+        LootLockerSDKManager.SetPlayerName(leaderboardName, (response) =>
         {
-            yield return www.SendWebRequest();
-            if (!www.result.Equals(UnityWebRequest.Result.Success))
-                Debug.Log("Errore invio: " + www.error);
-        }
+            if (response.success)
+            {
+                Debug.Log("Player name updated!");
+            }
+            else
+            {
+                Debug.Log("Failed to update player name.");
+            }
+        });
+        LootLockerSDKManager.SubmitScore(leaderboardName, (int)(time*100f), leaderboardKey, (response) =>
+        {
+            if (!response.success)
+            {
+                Debug.Log("Could not submit score!");
+                Debug.Log(response.errorData.ToString());
+            }
+        });
+    }
+
+    private void FetchLeaderboard()
+    {
+        int count = 50;
+
+        LootLockerSDKManager.GetScoreList(leaderboardKey, count, 0, (response) =>
+        {
+            if (!response.success) {
+                Debug.Log("Could not get score list!");
+                Debug.Log(response.errorData.ToString());
+                return;
+            } 
+            foreach (var entry in response.items)
+            {
+                Debug.Log($"{entry.rank}. {entry.player.name} - {entry.score}");
+            }
+            Debug.Log("Successfully got score list!");
+        });
+    }
+
+    public void ShowLeaderboard()
+    {
+        FetchLeaderboard();
+        winPanel.SetActive(false);
+        leaderboardPanel.SetActive(true);
     }
 }

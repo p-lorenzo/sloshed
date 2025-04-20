@@ -95,8 +95,8 @@ public class DrunkEffectController : MonoBehaviour
 
         audioMixer.SetFloat("_CutoffFreq", DrunknessToAudioValue(maxCutoffFreq, minCutoffFreq));
         ringingSound.volume = DrunknessToAudioValue(minRingingSound, maxRingingSound);
-        _bloom.threshold.value = .5f - drunkLevel;
-        _bloom.intensity.value = drunkLevel * 50;
+        /*_bloom.threshold.value = .5f - drunkLevel;
+        _bloom.intensity.value = drunkLevel * 50;*/
     }
 
     private void OnDestroy()
