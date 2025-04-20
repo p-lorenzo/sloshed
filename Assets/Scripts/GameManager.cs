@@ -1,14 +1,13 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using LootLocker.Requests;
 using RootMotion.Dynamics;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Networking;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
@@ -37,6 +36,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject leaderboardButton;
     [SerializeField] private GameObject winPanel;
     string leaderboardKey = "30765";
+    private List<LeaderboardEntry> leaderboard = new List<LeaderboardEntry>();
     
     private void Start()
     {
@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
 
     private void FetchLeaderboard()
     {
-        int count = 50;
+        int count = 10;
 
         LootLockerSDKManager.GetScoreList(leaderboardKey, count, 0, (response) =>
         {
@@ -134,7 +134,11 @@ public class GameManager : MonoBehaviour
             foreach (var entry in response.items)
             {
                 Debug.Log($"{entry.rank}. {entry.player.name} - {entry.score}");
+                leaderboard.Add(new LeaderboardEntry(entry.rank, entry.player.name, entry.score));
             }
+            winPanel.SetActive(false);
+            leaderboardPanel.GetComponent<Leaderboard>().InitializeLeaderboard(leaderboard);
+            leaderboardPanel.SetActive(true);
             Debug.Log("Successfully got score list!");
         });
     }
@@ -142,7 +146,5 @@ public class GameManager : MonoBehaviour
     public void ShowLeaderboard()
     {
         FetchLeaderboard();
-        winPanel.SetActive(false);
-        leaderboardPanel.SetActive(true);
     }
 }
