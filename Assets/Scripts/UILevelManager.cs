@@ -37,6 +37,7 @@ public class UILevelManager : MonoBehaviour
 
         Time.timeScale = 0f;
         loadingPanel.SetActive(false);
+        gameManager.AddDepthOfField();
     }
 
     bool IsInIdle()
@@ -51,7 +52,7 @@ public class UILevelManager : MonoBehaviour
         Time.timeScale = 1;
         startPanel.SetActive(false);
         gameManager.started = true;
-        //_depthOfField.mode = new DepthOfFieldModeParameter(DepthOfFieldMode.Off, true);
+        gameManager.RemoveDepthOfField();
     }
 
     public void RestartLevel()

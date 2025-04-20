@@ -1834,7 +1834,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 1
+  m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -4270,10 +4270,6 @@ PrefabInstance:
       propertyPath: cameraNoise
       value: 
       objectReference: {fileID: 1893542086}
-    - target: {fileID: 6035871081333933418, guid: 326408c6c2d415448943de3e685e0490, type: 3}
-      propertyPath: globalVolume
-      value: 
-      objectReference: {fileID: 1477348052}
     - target: {fileID: 6035871081333933418, guid: 326408c6c2d415448943de3e685e0490, type: 3}
       propertyPath: ringingSound
       value: 

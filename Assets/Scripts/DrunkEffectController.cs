@@ -3,6 +3,8 @@ using TMPro;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using Random = UnityEngine.Random;
 
 public class DrunkEffectController : MonoBehaviour
@@ -17,6 +19,7 @@ public class DrunkEffectController : MonoBehaviour
     [SerializeField] private Material drunkMat;
     [SerializeField] private TextMeshProUGUI drunknessMeter;
     [SerializeField] private GameManager gameManager;
+    [SerializeField] private Volume globalVolume;
 
     [Header("Audio Settings")] 
     [SerializeField] private AudioMixer audioMixer;
@@ -40,6 +43,13 @@ public class DrunkEffectController : MonoBehaviour
 
     [Header("Player Tilt Reference")] 
     [SerializeField] private DrunkPuppetTilt playerTilt;
+
+    [Header("LightBloom Settings")] private Bloom _bloom;
+
+    private void Start()
+    {
+        globalVolume.profile.TryGet<Bloom>(out _bloom);
+    }
 
     void Update()
     {
@@ -80,6 +90,8 @@ public class DrunkEffectController : MonoBehaviour
 
         audioMixer.SetFloat("_CutoffFreq", DrunknessToAudioValue(maxCutoffFreq, minCutoffFreq));
         ringingSound.volume = DrunknessToAudioValue(minRingingSound, maxRingingSound);
+        /*_bloom.threshold = new MinFloatParameter(0.5f / drunkLevel, 0);
+        _bloom.intensity = new MinFloatParameter(drunkLevel * 10, 0);*/
     }
 
     private void OnDestroy()

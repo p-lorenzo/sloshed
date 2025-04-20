@@ -52,6 +52,11 @@ public class GameManager : MonoBehaviour
         _depthOfField.active = true;
     }
 
+    public void RemoveDepthOfField()
+    {
+        _depthOfField.active = false;
+    }
+
     private void Update()
     {
         if (!finished && started)
