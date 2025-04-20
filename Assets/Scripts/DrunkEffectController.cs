@@ -91,6 +91,7 @@ public class DrunkEffectController : MonoBehaviour
         drunkMat.SetFloat("_Amplitude", drunkLevel * 0.01f);
         drunkMat.SetFloat("_GhostStrength", drunkLevel);
         drunkMat.SetFloat("_WaveSpeed", Mathf.Lerp(1f, 10f, drunkLevel));
+        drunkMat.SetFloat("_ChromaticAberration", drunkLevel * 0.02f);
 
         audioMixer.SetFloat("_CutoffFreq", DrunknessToAudioValue(maxCutoffFreq, minCutoffFreq));
         ringingSound.volume = DrunknessToAudioValue(minRingingSound, maxRingingSound);
