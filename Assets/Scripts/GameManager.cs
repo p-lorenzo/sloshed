@@ -4,8 +4,10 @@ using System.Threading.Tasks;
 using RootMotion.Dynamics;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
@@ -26,6 +28,10 @@ public class GameManager : MonoBehaviour
     [Header("Puppet stuff")]
     [SerializeField] private BehaviourPuppet behaviourPuppet;
     [SerializeField] private PuppetMaster puppetMaster;
+    
+    [Header("Leaderboard")]
+    [SerializeField] private TMP_InputField nameInputField;
+    
     private void Start()
     {
         _playerFinishTracker = FindFirstObjectByType<PlayerFinishTracker>();
@@ -63,6 +69,23 @@ public class GameManager : MonoBehaviour
         {
             timer += Time.deltaTime;
             timerText.text = timer.ToString("0.00 s");
+        }
+    }
+
+    public void LeaderboardSend()
+    {
+        Debug.Log($"Leaderboard Send {nameInputField.text} in {timer}");
+        StartCoroutine(SendScore(nameInputField.text, timer));
+    }
+    
+    IEnumerator SendScore(string leaderboardName, float time)
+    {
+        string url = "http://dreamlo.com/lb/Arj4UvPYVkmX5z2QsHIx8QhbjfOPFOZ0a_duZaffDvIA/add/" + UnityWebRequest.EscapeURL(leaderboardName) + "/" + Mathf.FloorToInt(time*100.0f);
+        using (UnityWebRequest www = UnityWebRequest.Get(url))
+        {
+            yield return www.SendWebRequest();
+            if (!www.result.Equals(UnityWebRequest.Result.Success))
+                Debug.Log("Errore invio: " + www.error);
         }
     }
 }
