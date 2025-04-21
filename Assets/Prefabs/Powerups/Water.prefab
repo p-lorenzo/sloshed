@@ -73,7 +73,7 @@ MonoBehaviour:
   bobbingFrequency: 1
   visualObject: {fileID: 587295733379356}
   pickupSound: {fileID: 8300000, guid: f6b77ccd0abef8340b64a1dfd977f8e1, type: 3}
-  volume: 1
+  volume: 0.3
 --- !u!1001 &1088434986991137363
 PrefabInstance:
   m_ObjectHideFlags: 0
