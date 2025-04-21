@@ -9,6 +9,8 @@ using Random = UnityEngine.Random;
 
 public class DrunkEffectController : MonoBehaviour
 {
+    public static DrunkEffectController instance;
+    
     [Header("Camera Noise Settings")] 
     [SerializeField] private CinemachineBasicMultiChannelPerlin cameraNoise;
     [SerializeField] private float cameraNoiseDrunknessMultiplier = 1.5f;
@@ -46,6 +48,11 @@ public class DrunkEffectController : MonoBehaviour
 
     [Header("LightBloom Settings")] private Bloom _bloom;
 
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+    }
+    
     private void Start()
     {
         if (globalVolume.profile.TryGet(out _bloom))
@@ -117,5 +124,11 @@ public class DrunkEffectController : MonoBehaviour
     {
         var invertedDrunkLevel = 1f - (drunkLevel / .5f);
         return Mathf.Lerp(minValue, maxValue, Mathf.Pow(invertedDrunkLevel, 2f));
+    }
+
+    public void DrinkWater()
+    {
+        drunkLevel = Mathf.Clamp(drunkLevel - 25f, 0f, .5f);
+        drunkGainRate *= 0.9f;
     }
 }
