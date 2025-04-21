@@ -11,6 +11,7 @@ public class UILevelManager : MonoBehaviour
     [SerializeField] private GameObject loadingPanel;
     [SerializeField] private GameManager gameManager;
     [SerializeField] private Animator animator;
+    [SerializeField] private ThirdPersonController controller;
     [SerializeField] private string idleStateName = "Idle";
     [Header("Endgame blur")]
     [SerializeField] private Volume globalVolume;
@@ -38,6 +39,7 @@ public class UILevelManager : MonoBehaviour
         Time.timeScale = 0f;
         loadingPanel.SetActive(false);
         gameManager.AddDepthOfField();
+        controller.enabled = true;
     }
 
     bool IsInIdle()
