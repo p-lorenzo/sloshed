@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using DunGen;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
@@ -59,6 +60,15 @@ public class UILevelManager : MonoBehaviour
 
     public void RestartLevel()
     {
+        DrunkEffectController.instance.RestartLevel();
+        GameManager.instance.Retry();
+        Time.timeScale = 1f; // utile se il gioco era in pausa
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void NextLevel()
+    {
+        GameManager.instance.NextLevel();
         Time.timeScale = 1f; // utile se il gioco era in pausa
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class DrunkEffectController : MonoBehaviour
@@ -12,16 +13,16 @@ public class DrunkEffectController : MonoBehaviour
     public static DrunkEffectController instance;
     
     [Header("Camera Noise Settings")] 
-    [SerializeField] private CinemachineBasicMultiChannelPerlin cameraNoise;
     [SerializeField] private float cameraNoiseDrunknessMultiplier = 1.5f;
 
     [Header("References")] 
-    [SerializeField] private CharacterController controller;
-    [SerializeField] private ThirdPersonController thirdPersonController;
-    [SerializeField] private Material drunkMat;
-    [SerializeField] private TextMeshProUGUI drunknessMeter;
-    [SerializeField] private GameManager gameManager;
-    [SerializeField] private Volume globalVolume;
+    private CinemachineBasicMultiChannelPerlin cameraNoise;
+    private CharacterController controller;
+    private ThirdPersonController thirdPersonController;
+    private TextMeshProUGUI drunknessMeter;
+    private GameManager gameManager;
+    private Volume globalVolume;
+    private DrunkPuppetTilt playerTilt;
 
     [Header("Audio Settings")] 
     [SerializeField] private AudioMixer audioMixer;
@@ -32,30 +33,79 @@ public class DrunkEffectController : MonoBehaviour
     [SerializeField] private float minRingingSound = 0f;
 
     [Header("Drunkness Settings")] 
+    [SerializeField] private Material drunkMat;
     [Range(0f, .5f)] [SerializeField] private float drunkLevel = 0f;
-    [SerializeField] private float drunkGainRate = 0.01f;
-    [SerializeField] private float drunkDecayRate = 0.01f;
+    [SerializeField] private float drunkGainRate = 0.03f;
+    [SerializeField] private float drunkDecayRate = 0.1f;
 
     [Header("Player Drift Settings")] 
+    [SerializeField] private float driftMagnitude = 1.2f;
     private Vector3 targetDrift;
     private Vector3 currentDrift;
-    [SerializeField] private float driftMagnitude = 1.2f;
     private float driftCooldown = 3f;
     private float driftTimer = 0f;
-
-    [Header("Player Tilt Reference")] 
-    [SerializeField] private DrunkPuppetTilt playerTilt;
-
-    [Header("LightBloom Settings")] private Bloom _bloom;
+    
+    [Header("LightBloom Settings")] 
+    private Bloom _bloom;
 
     private void Awake()
     {
-        if (instance == null) instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
     }
     
-    private void Start()
+    private void OnEnable()
     {
-        if (globalVolume.profile.TryGet(out _bloom))
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        drunkLevel = 0f;
+        RebindReferences();
+    }    
+    
+    private void RebindReferences()
+    {
+        // Rebind References
+        if (cameraNoise == null)
+            cameraNoise = FindAnyObjectByType<CinemachineBasicMultiChannelPerlin>();
+        if (controller == null)
+            controller = FindAnyObjectByType<CharacterController>();
+        if (thirdPersonController == null)
+            thirdPersonController = FindAnyObjectByType<ThirdPersonController>();
+        if (drunknessMeter == null)
+        {
+            var meterObj = GameObject.Find("DrunkMeter");
+            if (meterObj != null)
+                drunknessMeter = meterObj.GetComponent<TextMeshProUGUI>();
+            else
+                Debug.LogWarning("DrunkMeter UI element not found!");
+        }
+        if (gameManager == null)
+            gameManager = FindAnyObjectByType<GameManager>();
+        if (globalVolume == null)
+            globalVolume = FindAnyObjectByType<Volume>();
+        if (playerTilt == null)
+            playerTilt = FindAnyObjectByType<DrunkPuppetTilt>();
+
+        // Recupera il Bloom se possibile
+        if (globalVolume != null && globalVolume.profile != null)
+            globalVolume.profile.TryGet(out _bloom);
+
+        if (_bloom != null)
         {
             _bloom.intensity.value = .5f;
             _bloom.threshold.value = 1.1f;
@@ -128,7 +178,13 @@ public class DrunkEffectController : MonoBehaviour
 
     public void DrinkWater()
     {
-        drunkLevel = Mathf.Clamp(drunkLevel - 25f, 0f, .5f);
+        drunkLevel = Mathf.Clamp(drunkLevel - 0.025f, 0f, .5f);
         drunkGainRate *= 0.9f;
+    }
+
+    public void RestartLevel()
+    {
+        drunkGainRate = 0.03f;
+        drunkDecayRate = 0.1f;
     }
 }

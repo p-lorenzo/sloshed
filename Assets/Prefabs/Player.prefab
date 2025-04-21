@@ -3413,7 +3413,7 @@ MonoBehaviour:
   puppetMaster: {fileID: 3146413272157317854}
   characterController: {fileID: 8692076358439176203}
   gameManager: {fileID: 0}
-  maxTiltForce: 240
+  maxTiltForce: 300
   maxPinWeightOffset: 2
   tiltSmoothing: 5
   drunkLevel: 0.25
@@ -3914,7 +3914,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5913949458806742698}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25adeae5a2dae34419e6b562d516ab87, type: 3}
   m_Name: 
@@ -4493,6 +4493,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7315731122427979614}
   - component: {fileID: 7315731122422208216}
+  - component: {fileID: 6585922896850852069}
   m_Layer: 8
   m_Name: Puppet
   m_TagString: Player
@@ -4508,8 +4509,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7315731122427702792}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 445.6273, y: 341.30603, z: -618.648}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4712,8 +4713,8 @@ MonoBehaviour:
     unityEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        - m_Target: {fileID: 6585922896850852069}
+          m_TargetAssemblyTypeName: OnLooseBalance, Assembly-CSharp
           m_MethodName: Fallen
           m_Mode: 1
           m_Arguments:
@@ -4743,6 +4744,18 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   canMoveTarget: 1
+--- !u!114 &6585922896850852069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7315731122427702792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c31b3d68991374545a75cd16715256c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7581644379681189776
 GameObject:
   m_ObjectHideFlags: 0

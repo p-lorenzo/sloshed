@@ -83,6 +83,7 @@ public class ThirdPersonController : MonoBehaviour
 
     void OnAnimatorMove()
     {
+        if (!animator) return;
         if (animator.applyRootMotion)
         {
             Vector3 rootMotion = animator.deltaPosition;

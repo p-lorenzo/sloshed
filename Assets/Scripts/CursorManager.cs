@@ -4,16 +4,10 @@ using UnityEngine;
 public class CursorManager : MonoBehaviour
 {
     private bool cursorLocked = false;
-    private GameManager gameManager;
-
-    private void Start()
-    {
-        gameManager = FindAnyObjectByType<GameManager>();
-    }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !cursorLocked && gameManager.started && !gameManager.finished)
+        if (Input.GetMouseButtonDown(0) && !cursorLocked && GameManager.instance.started && !GameManager.instance.finished)
         {
             LockCursor();
         }

@@ -14,7 +14,6 @@ public class PlayerFinishTracker : MonoBehaviour
     [Header("Winscreen Elements")]
     [SerializeField] private GameObject winPanel;
     [SerializeField] private TextMeshProUGUI winText;
-    private float winTimer = 0f;
     public bool win = false;
     
     [Header("Loosescreen Elements")]
@@ -30,20 +29,17 @@ public class PlayerFinishTracker : MonoBehaviour
         if (other.CompareTag("Finish"))
         {
             activeFinishTriggers.Add(other);
-            if (_gameManager.finished)
-            {
-                WinGame();
-            }
         }
     }
 
     private void WinGame()
     {
         if (win) return;
-        winTimer = _gameManager.timer;
         winPanel.SetActive(true);
-        winText.text = "It only took you " + winTimer.ToString("0.00") + " seconds.";
         win = true;
+        int level = GameManager.instance.currentLevel;
+        string timesText = level == 1 ? "time" : "times";
+        winText.text = $"You made it to the Bed!\n{level} {timesText}!";
         _gameManager.AddDepthOfField();
     }
     

@@ -45,7 +45,7 @@ public class DrunkPuppetTilt : MonoBehaviour
     void FixedUpdate()
     {
         if (puppetMaster == null || targetIndices.Count == 0) return;
-        if (gameManager.finished)
+        if (GameManager.instance.finished)
         {
             foreach (int i in targetIndices)
             {

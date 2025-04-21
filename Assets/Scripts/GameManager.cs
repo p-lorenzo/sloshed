@@ -1,19 +1,27 @@
 using System;
 using System.Collections;
+using DunGen;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using LootLocker.Requests;
 using RootMotion.Dynamics;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+
+    [Header("References")]
+    [SerializeField] private Volume globalVolume;
+    [SerializeField] private BehaviourPuppet behaviourPuppet;
+    [SerializeField] private PuppetMaster puppetMaster;
+    [SerializeField] private RuntimeDungeon runtimeDungeon;
+    [SerializeField] private TextMeshProUGUI levelCounter;
+    
     [Header("Game Timer")]
-    [SerializeField] private TextMeshProUGUI timerText;
-    public float timer;
     public bool finished = false;
     public bool started = false;
     
@@ -22,38 +30,79 @@ public class GameManager : MonoBehaviour
     private CursorManager cursorManager;
     
     [Header("Endgame blur")]
-    [SerializeField] private Volume globalVolume;
     private DepthOfField _depthOfField;
     
-    [Header("Puppet stuff")]
-    [SerializeField] private BehaviourPuppet behaviourPuppet;
-    [SerializeField] private PuppetMaster puppetMaster;
-    
-    [Header("Leaderboard")]
-    [SerializeField] private TMP_InputField nameInputField;
-    [SerializeField] private GameObject leaderboardInsertScorePanel;
-    [SerializeField] private GameObject leaderboardPanel;
-    [SerializeField] private GameObject leaderboardButton;
-    [SerializeField] private GameObject winPanel;
-    string leaderboardKey = "30765";
-    private List<LeaderboardEntry> leaderboard = new List<LeaderboardEntry>();
-    
-    private void Start()
+    [Header("Progression")]
+    public int currentLevel = 0;
+
+    private void Awake()
     {
-        _playerFinishTracker = FindFirstObjectByType<PlayerFinishTracker>();
-        globalVolume.profile.TryGet<DepthOfField>(out _depthOfField);
-        cursorManager = FindAnyObjectByType<CursorManager>();
-        LootLockerSDKManager.StartGuestSession((response) =>
+        if (instance == null)
         {
-            if (!response.success)
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+    
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        finished = false;
+        started = false;
+        RebindReferences();
+        levelCounter.text = currentLevel.ToString();
+        runtimeDungeon.Generator.LengthMultiplier = 1f + (currentLevel * 0.25f);
+        runtimeDungeon.Generator.Generate();
+    }
+    
+    private void RebindReferences()
+    {
+        if (globalVolume == null)
+            globalVolume = FindAnyObjectByType<Volume>();
+
+        if (behaviourPuppet == null)
+        {
+            behaviourPuppet = FindAnyObjectByType<BehaviourPuppet>();
+            if (behaviourPuppet.onLoseBalance.unityEvent != null)
             {
-                Debug.Log(response.text);
-
-                return;
+                behaviourPuppet.onLoseBalance.unityEvent.AddListener(Fallen);
             }
+            else
+            {
+                Debug.LogWarning("onLoseBalance or unityEvent is null!");
+            }
+        }
 
-            Debug.Log("successfully started LootLocker session");
-        });
+        if (puppetMaster == null)
+            puppetMaster = FindAnyObjectByType<PuppetMaster>();
+
+        if (runtimeDungeon == null)
+            runtimeDungeon = FindAnyObjectByType<RuntimeDungeon>();
+
+        if (globalVolume != null)
+            globalVolume.profile.TryGet(out _depthOfField);
+            
+        if (_playerFinishTracker == null)
+            _playerFinishTracker = FindFirstObjectByType<PlayerFinishTracker>();
+
+        if (cursorManager == null)
+            cursorManager = FindAnyObjectByType<CursorManager>();
+        
+        if (levelCounter == null)
+            levelCounter = GameObject.Find("RoundCounter").GetComponent<TextMeshProUGUI>();
     }
 
     public void Fallen()
@@ -72,79 +121,21 @@ public class GameManager : MonoBehaviour
 
     public void AddDepthOfField()
     {
-        _depthOfField.active = true;
+        //_depthOfField.active = true;
     }
 
     public void RemoveDepthOfField()
     {
-        _depthOfField.active = false;
+        //_depthOfField.active = false;
     }
 
-    private void Update()
+    public void NextLevel()
     {
-        if (!finished && started)
-        {
-            timer += Time.deltaTime;
-            timerText.text = timer.ToString("0.00 s");
-        }
+        currentLevel++;
     }
 
-    public void LeaderboardSend()
+    public void Retry()
     {
-        Debug.Log($"Leaderboard Send {nameInputField.text} in {timer}");
-        SendScore(nameInputField.text, timer);
-        leaderboardInsertScorePanel.SetActive(false);
-        leaderboardButton.SetActive(true);
-    }
-    
-    private void SendScore(string leaderboardName, float time)
-    {
-        LootLockerSDKManager.SetPlayerName(leaderboardName, (response) =>
-        {
-            if (response.success)
-            {
-                Debug.Log("Player name updated!");
-            }
-            else
-            {
-                Debug.Log("Failed to update player name.");
-            }
-        });
-        LootLockerSDKManager.SubmitScore(leaderboardName, (int)(time*100f), leaderboardKey, (response) =>
-        {
-            if (!response.success)
-            {
-                Debug.Log("Could not submit score!");
-                Debug.Log(response.errorData.ToString());
-            }
-        });
-    }
-
-    private void FetchLeaderboard()
-    {
-        int count = 10;
-
-        LootLockerSDKManager.GetScoreList(leaderboardKey, count, 0, (response) =>
-        {
-            if (!response.success) {
-                Debug.Log("Could not get score list!");
-                Debug.Log(response.errorData.ToString());
-                return;
-            } 
-            foreach (var entry in response.items)
-            {
-                Debug.Log($"{entry.rank}. {entry.player.name} - {entry.score}");
-                leaderboard.Add(new LeaderboardEntry(entry.rank, entry.player.name, entry.score));
-            }
-            winPanel.SetActive(false);
-            leaderboardPanel.GetComponent<Leaderboard>().InitializeLeaderboard(leaderboard);
-            leaderboardPanel.SetActive(true);
-            Debug.Log("Successfully got score list!");
-        });
-    }
-
-    public void ShowLeaderboard()
-    {
-        FetchLeaderboard();
+        currentLevel = 0;
     }
 }
