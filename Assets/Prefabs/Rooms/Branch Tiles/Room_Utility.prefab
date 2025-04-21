@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DoorPrefabPriority: 0
   ConnectorPrefabWeights:
-  - GameObject: {fileID: 5540057530100336922, guid: 03caf01f158fb3644a7c96fd3650b970, type: 3}
+  - GameObject: {fileID: 5540057530100336922, guid: 27b2cdbafcb58a9428b5d9b1e1e900b9, type: 3}
     Weight: 1
   BlockerPrefabWeights: []
   AvoidRotatingDoorPrefab: 0

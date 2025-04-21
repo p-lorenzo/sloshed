@@ -2035,7 +2035,7 @@ GameObject:
   - component: {fileID: 2839467225800938924}
   - component: {fileID: 4948319088945641375}
   m_Layer: 0
-  m_Name: EndingRoom
+  m_Name: Room_End_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

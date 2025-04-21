@@ -772,7 +772,7 @@ GameObject:
   - component: {fileID: 2839467225800938924}
   - component: {fileID: 4948319088945641375}
   m_Layer: 6
-  m_Name: Room3 (kitchen)
+  m_Name: Room_Kitchen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
