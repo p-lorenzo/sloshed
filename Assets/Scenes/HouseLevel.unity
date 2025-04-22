@@ -981,7 +981,7 @@ MonoBehaviour:
   levelCounter: {fileID: 0}
   finished: 0
   started: 0
-  currentLevel: 0
+  currentLevel: 1
 --- !u!1001 &412740659
 PrefabInstance:
   m_ObjectHideFlags: 0
