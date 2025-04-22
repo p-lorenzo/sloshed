@@ -27,8 +27,6 @@ public class GameManager : MonoBehaviour
     
     private PlayerFinishTracker _playerFinishTracker;
     
-    private CursorManager cursorManager;
-    
     [Header("Endgame blur")]
     private DepthOfField _depthOfField;
     
@@ -97,9 +95,6 @@ public class GameManager : MonoBehaviour
             
         if (_playerFinishTracker == null)
             _playerFinishTracker = FindFirstObjectByType<PlayerFinishTracker>();
-
-        if (cursorManager == null)
-            cursorManager = FindAnyObjectByType<CursorManager>();
         
         if (levelCounter == null)
             levelCounter = GameObject.Find("RoundCounter").GetComponent<TextMeshProUGUI>();
@@ -108,7 +103,7 @@ public class GameManager : MonoBehaviour
     public void Fallen()
     {
         finished = true;
-        cursorManager.UnlockCursor();
+        CursorManager.instance.UnlockCursor();
         puppetMaster.state = PuppetMaster.State.Dead;
         StartCoroutine(EndAfterDelay());
     }
@@ -121,12 +116,12 @@ public class GameManager : MonoBehaviour
 
     public void AddDepthOfField()
     {
-        //_depthOfField.active = true;
+        _depthOfField.active = true;
     }
 
     public void RemoveDepthOfField()
     {
-        //_depthOfField.active = false;
+        _depthOfField.active = false;
     }
 
     public void NextLevel()

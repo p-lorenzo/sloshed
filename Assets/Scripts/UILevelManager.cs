@@ -8,17 +8,21 @@ using UnityEngine.SceneManagement;
 
 public class UILevelManager : MonoBehaviour
 {
+    public static UILevelManager instance;
+    
     [SerializeField] private GameObject startPanel;
     [SerializeField] private GameObject loadingPanel;
     [SerializeField] private Animator animator;
     [SerializeField] private ThirdPersonController controller;
     [SerializeField] private string idleStateName = "Idle";
-    [Header("Endgame blur")]
-    [SerializeField] private Volume globalVolume;
-    private DepthOfField _depthOfField;
+
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+    }
+
     void Start()
     {
-        globalVolume.profile.TryGet<DepthOfField>(out _depthOfField);
         StartCoroutine(WaitForIdleThenFreeze());
     }
 

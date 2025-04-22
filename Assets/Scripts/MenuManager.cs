@@ -26,6 +26,8 @@ public class MenuManager : MonoBehaviour
     public void PauseGame()
     {
         if (!GameManager.instance.started || GameManager.instance.finished) return;
+        
+        GameManager.instance.AddDepthOfField();
         isPaused = true;
         gameObject.SetActive(true);
         hud.SetActive(false);
@@ -34,6 +36,8 @@ public class MenuManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        GameManager.instance.RemoveDepthOfField();
+        CursorManager.instance.LockCursor();
         isPaused = false;
         gameObject.SetActive(false);
         hud.SetActive(true);
