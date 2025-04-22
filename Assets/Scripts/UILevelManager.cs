@@ -10,7 +10,6 @@ public class UILevelManager : MonoBehaviour
 {
     [SerializeField] private GameObject startPanel;
     [SerializeField] private GameObject loadingPanel;
-    [SerializeField] private GameManager gameManager;
     [SerializeField] private Animator animator;
     [SerializeField] private ThirdPersonController controller;
     [SerializeField] private string idleStateName = "Idle";
@@ -39,7 +38,7 @@ public class UILevelManager : MonoBehaviour
 
         Time.timeScale = 0f;
         loadingPanel.SetActive(false);
-        gameManager.AddDepthOfField();
+        GameManager.instance.AddDepthOfField();
         controller.enabled = true;
     }
 
@@ -54,8 +53,8 @@ public class UILevelManager : MonoBehaviour
     {
         Time.timeScale = 1;
         startPanel.SetActive(false);
-        gameManager.started = true;
-        gameManager.RemoveDepthOfField();
+        GameManager.instance.started = true;
+        GameManager.instance.RemoveDepthOfField();
     }
 
     public void RestartLevel()

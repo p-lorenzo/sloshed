@@ -7,7 +7,7 @@ public class CursorManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !cursorLocked && GameManager.instance.started && !GameManager.instance.finished)
+        if (Input.GetMouseButtonDown(0) && !cursorLocked && GameManager.instance.started && !GameManager.instance.finished && !MenuManager.instance.isPaused)
         {
             LockCursor();
         }
