@@ -10,7 +10,6 @@ public class PlayerFinishTracker : MonoBehaviour
     [Header("References")] 
     [SerializeField] private GameObject hud;
     
-    private GameManager _gameManager;
     [Header("Winscreen Elements")]
     [SerializeField] private GameObject winPanel;
     [SerializeField] private TextMeshProUGUI winText;
@@ -18,11 +17,6 @@ public class PlayerFinishTracker : MonoBehaviour
     
     [Header("Loosescreen Elements")]
     [SerializeField] private GameObject losePanel;
-
-    private void Start()
-    {
-        _gameManager = FindAnyObjectByType<GameManager>();
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -40,7 +34,7 @@ public class PlayerFinishTracker : MonoBehaviour
         int level = GameManager.instance.currentLevel;
         string timesText = level == 1 ? "time" : "times";
         winText.text = $"You made it to the Bed!\n{level} {timesText}!";
-        _gameManager.AddDepthOfField();
+        GameManager.instance.AddDepthOfField();
     }
     
     private void OnTriggerExit(Collider other)
@@ -59,7 +53,7 @@ public class PlayerFinishTracker : MonoBehaviour
             WinGame();
             return;
         }        
-        _gameManager.AddDepthOfField();
+        GameManager.instance.AddDepthOfField();
         losePanel.SetActive(true);
     }
 }
