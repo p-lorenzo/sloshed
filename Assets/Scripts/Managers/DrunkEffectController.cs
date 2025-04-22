@@ -47,6 +47,9 @@ public class DrunkEffectController : MonoBehaviour
     
     [Header("LightBloom Settings")] 
     private Bloom _bloom;
+    
+    [Header("Dizzimeter powerup")]
+    [SerializeField] bool dizzimeterPowerup = false;
 
     private void Awake()
     {
@@ -119,8 +122,16 @@ public class DrunkEffectController : MonoBehaviour
         int drunknessPercent = Mathf.RoundToInt((drunkLevel / 0.5f) * 100f);
         cameraNoise.AmplitudeGain = 1 + drunkLevel * cameraNoiseDrunknessMultiplier;
         cameraNoise.FrequencyGain = 1 + drunkLevel * cameraNoiseDrunknessMultiplier;
-        drunknessMeter.text = $"Confusion: {drunknessPercent}%";
 
+        if (dizzimeterPowerup)
+        {
+            drunknessMeter.text = $"Dizziness: {drunknessPercent}%";
+        }
+        else
+        {
+            drunknessMeter.text = "";
+        }
+        
         if (controller.velocity.magnitude < 0.1f)
         {
             drunkLevel -= drunkDecayRate * Time.deltaTime;
@@ -186,5 +197,10 @@ public class DrunkEffectController : MonoBehaviour
     {
         drunkGainRate = 0.03f;
         drunkDecayRate = 0.1f;
+    }
+
+    public void DizzimeterPowerup()
+    {
+        dizzimeterPowerup = true;
     }
 }

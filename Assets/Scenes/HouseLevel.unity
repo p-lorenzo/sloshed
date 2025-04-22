@@ -3700,7 +3700,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Confusion: 100%'
+  m_text: 'Dizziness: 100%'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 11b5a083650f4ee40bd324abf175cab6, type: 2}
   m_sharedMaterial: {fileID: 2141047623426845686, guid: 11b5a083650f4ee40bd324abf175cab6, type: 2}
@@ -4337,6 +4337,7 @@ MonoBehaviour:
   drunkGainRate: 0.03
   drunkDecayRate: 0.1
   driftMagnitude: 1.5
+  dizzimeterPowerup: 0
 --- !u!4 &1480486971
 Transform:
   m_ObjectHideFlags: 0
