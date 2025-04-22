@@ -4,8 +4,13 @@ using UnityEngine;
 public class MenuManager : MonoBehaviour
 {
     public static MenuManager instance;
+    
     public bool isPaused = false;
     [SerializeField] private GameObject hud;
+    [SerializeField] private Camera camera;
+    [SerializeField] private GameObject rawImage;
+    [SerializeField] private RenderTexture pixelatedTexture;
+    
     public void Awake()
     {
         if (instance == null) instance = this;
@@ -42,5 +47,23 @@ public class MenuManager : MonoBehaviour
         gameObject.SetActive(false);
         hud.SetActive(true);
         Time.timeScale = 1;
+    }
+
+    public void RemovePixelatedEffect()
+    {
+        camera.targetTexture = null;
+        rawImage.SetActive(false);
+    }
+
+    public void EnablePixelatedEffect()
+    {
+        rawImage.SetActive(true);
+        camera.targetTexture = pixelatedTexture;
+    }
+
+    public void TogglePixelatedEffect(bool state)
+    {
+        if (state) EnablePixelatedEffect();
+        else RemovePixelatedEffect();
     }
 }
