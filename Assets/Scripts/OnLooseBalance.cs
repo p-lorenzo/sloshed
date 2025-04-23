@@ -6,4 +6,9 @@ public class OnLooseBalance : MonoBehaviour
     {
         GameManager.instance.Fallen();
     }
+
+    public void OnRegainBalance()
+    {
+        GameManager.instance.GetUp();
+    }
 }

@@ -16,22 +16,28 @@ public class GameManager : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private Volume globalVolume;
-    [SerializeField] private BehaviourPuppet behaviourPuppet;
-    [SerializeField] private PuppetMaster puppetMaster;
+    [SerializeField] public BehaviourPuppet behaviourPuppet;
+    [SerializeField] public PuppetMaster puppetMaster;
     [SerializeField] private RuntimeDungeon runtimeDungeon;
     [SerializeField] private TextMeshProUGUI levelCounter;
-    
-    [Header("Game Timer")]
+    [SerializeField] private TextMeshProUGUI getterUpperCounter;
+    [SerializeField] private ThirdPersonController thirdPersonController;
+
+    [Header("Game Timer")] 
     public bool finished = false;
     public bool started = false;
-    
+
     private PlayerFinishTracker _playerFinishTracker;
-    
+
     [Header("Endgame blur")]
     private DepthOfField _depthOfField;
-    
-    [Header("Progression")]
+
+    [Header("Progression")] 
     public int currentLevel = 0;
+
+    [Header("Get ups")] 
+    [SerializeField] public int getUpsCount = 0;
+    [SerializeField] public bool isFallen = false;
 
     private void Awake()
     {
@@ -61,13 +67,17 @@ public class GameManager : MonoBehaviour
         finished = false;
         started = false;
         RebindReferences();
-        levelCounter.text = currentLevel.ToString();
+        levelCounter.text = currentLevel.ToString();        
+        UpdateGetterUpperCounter();
         runtimeDungeon.Generator.LengthMultiplier = 1f + (currentLevel * 0.25f);
         runtimeDungeon.Generator.Generate();
     }
     
     private void RebindReferences()
     {
+        if (thirdPersonController == null)
+            thirdPersonController = FindAnyObjectByType<ThirdPersonController>();
+            
         if (globalVolume == null)
             globalVolume = FindAnyObjectByType<Volume>();
 
@@ -97,15 +107,36 @@ public class GameManager : MonoBehaviour
             _playerFinishTracker = FindFirstObjectByType<PlayerFinishTracker>();
         
         if (levelCounter == null)
-            levelCounter = GameObject.Find("RoundCounter").GetComponent<TextMeshProUGUI>();
+            levelCounter = GameObject.Find("RoundCounter").GetComponent<TextMeshProUGUI>();        
+        
+        if (getterUpperCounter == null)
+            getterUpperCounter = GameObject.Find("GetterUppers").GetComponent<TextMeshProUGUI>();
     }
 
     public void Fallen()
     {
+        if (isFallen) return;
+        isFallen = true;
+        Debug.Log("Fallen");
+        if (getUpsCount > 0)
+        {
+            _playerFinishTracker.CheckWin();
+            thirdPersonController.UnDive();
+            return;
+        }
+        Debug.Log("Fallen for good");
+        behaviourPuppet.canGetUp = false;
         finished = true;
         CursorManager.instance.UnlockCursor();
         puppetMaster.state = PuppetMaster.State.Dead;
         StartCoroutine(EndAfterDelay());
+    }
+
+    public void GetUp()
+    {
+        getUpsCount -= 1;
+        UpdateGetterUpperCounter();
+        isFallen = false;
     }
     
     private IEnumerator EndAfterDelay()
@@ -127,10 +158,35 @@ public class GameManager : MonoBehaviour
     public void NextLevel()
     {
         currentLevel++;
+        isFallen = false;
     }
 
     public void Retry()
     {
         currentLevel = 0;
+        getUpsCount = 0;
+        isFallen = false;
+    }
+
+    public void AddGetterUpper()
+    {
+        getUpsCount += 1;
+        UpdateGetterUpperCounter();
+    }
+
+    private void UpdateGetterUpperCounter()
+    {
+        if (getUpsCount == 0)
+        {
+            getterUpperCounter.text = "";
+            return;
+        }
+        
+        getterUpperCounter.text = $"Getter uppers: {getUpsCount.ToString()}";
+    }
+
+    public void EndGame()
+    {
+        _playerFinishTracker.EndGame();
     }
 }

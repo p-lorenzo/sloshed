@@ -20,7 +20,6 @@ public class DrunkEffectController : MonoBehaviour
     private CharacterController controller;
     private ThirdPersonController thirdPersonController;
     private TextMeshProUGUI drunknessMeter;
-    private GameManager gameManager;
     private Volume globalVolume;
     private DrunkPuppetTilt playerTilt;
 
@@ -100,8 +99,6 @@ public class DrunkEffectController : MonoBehaviour
             else
                 Debug.LogWarning("DrunkMeter UI element not found!");
         }
-        if (gameManager == null)
-            gameManager = FindAnyObjectByType<GameManager>();
         if (globalVolume == null)
             globalVolume = FindAnyObjectByType<Volume>();
         if (playerTilt == null)
@@ -120,7 +117,12 @@ public class DrunkEffectController : MonoBehaviour
 
     void Update()
     {
-        if (gameManager.finished)
+        if (GameManager.instance.isFallen)
+        {
+            drunkLevel = 0f;
+            drunknessMeter.text = "";
+        }
+        if (GameManager.instance.finished)
             return;
         int drunknessPercent = Mathf.RoundToInt((drunkLevel / 0.5f) * 100f);
         cameraNoise.AmplitudeGain = 1 + drunkLevel * cameraNoiseDrunknessMultiplier;

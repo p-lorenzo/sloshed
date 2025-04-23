@@ -14,7 +14,12 @@ public abstract class Powerup : MonoBehaviour, Pickupable
     [SerializeField] private AudioClip pickupSound;
     [SerializeField] private float volume = 1f;
     
+    [Header("Pickup popup")]
+    [SerializeField] private string pickupName;
+    [SerializeField] private string pickupDescription;
+    
     private Vector3 startPos;
+    private bool pickedUp = false;
 
     void Start()
     {
@@ -32,6 +37,9 @@ public abstract class Powerup : MonoBehaviour, Pickupable
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            if (pickedUp) return;
+            pickedUp = true;
+            PickupMessage.instance.Show(pickupName, pickupDescription);
             SoundFXManager.instance.PlaySoundFxClip(pickupSound, transform, volume);
             Pickup();
         }

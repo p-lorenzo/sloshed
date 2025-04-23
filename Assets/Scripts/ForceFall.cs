@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class ForceFall : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (!collision.gameObject.CompareTag("Player")) return;
+        if (!other.gameObject.CompareTag("Player")) return;
 
-        GameManager.instance.Fallen();
+        GameManager.instance.EndGame();
     }
 }

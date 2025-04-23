@@ -51,3 +51,5 @@ MonoBehaviour:
     weight: 1
   - powerupPrefab: {fileID: 4834748704090441111, guid: 32c8a2902bb11ee4cb2f67ed9bafc101, type: 3}
     weight: 1
+  - powerupPrefab: {fileID: 4834748704090441111, guid: 71f845092eba74143bd7a6b4c4afa7df, type: 3}
+    weight: 2

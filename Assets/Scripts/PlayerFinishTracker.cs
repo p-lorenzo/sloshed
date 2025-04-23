@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using RootMotion.Dynamics;
 using UnityEngine;
 using TMPro;
 
@@ -23,6 +25,10 @@ public class PlayerFinishTracker : MonoBehaviour
         if (other.CompareTag("Finish"))
         {
             activeFinishTriggers.Add(other);
+            if (GameManager.instance.isFallen)
+            {
+                CheckWin();
+            }
         }
     }
 
@@ -55,5 +61,25 @@ public class PlayerFinishTracker : MonoBehaviour
         }        
         GameManager.instance.AddDepthOfField();
         losePanel.SetActive(true);
+    }
+
+    public void CheckWin()
+    {
+        if (activeFinishTriggers.Count > 0 || win)
+        {
+            GameManager.instance.behaviourPuppet.canGetUp = false;
+            GameManager.instance.finished = true;
+            CursorManager.instance.UnlockCursor();
+            GameManager.instance.puppetMaster.state = PuppetMaster.State.Dead;
+            hud.SetActive(false);
+            StartCoroutine(WinGameAfterDelay());
+            return;
+        }
+    }
+    
+    private IEnumerator WinGameAfterDelay()
+    {
+        yield return new WaitForSeconds(3f);
+        WinGame();
     }
 }

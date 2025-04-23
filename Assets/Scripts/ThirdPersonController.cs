@@ -118,10 +118,17 @@ public class ThirdPersonController : MonoBehaviour
         if (hasJumped) return;
         hasJumped = true;
         animator.SetBool(Diving, true);
-        StartCoroutine(DieAfterJumping());
+        StartCoroutine(UnpinAfterJumping());
     }
 
-    private IEnumerator DieAfterJumping()
+    public void UnDive()
+    {
+        if (!hasJumped) return;
+        hasJumped = false;
+        animator.SetBool(Diving, false);
+    }
+
+    private IEnumerator UnpinAfterJumping()
     {
         yield return new WaitForSeconds(0.6f);
         behaviourPuppet.SetState(BehaviourPuppet.State.Unpinned);
