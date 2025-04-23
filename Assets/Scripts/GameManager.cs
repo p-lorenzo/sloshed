@@ -187,6 +187,11 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
+        Debug.Log("Fallen for good");
+        behaviourPuppet.canGetUp = false;
+        finished = true;
+        CursorManager.instance.UnlockCursor();
+        puppetMaster.state = PuppetMaster.State.Dead;
         _playerFinishTracker.EndGame();
     }
 }
