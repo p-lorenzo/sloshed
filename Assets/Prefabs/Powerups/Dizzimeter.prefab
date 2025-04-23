@@ -229,7 +229,7 @@ MonoBehaviour:
   bobbingAmplitude: 0.25
   bobbingFrequency: 1
   visualObject: {fileID: 2258306660850457120}
-  pickupSound: {fileID: 8300000, guid: e5add19c3971cc04f895119c2a01c53c, type: 3}
+  pickupSound: {fileID: 8300000, guid: 7fc2007137b0c1f45ab2e062dd6c240d, type: 3}
   volume: 0.5
   pickupName: Dizzimeter
   pickupDescription: Who doesn't like numbers?
