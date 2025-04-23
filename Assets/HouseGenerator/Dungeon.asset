@@ -17,7 +17,7 @@ MonoBehaviour:
   Length:
     Min: 2
     Max: 3
-  BranchMode: 0
+  BranchMode: 1
   BranchCount:
     Min: 1
     Max: 5

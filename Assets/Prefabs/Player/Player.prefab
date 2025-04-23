@@ -1026,7 +1026,7 @@ GameObject:
   - component: {fileID: 2688789122587552967}
   m_Layer: 9
   m_Name: bip Head
-  m_TagString: Player
+  m_TagString: PlayerHead
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
