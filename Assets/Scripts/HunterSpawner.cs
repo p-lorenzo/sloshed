@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using DunGen;
 using JetBrains.Annotations;
-using Unity.Mathematics;
 using UnityEngine;
-using Random = System.Random;
+using Random = UnityEngine.Random;
 
 public class HunterSpawner : MonoBehaviour
 {
@@ -45,9 +44,8 @@ public class HunterSpawner : MonoBehaviour
 
     private bool RandomSpawn()
     {
-        var rand = new Random();
-        var num = rand.Next(0, 11);
-        return num is 0 or 3 or 5 or 7 or 9;
+        timeSinceSessionStart = 0f;
+        return Random.Range(0,1) % 2 == 0;
     }
 
     private bool CheckSpawnConditions()
