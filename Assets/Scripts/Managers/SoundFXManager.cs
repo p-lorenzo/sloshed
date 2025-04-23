@@ -17,6 +17,8 @@ public class SoundFXManager : MonoBehaviour
         
         audioSource.clip = audioClip;
         audioSource.volume = volume;
+        audioSource.spatialize = true;
+        audioSource.maxDistance = 10f;
         
         audioSource.Play();
         

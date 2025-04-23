@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using DunGen;
 using JetBrains.Annotations;
+using Unity.Mathematics;
 using UnityEngine;
+using Random = System.Random;
 
 public class HunterSpawner : MonoBehaviour
 {
@@ -35,11 +37,26 @@ public class HunterSpawner : MonoBehaviour
     
     void Update()
     {
-        if (GameManager.instance.currentLevel <= 3) return;
-        if (spawnPoints.Count <= 3) return;
+        if (!CheckSpawnConditions()) return;
         if (enemyHasSpawned) return;
         timeSinceSessionStart += Time.deltaTime;
-        if (timeSinceSessionStart >= 30f) TimeSpawn();
+        if (timeSinceSessionStart >= 30f && RandomSpawn()) TimeSpawn();
+    }
+
+    private bool RandomSpawn()
+    {
+        var rand = new Random();
+        var num = rand.Next(0, 11);
+        return num is 0 or 3 or 5 or 7 or 9;
+    }
+
+    private bool CheckSpawnConditions()
+    {
+        if (!PowerupManager.instance.activePowerups.TryGetValue(PowerupManager.PowerupType.GetterUpper, out var getterUpperCount)) return false;
+        if (getterUpperCount < 1) return false;
+        if (GameManager.instance.currentLevel <= 3) return false;
+        if (spawnPoints.Count <= 3) return false;
+        return true;
     }
     
     private IOrderedEnumerable<GameObject> OrderSpawnPoints()

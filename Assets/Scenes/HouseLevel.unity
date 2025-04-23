@@ -1028,6 +1028,11 @@ MonoBehaviour:
   currentLevel: 1
   getUpsCount: 0
   isFallen: 0
+--- !u!4 &411051100 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7266291925878285594, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+  m_PrefabInstance: {fileID: 1275685747}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &412740659
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5021,6 +5026,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534832638}
   m_CullTransparentMesh: 1
+--- !u!1 &1553137628
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1553137630}
+  - component: {fileID: 1553137629}
+  m_Layer: 0
+  m_Name: HunterSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1553137629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553137628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7603b06702684004b8a1ea703d157d8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runtimeDungeon: {fileID: 286003757}
+  spawnCue: {fileID: 8300000, guid: a7e9ee8734e9f9a4798c8dac03b089fc, type: 3}
+  spawnCueVolume: 0.2
+  hunterPrefab: {fileID: 913845681951795218, guid: e20ab2515fabcc6479fa4886192c536e, type: 3}
+  player: {fileID: 411051100}
+  enemyHasSpawned: 0
+--- !u!4 &1553137630
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553137628}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1593399069
 GameObject:
   m_ObjectHideFlags: 0
@@ -7554,3 +7609,4 @@ SceneRoots:
   - {fileID: 286003758}
   - {fileID: 2118252682}
   - {fileID: 563079170}
+  - {fileID: 1553137630}
