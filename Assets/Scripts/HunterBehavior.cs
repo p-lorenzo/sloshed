@@ -4,6 +4,7 @@ using RootMotion.Dynamics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(NavMeshAgent))]
@@ -16,13 +17,18 @@ public class HunterBehavior : MonoBehaviour
     private NavMeshAgent agent;
     private Animator animator;
     private ThirdPersonController thirdPersonController;
+    private bool hasHitPlayer;
     
     [SerializeField] private ParticleSystem deathParticles;
     [SerializeField] private float dissolveDuration;
     
     [Header("Sounds")]
-    [SerializeField] private AudioClip[] FootstepAudioClips;
-    [Range(0, 1)] [SerializeField] private float FootstepAudioVolume = 0.5f;
+    [SerializeField] private AudioClip[] footstepAudioClips; 
+    [Range(0, 1)] [SerializeField] private float footstepAudioVolume = 0.5f;
+    [SerializeField] private AudioClip playerHitSound;
+    [Range(0, 1)] [SerializeField] private float playerHitVolume = 0.5f;
+    [SerializeField] private AudioClip hunterDeathSound;
+    [Range(0, 1)] [SerializeField] private float hunterDeathVolume = 0.5f;
 
     private void Start()
     {
@@ -36,6 +42,9 @@ public class HunterBehavior : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         if (!other.gameObject.CompareTag("Player")) return;
+        if (hasHitPlayer) return;
+        hasHitPlayer = true;
+        SoundFXManager.instance.PlaySoundFxClip(playerHitSound, transform, playerHitVolume);
         animator.SetBool(IsPunching, true);
         StartCoroutine(Dissolve());
         thirdPersonController.puppetMaster.state = PuppetMaster.State.Dead;
@@ -74,6 +83,7 @@ public class HunterBehavior : MonoBehaviour
 
         mat.SetFloat("_Dissolve", 1f);
         Destroy(gameObject);
+        SoundFXManager.instance.PlaySoundFxClip(hunterDeathSound, transform, hunterDeathVolume);
         
         thirdPersonController.puppetMaster.state = PuppetMaster.State.Alive;
         
@@ -91,9 +101,9 @@ public class HunterBehavior : MonoBehaviour
     private void OnFootstep(AnimationEvent animationEvent)
     {
         if (!(animationEvent.animatorClipInfo.weight > 0.5f)) return;
-        if (FootstepAudioClips.Length <= 0) return;
+        if (footstepAudioClips.Length <= 0) return;
         
-        var index = Random.Range(0, FootstepAudioClips.Length);
-        SoundFXManager.instance.PlaySoundFxClip(FootstepAudioClips[index], transform, FootstepAudioVolume);
+        var index = Random.Range(0, footstepAudioClips.Length);
+        SoundFXManager.instance.PlaySoundFxClip(footstepAudioClips[index], transform, footstepAudioVolume);
     }
 }

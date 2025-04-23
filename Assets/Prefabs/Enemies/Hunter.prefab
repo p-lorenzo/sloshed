@@ -192,7 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 2998380019693574321}
   dissolveDuration: 1.2
-  FootstepAudioClips:
+  footstepAudioClips:
   - {fileID: 8300000, guid: 366d177ef3e58d043b0aa3b3c2fc94b0, type: 3}
   - {fileID: 8300000, guid: 793f046683907be489e7eafe76d96341, type: 3}
   - {fileID: 8300000, guid: ce67369983962c144b4b56fa8df74e9b, type: 3}
@@ -204,7 +204,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 91f2aaff94f1be64eb23de5a24e588bb, type: 3}
   - {fileID: 8300000, guid: f8c0003689a06614f96cbca71e678a13, type: 3}
   - {fileID: 8300000, guid: a272a0fc2c0bb5d47b00d7a5328ad43e, type: 3}
-  FootstepAudioVolume: 0.3
+  footstepAudioVolume: 0.1
+  playerHitSound: {fileID: 8300000, guid: 6af14c0189a7a16489a46d6dde227ae2, type: 3}
+  playerHitVolume: 0.8
+  hunterDeathSound: {fileID: 8300000, guid: 13d631efa042c9143abdd431d3210a6f, type: 3}
+  hunterDeathVolume: 0.6
 --- !u!136 &692890700076019540
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -50030,7 +50034,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 1c17252c26ffddb459aae44b48c03547, type: 3}
   m_Resource: {fileID: 8300000, guid: 1c17252c26ffddb459aae44b48c03547, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.6
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
