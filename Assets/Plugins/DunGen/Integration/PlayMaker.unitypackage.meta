@@ -1,11 +1,7 @@
 fileFormatVersion: 2
-guid: e0d91113e2dee184284b8a7f3472993a
+guid: 4f8dc2e28cefedc45960656dc449d2a2
 DefaultImporter:
+  externalObjects: {}
   userData: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 15682
-  packageName: DunGen
-  packageVersion: 2.17.4
-  assetPath: Assets/DunGen/Integration/PlayMaker.unitypackage
-  uploadId: 700618
+  assetBundleName: 
+  assetBundleVariant: 

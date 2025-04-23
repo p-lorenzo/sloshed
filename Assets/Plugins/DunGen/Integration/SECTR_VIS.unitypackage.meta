@@ -1,11 +1,7 @@
 fileFormatVersion: 2
-guid: e39641cabe04b3546bfcdccf6647d6d6
+guid: 6cf51bc0a348d52418a64fd7db9d2108
 DefaultImporter:
+  externalObjects: {}
   userData: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 15682
-  packageName: DunGen
-  packageVersion: 2.17.4
-  assetPath: Assets/DunGen/Integration/SECTR_VIS.unitypackage
-  uploadId: 700618
+  assetBundleName: 
+  assetBundleVariant: 

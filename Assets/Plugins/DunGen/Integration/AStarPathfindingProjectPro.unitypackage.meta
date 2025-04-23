@@ -1,11 +1,7 @@
 fileFormatVersion: 2
-guid: dd45dc993002a8847b0b0298ae11813f
+guid: 98e80d8d830fccf478ef15d064181eed
 DefaultImporter:
+  externalObjects: {}
   userData: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 15682
-  packageName: DunGen
-  packageVersion: 2.17.4
-  assetPath: Assets/DunGen/Integration/AStarPathfindingProjectPro.unitypackage
-  uploadId: 700618
+  assetBundleName: 
+  assetBundleVariant: 

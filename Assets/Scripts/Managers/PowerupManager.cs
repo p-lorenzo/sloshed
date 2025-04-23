@@ -7,6 +7,8 @@ public class PowerupManager : MonoBehaviour
 {
     public enum PowerupType {Flashlight, GetterUpper, Water, Dizzimeter};
 
+    private ParticleSystem pickupEffect;
+
     public static PowerupManager instance;
 
     private Dictionary<PowerupType, int> activePowerups = new Dictionary<PowerupType, int>();
@@ -41,7 +43,7 @@ public class PowerupManager : MonoBehaviour
     
     private void RebindReferences()
     {
-        
+        pickupEffect = GameObject.Find("PowerupEffect").GetComponent<ParticleSystem>();
     }
 
     public void FlashlightPowerup()
@@ -75,6 +77,8 @@ public class PowerupManager : MonoBehaviour
 
     private void AddPowerup(PowerupType type)
     {
+        pickupEffect.Play();
+        
         if (activePowerups.ContainsKey(type))
         {
             activePowerups[type]++;

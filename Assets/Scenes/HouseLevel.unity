@@ -885,6 +885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 286003758}
   - component: {fileID: 286003757}
+  - component: {fileID: 286003759}
   m_Layer: 0
   m_Name: RuntimeDungeon
   m_TagString: Untagged
@@ -952,6 +953,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &286003759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286003756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f76f356143a516846a54607aa83a9ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Priority: 0
+  BakeMode: 2
+  LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  AddNavMeshLinksBetweenRooms: 1
+  NavMeshAgentTypes:
+  - AgentTypeID: 0
+    AreaTypeID: 0
+    DisableLinkWhenDoorIsClosed: 0
+  NavMeshLinkDistanceFromDoorway: 2.5
+  AutoGenerateFullRebakeSurfaces: 1
+  FullRebakeTargets: []
+  UseAutomaticLinkDistance: 1
+  AutomaticLinkDistanceOffset: 0.1
 --- !u!4 &289831090 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6177533551037028778, guid: 2403b9fd1648458468cdef29f8d52984, type: 3}
@@ -1369,6 +1397,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!198 &546956328 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8700035473269227422, guid: b21d155ec7ea5a349a0e36106f913148, type: 3}
+  m_PrefabInstance: {fileID: 114361349}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &563079168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,6 +1431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2516afa120047f3bb6f2d3a5702c115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupEffect: {fileID: 546956328}
 --- !u!4 &563079170
 Transform:
   m_ObjectHideFlags: 0

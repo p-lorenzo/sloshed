@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 16b608ef07e7a6045981eb292b107e97
+AssetOrigin:
+  serializedVersion: 1
+  productId: 260446
+  packageName: City People FREE Samples
+  packageVersion: 1.1.1
+  assetPath: Assets/DenysAlmaral/CityPeople-FREE/Meshes/z_dummyProps/dprop_tree2.fbx
+  uploadId: 748246
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -21,8 +28,6 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -37,7 +42,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -112,10 +117,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 260446
-  packageName: City People FREE Samples
-  packageVersion: 1.1.1
-  assetPath: Assets/DenysAlmaral/CityPeople-FREE/Meshes/z_dummyProps/dprop_tree2.fbx
-  uploadId: 748246

@@ -16,7 +16,7 @@ public class ThirdPersonController : MonoBehaviour
 
     [Header("Puppet stuff")]
     [SerializeField] private BehaviourPuppet behaviourPuppet;
-    [SerializeField] private PuppetMaster puppetMaster;
+    [SerializeField] public PuppetMaster puppetMaster;
 
     [Header("Movement Settings")]
     [SerializeField] private float rotationSpeed = 10f;

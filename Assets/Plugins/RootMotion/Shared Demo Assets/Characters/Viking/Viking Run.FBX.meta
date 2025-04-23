@@ -1,76 +1,214 @@
 fileFormatVersion: 2
 guid: 483d1fd2fddd24ffc8ea3f8bef918e47
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48977
+  packageName: PuppetMaster
+  packageVersion: 1.4
+  assetPath: Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Viking/Viking
+    Run.FBX
+  uploadId: 725639
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: Shield
-    100004: CATRigRArmPalm
-    100006: CATRigRArm2
-    100008: CATRigRArm1
-    100010: Axe
-    100012: CATRigLArmPalm
-    100014: CATRigLArm2
-    100016: CATRigLArm1
-    100018: CATRigHub003
-    100020: CATRigSpine
-    100022: CATRigHub002
-    100024: CATRigSpine2
-    100026: CATRigRLegAnkle
-    100028: CATRigRLeg2
-    100030: CATRigRLeg1
-    100032: CATRigLLegAnkle
-    100034: CATRigLLeg2
-    100036: CATRigLLeg1
-    100038: CATRigHub001
-    100040: Character001
-    100042: BaseHuman
-    100044: CATRigLArmCollarbone
-    100046: CATRigRArmCollarbone
-    100048: CATRigSpineCATRigSpine1
-    100050: CATRigRLegPlatform
-    100052: CATRigLLegPlatform
-    400000: //RootNode
-    400002: Shield
-    400004: CATRigRArmPalm
-    400006: CATRigRArm2
-    400008: CATRigRArm1
-    400010: Axe
-    400012: CATRigLArmPalm
-    400014: CATRigLArm2
-    400016: CATRigLArm1
-    400018: CATRigHub003
-    400020: CATRigSpine
-    400022: CATRigHub002
-    400024: CATRigSpine2
-    400026: CATRigRLegAnkle
-    400028: CATRigRLeg2
-    400030: CATRigRLeg1
-    400032: CATRigLLegAnkle
-    400034: CATRigLLeg2
-    400036: CATRigLLeg1
-    400038: CATRigHub001
-    400040: Character001
-    400042: BaseHuman
-    400044: CATRigLArmCollarbone
-    400046: CATRigRArmCollarbone
-    400048: CATRigSpineCATRigSpine1
-    400050: CATRigRLegPlatform
-    400052: CATRigLLegPlatform
-    2300000: Shield
-    2300002: Axe
-    3300000: Shield
-    3300002: Axe
-    4300000: BaseHuman
-    4300002: Axe
-    4300004: Shield
-    7400000: Viking Run
-    11100000: //RootNode
-    13700000: BaseHuman
-    2186277476908879412: ImportLogs
+  serializedVersion: 22200
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: Shield
+  - first:
+      1: 100004
+    second: CATRigRArmPalm
+  - first:
+      1: 100006
+    second: CATRigRArm2
+  - first:
+      1: 100008
+    second: CATRigRArm1
+  - first:
+      1: 100010
+    second: Axe
+  - first:
+      1: 100012
+    second: CATRigLArmPalm
+  - first:
+      1: 100014
+    second: CATRigLArm2
+  - first:
+      1: 100016
+    second: CATRigLArm1
+  - first:
+      1: 100018
+    second: CATRigHub003
+  - first:
+      1: 100020
+    second: CATRigSpine
+  - first:
+      1: 100022
+    second: CATRigHub002
+  - first:
+      1: 100024
+    second: CATRigSpine2
+  - first:
+      1: 100026
+    second: CATRigRLegAnkle
+  - first:
+      1: 100028
+    second: CATRigRLeg2
+  - first:
+      1: 100030
+    second: CATRigRLeg1
+  - first:
+      1: 100032
+    second: CATRigLLegAnkle
+  - first:
+      1: 100034
+    second: CATRigLLeg2
+  - first:
+      1: 100036
+    second: CATRigLLeg1
+  - first:
+      1: 100038
+    second: CATRigHub001
+  - first:
+      1: 100040
+    second: Character001
+  - first:
+      1: 100042
+    second: BaseHuman
+  - first:
+      1: 100044
+    second: CATRigLArmCollarbone
+  - first:
+      1: 100046
+    second: CATRigRArmCollarbone
+  - first:
+      1: 100048
+    second: CATRigSpineCATRigSpine1
+  - first:
+      1: 100050
+    second: CATRigRLegPlatform
+  - first:
+      1: 100052
+    second: CATRigLLegPlatform
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: Shield
+  - first:
+      4: 400004
+    second: CATRigRArmPalm
+  - first:
+      4: 400006
+    second: CATRigRArm2
+  - first:
+      4: 400008
+    second: CATRigRArm1
+  - first:
+      4: 400010
+    second: Axe
+  - first:
+      4: 400012
+    second: CATRigLArmPalm
+  - first:
+      4: 400014
+    second: CATRigLArm2
+  - first:
+      4: 400016
+    second: CATRigLArm1
+  - first:
+      4: 400018
+    second: CATRigHub003
+  - first:
+      4: 400020
+    second: CATRigSpine
+  - first:
+      4: 400022
+    second: CATRigHub002
+  - first:
+      4: 400024
+    second: CATRigSpine2
+  - first:
+      4: 400026
+    second: CATRigRLegAnkle
+  - first:
+      4: 400028
+    second: CATRigRLeg2
+  - first:
+      4: 400030
+    second: CATRigRLeg1
+  - first:
+      4: 400032
+    second: CATRigLLegAnkle
+  - first:
+      4: 400034
+    second: CATRigLLeg2
+  - first:
+      4: 400036
+    second: CATRigLLeg1
+  - first:
+      4: 400038
+    second: CATRigHub001
+  - first:
+      4: 400040
+    second: Character001
+  - first:
+      4: 400042
+    second: BaseHuman
+  - first:
+      4: 400044
+    second: CATRigLArmCollarbone
+  - first:
+      4: 400046
+    second: CATRigRArmCollarbone
+  - first:
+      4: 400048
+    second: CATRigSpineCATRigSpine1
+  - first:
+      4: 400050
+    second: CATRigRLegPlatform
+  - first:
+      4: 400052
+    second: CATRigLLegPlatform
+  - first:
+      23: 2300000
+    second: Shield
+  - first:
+      23: 2300002
+    second: Axe
+  - first:
+      33: 3300000
+    second: Shield
+  - first:
+      33: 3300002
+    second: Axe
+  - first:
+      43: 4300000
+    second: BaseHuman
+  - first:
+      43: 4300002
+    second: Axe
+  - first:
+      43: 4300004
+    second: Shield
+  - first:
+      74: 7400000
+    second: Viking Run
+  - first:
+      111: 11100000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: BaseHuman
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
   externalObjects: {}
   materials:
-    importMaterials: 0
+    materialImportMode: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -79,11 +217,8 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Inbetween bone
-      rotation in copied configuration does not match rotation in animation file:\n\t'CATRigSpineCATRigSpine1'
-      : rotation error = 3.078895 deg\n"
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
       might lower retargeting quality:\nNote: Activate translation DOF on avatar
@@ -104,6 +239,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Viking Run
       takeName: Take 001
+      internalID: 0
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -190,25 +326,36 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
+    nodeNameCollisionStrategy: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
     indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 0
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
+    strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -217,10 +364,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 1
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human:
     - boneName: CATRigHub001
       humanName: Hips
@@ -509,23 +656,20 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 0.01
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 0
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 77175d72106534d05bbaa1a44d43c57e,
-    type: 3}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 77175d72106534d05bbaa1a44d43c57e, type: 3}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
+  avatarSetup: 2
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  importBlendShapeDeformPercent: 0
+  remapMaterialsIfMaterialImportModeIsNone: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 48977
-  packageName: PuppetMaster
-  packageVersion: 1.4
-  assetPath: Assets/Plugins/RootMotion/Shared Demo Assets/Characters/Viking/Viking
-    Run.FBX
-  uploadId: 725639
