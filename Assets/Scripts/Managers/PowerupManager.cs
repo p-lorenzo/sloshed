@@ -11,7 +11,7 @@ public class PowerupManager : MonoBehaviour
 
     public static PowerupManager instance;
 
-    private Dictionary<PowerupType, int> activePowerups = new Dictionary<PowerupType, int>();
+    public Dictionary<PowerupType, int> activePowerups = new Dictionary<PowerupType, int>();
     
     private void Awake()
     {
