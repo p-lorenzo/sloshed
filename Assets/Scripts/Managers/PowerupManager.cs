@@ -110,4 +110,10 @@ public class PowerupManager : MonoBehaviour
     {
         activePowerups.Clear();
     }
+
+    public bool HasAtLeastOneGetterUpper()
+    {
+        if (activePowerups.ContainsKey(PowerupType.GetterUpper)) return activePowerups[PowerupType.GetterUpper] > 0;
+        return false;
+    }
 }
