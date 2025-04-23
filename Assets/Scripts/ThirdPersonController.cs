@@ -102,6 +102,8 @@ public class ThirdPersonController : MonoBehaviour
             controller.Move(finalMotion);
         }
     }
+    
+
 
     public void LaunchPuppet(Vector3 direction, float force)
     {
