@@ -75,6 +75,8 @@ public class HunterBehavior : MonoBehaviour
         mat.SetFloat("_Dissolve", 1f);
         Destroy(gameObject);
         
+        thirdPersonController.puppetMaster.state = PuppetMaster.State.Alive;
+        
         var totalDuration = deathParticles.main.duration + deathParticles.main.startLifetime.constantMax;
         Destroy(deathParticles.gameObject, totalDuration);
     }

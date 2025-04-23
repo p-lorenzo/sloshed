@@ -138,6 +138,7 @@ public class GameManager : MonoBehaviour
         getUpsCount -= 1;
         UpdateGetterUpperCounter();
         isFallen = false;
+        thirdPersonController.UnDive();
     }
     
     private IEnumerator EndAfterDelay()
