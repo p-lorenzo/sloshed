@@ -29,6 +29,10 @@ public class PowerupSpawner : MonoBehaviour
             currentSum += powerup.weight;
             if (randomValue < currentSum)
             {
+                if (PowerupManager.instance.PowerupAlreadyActive(powerup.powerupType) && powerup.canSpawnOnlyOnce)
+                {
+                    continue;
+                }
                 Instantiate(powerup.powerupPrefab, new Vector3(transform.position.x, transform.position.y + .5f, transform.position.z), Quaternion.identity);
                 return;
             }
@@ -50,6 +54,8 @@ public class PowerupSpawner : MonoBehaviour
 [System.Serializable]
 public class SpawnablePowerup
 {
+    public PowerupManager.PowerupType powerupType;
     public GameObject powerupPrefab;
     public int weight;
+    public bool canSpawnOnlyOnce = false;
 }

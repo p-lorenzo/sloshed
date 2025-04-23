@@ -5,7 +5,7 @@ public class Flashlight : Powerup
 {
     public override void Pickup()
     {
-        DrunkEffectController.instance.FlashlightPowerup();
+        PowerupManager.instance.FlashlightPowerup();
         Destroy(gameObject);
     }
 }

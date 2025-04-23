@@ -134,6 +134,7 @@ public class GameManager : MonoBehaviour
 
     public void GetUp()
     {
+        PowerupManager.instance.UseGetterUpperPowerup();
         getUpsCount -= 1;
         UpdateGetterUpperCounter();
         isFallen = false;

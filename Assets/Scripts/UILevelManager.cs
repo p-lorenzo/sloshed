@@ -65,6 +65,7 @@ public class UILevelManager : MonoBehaviour
     {
         DrunkEffectController.instance.RestartLevel();
         GameManager.instance.Retry();
+        PowerupManager.instance.RestartLevel();
         Time.timeScale = 1f; // utile se il gioco era in pausa
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

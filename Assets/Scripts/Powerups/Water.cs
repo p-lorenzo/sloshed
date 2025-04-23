@@ -5,7 +5,7 @@ public class Water : Powerup
 {
     public override void Pickup()
     {
-        DrunkEffectController.instance.DrinkWater();
+        PowerupManager.instance.WaterPowerup();
         Destroy(gameObject);
     }
 }

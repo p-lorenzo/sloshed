@@ -5,7 +5,7 @@ public class Dizzimeter : Powerup
 {
     public override void Pickup()
     {
-        DrunkEffectController.instance.DizzimeterPowerup();
+        PowerupManager.instance.DizzimeterPowerup();
         Destroy(gameObject);
     }
 }
