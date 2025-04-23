@@ -75,6 +75,8 @@ MonoBehaviour:
   visualObject: {fileID: 6021694327274956953}
   pickupSound: {fileID: 8300000, guid: e5add19c3971cc04f895119c2a01c53c, type: 3}
   volume: 0.5
+  pickupName: Water
+  pickupDescription: Clears body and soul
 --- !u!1 &6121870883945973152
 GameObject:
   m_ObjectHideFlags: 0

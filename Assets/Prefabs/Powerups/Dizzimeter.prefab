@@ -231,6 +231,8 @@ MonoBehaviour:
   visualObject: {fileID: 2258306660850457120}
   pickupSound: {fileID: 8300000, guid: e5add19c3971cc04f895119c2a01c53c, type: 3}
   volume: 0.5
+  pickupName: Dizzimeter
+  pickupDescription: Who doesn't like numbers?
 --- !u!1001 &4927988361367724101
 PrefabInstance:
   m_ObjectHideFlags: 0

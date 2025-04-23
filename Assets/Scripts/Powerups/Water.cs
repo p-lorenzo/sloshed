@@ -3,9 +3,13 @@ using UnityEngine;
 
 public class Water : Powerup
 {
-    override public void Pickup()
+    [SerializeField] private string pickupName;
+    [SerializeField] private string pickupDescription;
+    
+    public override void Pickup()
     {
         DrunkEffectController.instance.DrinkWater();
+        PickupMessage.instance.Show(pickupName, pickupDescription);
         Destroy(gameObject);
     }
 }
