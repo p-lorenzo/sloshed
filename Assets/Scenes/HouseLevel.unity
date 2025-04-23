@@ -498,7 +498,7 @@ GameObject:
   - component: {fileID: 193849394}
   - component: {fileID: 193849396}
   - component: {fileID: 193849395}
-  - component: {fileID: 193849397}
+  - component: {fileID: 193849398}
   m_Layer: 5
   m_Name: RawImage
   m_TagString: Untagged
@@ -560,7 +560,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193849393}
   m_CullTransparentMesh: 1
---- !u!114 &193849397
+--- !u!114 &193849398
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -569,9 +569,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 193849393}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dfadeeb05b7606468b03a3ef17c278e, type: 3}
+  m_Script: {fileID: 11500000, guid: 598968e59d58ebb418bf6178d43a469b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 927993929}
 --- !u!1 &233077961
 GameObject:
   m_ObjectHideFlags: 0
@@ -3585,50 +3586,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7315731122422208216, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: canGetUp
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8182149910986026570, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
-      propertyPath: m_ActionEvents.Array.size
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
-      propertyPath: m_ActionEvents.Array.data[19].m_ActionId
-      value: baf3b49c-331d-436c-8ba6-29f10b8f73a4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
-      propertyPath: m_ActionEvents.Array.data[19].m_ActionName
-      value: 'Player/Pause[/Keyboard/escape,/XInputControllerWindows/start]'
-      objectReference: {fileID: 0}
-    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
-      propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
-      propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
       propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1270028554}
-    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
-      propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
-      propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: TogglePause
-      objectReference: {fileID: 0}
-    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
-      propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MenuManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 9017968559273691758, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
-      propertyPath: m_ActionEvents.Array.data[19].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

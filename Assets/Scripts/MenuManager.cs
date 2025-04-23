@@ -16,14 +16,6 @@ public class MenuManager : MonoBehaviour
         if (instance == null) instance = this;
     }
 
-    private void Start()
-    {
-        if (Application.platform == RuntimePlatform.WebGLPlayer && Application.isMobilePlatform)
-        {
-            RemovePixelatedEffect();
-        }
-    }
-
     public void TogglePause()
     {
         if (isPaused)

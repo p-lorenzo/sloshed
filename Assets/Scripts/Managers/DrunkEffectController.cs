@@ -197,6 +197,7 @@ public class DrunkEffectController : MonoBehaviour
     {
         drunkGainRate = 0.03f;
         drunkDecayRate = 0.1f;
+        dizzimeterPowerup = false;
     }
 
     public void DizzimeterPowerup()

@@ -3879,7 +3879,6 @@ GameObject:
   - component: {fileID: 8242605174557178696}
   - component: {fileID: 8692076358439176203}
   - component: {fileID: 6320376429870600677}
-  - component: {fileID: 3909140401153101416}
   - component: {fileID: 9017968559273691758}
   m_Layer: 8
   m_Name: Player
@@ -3988,7 +3987,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.85, z: 0}
+  m_Center: {x: 0, y: 0.94, z: 0}
 --- !u!114 &6320376429870600677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4006,29 +4005,6 @@ MonoBehaviour:
   winText: {fileID: 0}
   win: 0
   losePanel: {fileID: 0}
---- !u!136 &3909140401153101416
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5913949458806742698}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2.1942675
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.59713376, z: 0}
 --- !u!114 &9017968559273691758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4166,6 +4142,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: TogglePause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: baf3b49c-331d-436c-8ba6-29f10b8f73a4
+    m_ActionName: 'Player/Pause[/Keyboard/escape,/XInputControllerWindows/start]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
