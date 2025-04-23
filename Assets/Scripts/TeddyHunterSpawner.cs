@@ -10,7 +10,7 @@ public class TeddyHunterSpawner : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         if (HunterSpawner.instance.enemyHasSpawned) return;
-        if (!other.CompareTag("Player")) return;
+        if (!other.CompareTag("PlayerHead")) return;
         deathTimer += Time.deltaTime;
         if (deathTimer >= spawnTimer) HunterSpawner.instance.TeddySpawn();
     }

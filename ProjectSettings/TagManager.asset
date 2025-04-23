@@ -7,6 +7,7 @@ TagManager:
   - CinemachineTarget
   - Hunter
   - EnemySpawner
+  - PlayerHead
   layers:
   - Default
   - TransparentFX
