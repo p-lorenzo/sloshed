@@ -163,7 +163,7 @@ public class GameManager : MonoBehaviour
 
     public void Retry()
     {
-        currentLevel = 0;
+        currentLevel = 1;
         getUpsCount = 0;
         isFallen = false;
     }
