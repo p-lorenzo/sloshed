@@ -27,8 +27,19 @@ public class PowerupManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        LoadPowerups();
+
     }
     
+    private void LoadPowerups()
+    {
+        foreach (PowerupType powerupType in System.Enum.GetValues(typeof(PowerupType)))
+        {
+            activePowerups.Add(powerupType, PlayerPrefs.GetInt(powerupType.ToString(), 0));
+            Debug.Log($"Load {powerupType}: {PlayerPrefs.GetInt(powerupType.ToString())}");
+        }
+    }
+
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -42,7 +53,18 @@ public class PowerupManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         RebindReferences();
-    }    
+        SavePowerups();
+    }
+
+    private void SavePowerups()
+    {
+        foreach (PowerupType powerupType in System.Enum.GetValues(typeof(PowerupType)))
+        {
+            if (!activePowerups.ContainsKey(powerupType)) return;
+            PlayerPrefs.SetInt(powerupType.ToString(), activePowerups[powerupType]);
+            Debug.Log($"Save {powerupType}: {PlayerPrefs.GetInt(powerupType.ToString())}");
+        }
+    }
     
     private void RebindReferences()
     {
@@ -110,18 +132,23 @@ public class PowerupManager : MonoBehaviour
 
     public bool PowerupAlreadyActive(PowerupType powerupType)
     {
-        foreach (var powerup in activePowerups)
-        {
-            Debug.Log(powerup.Key + ": " + powerup.Value);
-        }
         return activePowerups.ContainsKey(powerupType);
     }
 
     public void RestartLevel()
     {
         activePowerups.Clear();
+        ClearSave();
     }
 
+    private void ClearSave()
+    {
+        foreach (PowerupType powerupType in System.Enum.GetValues(typeof(PowerupType)))
+        {
+            PlayerPrefs.SetInt(powerupType.ToString(), 0);
+        }
+    }
+    
     public bool HasAtLeastOnePowerUpOfType(PowerupType powerupType)
     {
         if (activePowerups.TryGetValue(powerupType, out var powerup)) return powerup > 0;

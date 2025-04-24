@@ -48,11 +48,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    private void Start()
-    {
-        LoadState();
+        LoadSave();
     }
     
     private void OnEnable()
@@ -71,16 +67,24 @@ public class GameManager : MonoBehaviour
         finished = false;
         started = false;
         RebindReferences();
-        levelCounter.text = currentLevel.ToString();        
+        levelCounter.text = currentLevel.ToString();
+        SaveGame();
         UpdateGetterUpperCounter();
         runtimeDungeon.Generator.LengthMultiplier = 1f + (currentLevel * 0.25f);
         runtimeDungeon.Generator.DungeonFlow.BranchCount = new IntRange(1, Mathf.RoundToInt(1 + (currentLevel * 0.25f)));
         runtimeDungeon.Generator.Generate();
     }
 
-    private void LoadState()
+    private void SaveGame()
     {
-        Debug.Log("Loading State");
+        PlayerPrefs.SetInt("currentLevel", currentLevel);
+        Debug.Log($"Saved level: {PlayerPrefs.GetInt("currentLevel")}");
+    }
+
+    private void LoadSave()
+    {
+        currentLevel = PlayerPrefs.GetInt("currentLevel", 1);
+        Debug.Log($"Loaded level: {PlayerPrefs.GetInt("currentLevel")}");
     }
     
     private void RebindReferences()
@@ -183,7 +187,13 @@ public class GameManager : MonoBehaviour
     public void Retry()
     {
         currentLevel = 1;
+        ClearSave();
         isFallen = false;
+    }
+
+    private void ClearSave()
+    {
+        PlayerPrefs.SetInt("currentLevel", 1);
     }
 
     public void AddGetterUpper()

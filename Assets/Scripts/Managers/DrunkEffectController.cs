@@ -61,6 +61,17 @@ public class DrunkEffectController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        ApplySavedPowerups();
+    }
+
+    private void ApplySavedPowerups()
+    {
+        for (int i = 0; i < PowerupManager.instance.HowManyPowerupsOfType(PowerupManager.PowerupType.Water); i++)
+        {
+            DrinkWater();
+        }
+        
+        if (PowerupManager.instance.HasAtLeastOnePowerUpOfType(PowerupManager.PowerupType.Dizzimeter)) DizzimeterPowerup();
     }
     
     private void OnEnable()
