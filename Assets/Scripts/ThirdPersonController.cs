@@ -37,6 +37,9 @@ public class ThirdPersonController : MonoBehaviour
 
     private Vector2 moveInput = Vector2.zero;
     private bool isRunning = false;
+    private int speedDemonCount;
+    private bool stickyFeet;
+    private float moveSpeedModifier = 1f;
     
     [Header("Sounds")]
     [SerializeField] private AudioClip landingAudioClip;
@@ -83,24 +86,30 @@ public class ThirdPersonController : MonoBehaviour
         var targetSpeed = isRunning ? runSpeed : moveSpeed;
         var speedParam = inputMagnitude * (targetSpeed / runSpeed);
         
-        animator.SetFloat(InputMovement, speedParam * GetMoveSpeedModifier(), 0.1f, Time.deltaTime);
+        animator.SetFloat(InputMovement, speedParam * moveSpeedModifier, 0.1f, Time.deltaTime);
     }
 
     private void CheckPowerups()
     {
         if (PowerupManager.instance.HasAtLeastOnePowerUpOfType(PowerupManager.PowerupType.StickyFeet)) SetStickyFeet();
-        //add others
+        SetSpeedDemon();
+        SetMoveSpeedModifier();
     }
 
-    private float GetMoveSpeedModifier()
+    public void SetMoveSpeedModifier()
     {
-        var speedModifier = 1f;
-        if (PowerupManager.instance.HasAtLeastOnePowerUpOfType(PowerupManager.PowerupType.StickyFeet)) speedModifier *= .8f;
-        return speedModifier;
+        moveSpeedModifier *= (1f + .2f * speedDemonCount);
+        if (stickyFeet) moveSpeedModifier *= .8f;
+    }
+
+    public void SetSpeedDemon()
+    {
+        speedDemonCount = PowerupManager.instance.HowManyPowerupsOfType(PowerupManager.PowerupType.SpeedDemon);
     }
 
     public void SetStickyFeet()
     {
+        stickyFeet = true;
         behaviourPuppet.collisionLayers = 0;
     }
 

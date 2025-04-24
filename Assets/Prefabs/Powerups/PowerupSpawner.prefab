@@ -69,3 +69,7 @@ MonoBehaviour:
     powerupPrefab: {fileID: 4834748704090441111, guid: 6549727e4f84be9469c1e4067ae87c03, type: 3}
     weight: 1
     canSpawnOnlyOnce: 1
+  - powerupType: 6
+    powerupPrefab: {fileID: 4834748704090441111, guid: 6549727e4f84be9469c1e4067ae87c03, type: 3}
+    weight: 1
+    canSpawnOnlyOnce: 0
