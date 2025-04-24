@@ -801,6 +801,7 @@ GameObject:
   - component: {fileID: 286003758}
   - component: {fileID: 286003757}
   - component: {fileID: 286003759}
+  - component: {fileID: 286003760}
   m_Layer: 0
   m_Name: RuntimeDungeon
   m_TagString: Untagged
@@ -898,6 +899,22 @@ MonoBehaviour:
   FullRebakeTargets: []
   UseAutomaticLinkDistance: 1
   AutomaticLinkDistanceOffset: 0.1
+--- !u!114 &286003760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286003756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc9a8729e87e17144bfbab73b3b5aa24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AdjacentTileDepth: 1
+  CullBehindClosedDoors: 0
+  TargetOverride: {fileID: 1463081018}
+  IncludeDisabledComponents: 0
 --- !u!4 &289831090 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6177533551037028778, guid: 2403b9fd1648458468cdef29f8d52984, type: 3}
@@ -4537,6 +4554,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430177454}
   m_CullTransparentMesh: 1
+--- !u!4 &1463081018 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7626254178921169578, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+  m_PrefabInstance: {fileID: 1275685747}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1477348051
 GameObject:
   m_ObjectHideFlags: 0
