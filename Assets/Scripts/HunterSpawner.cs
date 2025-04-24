@@ -50,7 +50,7 @@ public class HunterSpawner : MonoBehaviour
 
     private bool CheckSpawnConditions()
     {
-        if (!PowerupManager.instance.HasAtLeastOneGetterUpper()) return false;
+        if (!PowerupManager.instance.HasAtLeastOnePowerUpOfType(PowerupManager.PowerupType.GetterUpper)) return false;
         if (GameManager.instance.currentLevel <= 3) return false;
         if (spawnPoints.Count <= 3) return false;
         return true;

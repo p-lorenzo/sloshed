@@ -119,9 +119,9 @@ public class PowerupManager : MonoBehaviour
         activePowerups.Clear();
     }
 
-    public bool HasAtLeastOneGetterUpper()
+    public bool HasAtLeastOnePowerUpOfType(PowerupType powerupType)
     {
-        if (activePowerups.TryGetValue(PowerupType.GetterUpper, out var powerup)) return powerup > 0;
+        if (activePowerups.TryGetValue(powerupType, out var powerup)) return powerup > 0;
         return false;
     }
 }
