@@ -8,7 +8,7 @@ public class VacuumBot : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private Transform player;
-    [SerializeField] private float randomAngleRange = 60f;
+    [SerializeField] private float randomAngleRange = 15f;
     
     private Collider _lastCollider;
     private Rigidbody rb;
@@ -20,12 +20,12 @@ public class VacuumBot : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         if (player == null)
-            player = GameObject.FindWithTag("Player")?.transform;
+            player = GameObject.FindWithTag("PlayerController")?.transform;
     }
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + transform.up * (moveSpeed * Time.fixedDeltaTime));
+        rb.MovePosition(rb.position + transform.forward * (moveSpeed * Time.fixedDeltaTime));
     }
 
     private void OnTriggerEnter(Collider other)
@@ -47,14 +47,14 @@ public class VacuumBot : MonoBehaviour
         if (player == null) return;
         
         Vector3 toPlayer = (player.position - transform.position).normalized;
-        float angleToPlayer = Vector3.SignedAngle(transform.up, toPlayer, Vector3.forward); // Z-axis for 2D
+        float angleToPlayer = Vector3.SignedAngle(transform.forward, toPlayer, Vector3.up); // Z-axis for 2D
         float randomOffset = Random.Range(-randomAngleRange, randomAngleRange);
         float finalAngle = angleToPlayer + randomOffset;
 
-        transform.Rotate(0f, 0f, finalAngle);
+        transform.Rotate(0f, finalAngle, 0f);
 
         // Store direction after rotation for Gizmo
-        lastDesiredDirection = Quaternion.Euler(0f, 0f, finalAngle) * transform.up;
+        lastDesiredDirection = Quaternion.Euler(0f, finalAngle, 0f) * transform.forward;
     }
 
     private void OnDrawGizmos()
@@ -63,7 +63,7 @@ public class VacuumBot : MonoBehaviour
 
         // Bot's current forward direction
         Gizmos.color = Color.green;
-        Gizmos.DrawLine(transform.position, transform.position + transform.up * 1.5f);
+        Gizmos.DrawLine(transform.position, transform.position + transform.forward * 1.5f);
 
         // Last calculated "desired" direction
         Gizmos.color = Color.red;
