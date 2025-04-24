@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour
         levelCounter.text = currentLevel.ToString();        
         UpdateGetterUpperCounter();
         runtimeDungeon.Generator.LengthMultiplier = 1f + (currentLevel * 0.25f);
+        runtimeDungeon.Generator.DungeonFlow.BranchCount = new IntRange(1, Mathf.RoundToInt(1 + (currentLevel * 0.25f)));
         runtimeDungeon.Generator.Generate();
     }
     
