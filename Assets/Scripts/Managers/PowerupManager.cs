@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class PowerupManager : MonoBehaviour
 {
-    public enum PowerupType {Flashlight, GetterUpper, Water, Dizzimeter};
+    public enum PowerupType {Flashlight, GetterUpper, Water, Dizzimeter, GuideLight};
 
+    [SerializeField] GuideLightSpawner guideLightSpawner;
+    
     private ParticleSystem pickupEffect;
 
     public static PowerupManager instance;
@@ -73,6 +75,12 @@ public class PowerupManager : MonoBehaviour
     {
         DrunkEffectController.instance.DizzimeterPowerup();
         AddPowerup(PowerupType.Dizzimeter);
+    }
+
+    public void GuideLightPowerup()
+    {
+        guideLightSpawner.isPowerupActive = true;
+        AddPowerup(PowerupType.GuideLight);
     }
 
     private void AddPowerup(PowerupType type)

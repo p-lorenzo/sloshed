@@ -1344,6 +1344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2516afa120047f3bb6f2d3a5702c115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  guideLightSpawner: {fileID: 1463081017}
 --- !u!4 &563079170
 Transform:
   m_ObjectHideFlags: 0
@@ -3717,10 +3718,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5913949458806742698, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1463081017}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
 --- !u!4 &1275685751 stripped
 Transform:
@@ -3732,7 +3730,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7149130971690745151, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
   m_PrefabInstance: {fileID: 1275685747}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1463081015}
+  m_GameObject: {fileID: 0}
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 25adeae5a2dae34419e6b562d516ab87, type: 3}
@@ -4488,24 +4486,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430177454}
   m_CullTransparentMesh: 1
---- !u!1 &1463081015 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5913949458806742698, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+--- !u!114 &1463081017 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3151012209968573707, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
   m_PrefabInstance: {fileID: 1275685747}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1463081017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1463081015}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c496c32344bf64479e5e4b32dedf9c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  guideLightPrefab: {fileID: 1071804643518410059, guid: 22e7d24fd9f045b4dbc894e3cba6b9ac, type: 3}
 --- !u!1 &1477348051
 GameObject:
   m_ObjectHideFlags: 0
