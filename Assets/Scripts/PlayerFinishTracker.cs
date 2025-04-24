@@ -11,38 +11,14 @@ public class PlayerFinishTracker : MonoBehaviour
 
     [Header("References")] 
     [SerializeField] private GameObject hud;
-    
-    [Header("Winscreen Elements")]
     [SerializeField] private GameObject winPanel;
     [SerializeField] private TextMeshProUGUI winText;
-    public bool win = false;
-    
-    [Header("Loosescreen Elements")]
     [SerializeField] private GameObject losePanel;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Finish"))
-        {
-            activeFinishTriggers.Add(other);
-            if (GameManager.instance.isFallen && !losePanel.activeSelf)
-            {
-                CheckWin();
-            }
-        }
-    }
+    private bool win = false;
+    private bool lost = false;
 
-    private void WinGame()
-    {
-        if (win) return;
-        winPanel.SetActive(true);
-        win = true;
-        int level = GameManager.instance.currentLevel;
-        string timesText = level == 1 ? "time" : "times";
-        winText.text = $"You made it to the Bed!\n{level} {timesText}!";
-        GameManager.instance.AddDepthOfField();
-    }
-    
+        
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Finish"))
@@ -51,35 +27,62 @@ public class PlayerFinishTracker : MonoBehaviour
         }
     }
     
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Finish"))
+        {
+            activeFinishTriggers.Add(other);
+            if (GameManager.instance.isFallen && !win && !lost)
+            {
+                WinGame();
+                GameManager.instance.puppetMaster.state = PuppetMaster.State.Dead;
+            }
+        }
+    }
+
+    private void WinGame()
+    {
+        if (win || lost) return;
+        winPanel.SetActive(true);
+        win = true;
+        int level = GameManager.instance.currentLevel;
+        string timesText = level == 1 ? "time" : "times";
+        winText.text = $"You made it to the Bed!\n{level} {timesText}!";
+        GameManager.instance.AddDepthOfField();
+        StopAllCoroutines();
+    }
+
+    private void LoseGame()
+    {
+        if (lost || win) return;
+        losePanel.SetActive(true);
+        lost = true;
+        GameManager.instance.AddDepthOfField();
+        StopAllCoroutines();
+    }
+    
     public void EndGame()
     {
+        if (win || lost) return;
         hud.SetActive(false);
-        if (activeFinishTriggers.Count > 0 || win)
+        if (activeFinishTriggers.Count > 0)
         {
             WinGame();
             return;
         }        
-        GameManager.instance.AddDepthOfField();
-        losePanel.SetActive(true);
+        LoseGame();
     }
 
-    public void CheckWin()
+    public bool CheckWin()
     {
-        if (activeFinishTriggers.Count > 0 || win && !losePanel.activeSelf)
+        if (win || lost) return false;
+        if (activeFinishTriggers.Count > 0)
         {
-            GameManager.instance.behaviourPuppet.canGetUp = false;
-            GameManager.instance.finished = true;
-            CursorManager.instance.UnlockCursor();
+            WinGame();
             GameManager.instance.puppetMaster.state = PuppetMaster.State.Dead;
-            hud.SetActive(false);
-            StartCoroutine(WinGameAfterDelay());
-            return;
+            return true;
         }
-    }
-    
-    private IEnumerator WinGameAfterDelay()
-    {
-        yield return new WaitForSeconds(3f);
-        WinGame();
+
+        return false;
     }
 }

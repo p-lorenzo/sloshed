@@ -7,6 +7,6 @@ public class ForceFall : MonoBehaviour
     {
         if (!other.gameObject.CompareTag("Player")) return;
 
-        GameManager.instance.EndGame();
+        GameManager.instance.FinishRound();
     }
 }

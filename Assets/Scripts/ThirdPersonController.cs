@@ -120,14 +120,7 @@ public class ThirdPersonController : MonoBehaviour
         animator.SetBool(Diving, true);
         StartCoroutine(UnpinAfterJumping());
     }
-
-    public void UnDive()
-    {
-        if (!hasJumped) return;
-        hasJumped = false;
-        animator.SetBool(Diving, false);
-    }
-
+    
     private IEnumerator UnpinAfterJumping()
     {
         yield return new WaitForSeconds(0.6f);
@@ -136,7 +129,13 @@ public class ThirdPersonController : MonoBehaviour
         LaunchPuppet(diveDir, launchForce);
     }
 
-    // 🎮 New Input System handlers (connect via PlayerInput)
+    public void UnDive()
+    {
+        if (!hasJumped) return;
+        hasJumped = false;
+        animator.SetBool(Diving, false);
+    }
+    
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();

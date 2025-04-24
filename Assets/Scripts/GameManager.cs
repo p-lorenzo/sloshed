@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        StopAllCoroutines();
         finished = false;
         started = false;
         RebindReferences();
@@ -121,16 +122,30 @@ public class GameManager : MonoBehaviour
         Debug.Log("Fallen");
         if (getUpsCount > 0)
         {
-            _playerFinishTracker.CheckWin();
+            if (_playerFinishTracker.CheckWin())
+            {
+                
+            }
             thirdPersonController.UnDive();
             return;
         }
         Debug.Log("Fallen for good");
         behaviourPuppet.canGetUp = false;
+        FinishRound();
+    }
+
+    public void FinishRound()
+    {
         finished = true;
         CursorManager.instance.UnlockCursor();
         puppetMaster.state = PuppetMaster.State.Dead;
         StartCoroutine(EndAfterDelay());
+    }
+    
+    private IEnumerator EndAfterDelay()
+    {
+        yield return new WaitForSeconds(3f);
+        _playerFinishTracker.EndGame();
     }
 
     public void GetUp()
@@ -140,12 +155,6 @@ public class GameManager : MonoBehaviour
         UpdateGetterUpperCounter();
         isFallen = false;
         thirdPersonController.UnDive();
-    }
-    
-    private IEnumerator EndAfterDelay()
-    {
-        yield return new WaitForSeconds(3f);
-        _playerFinishTracker.EndGame();
     }
 
     public void AddDepthOfField()
@@ -186,15 +195,5 @@ public class GameManager : MonoBehaviour
         }
         
         getterUpperCounter.text = $"Getter uppers: {getUpsCount.ToString()}";
-    }
-
-    public void EndGame()
-    {
-        Debug.Log("Fallen for good");
-        behaviourPuppet.canGetUp = false;
-        finished = true;
-        CursorManager.instance.UnlockCursor();
-        puppetMaster.state = PuppetMaster.State.Dead;
-        _playerFinishTracker.EndGame();
     }
 }
