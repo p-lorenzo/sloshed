@@ -8,6 +8,7 @@ TagManager:
   - Hunter
   - EnemySpawner
   - PlayerHead
+  - PlayerController
   layers:
   - Default
   - TransparentFX

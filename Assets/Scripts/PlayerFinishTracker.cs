@@ -65,7 +65,7 @@ public class PlayerFinishTracker : MonoBehaviour
 
     public void CheckWin()
     {
-        if (activeFinishTriggers.Count > 0 || win)
+        if (activeFinishTriggers.Count > 0 || win && !losePanel.activeSelf)
         {
             GameManager.instance.behaviourPuppet.canGetUp = false;
             GameManager.instance.finished = true;
