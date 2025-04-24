@@ -15,7 +15,7 @@ public class HooverSpawner : MonoBehaviour
     [SerializeField] private Transform player;
 
     private List<GameObject> spawnPoints = new();
-    public bool enemyHasSpawned;
+    public bool enemyHasTriedSpawning;
     
     private void Awake()
     {
@@ -34,7 +34,8 @@ public class HooverSpawner : MonoBehaviour
     void Update()
     {
         if (!CheckSpawnConditions()) return;
-        if (enemyHasSpawned) return;
+        if (enemyHasTriedSpawning) return;
+        enemyHasTriedSpawning = true;
         if (RandomSpawn()) SpawnHoover(OrderSpawnPoints().LastOrDefault());
     }
 
@@ -60,7 +61,6 @@ public class HooverSpawner : MonoBehaviour
     {
         if (!spawnPoint) return;
         Instantiate(hooverPrefab, spawnPoint.transform.position, Quaternion.identity);
-        enemyHasSpawned = true;
     }
     
     
