@@ -43,6 +43,8 @@ public class PlayerFinishTracker : MonoBehaviour
     private void WinGame()
     {
         if (win || lost) return;
+        GameManager.instance.puppetMaster.state = PuppetMaster.State.Dead;
+        GameManager.instance.finished = true;
         winPanel.SetActive(true);
         win = true;
         int level = GameManager.instance.currentLevel;
@@ -55,6 +57,8 @@ public class PlayerFinishTracker : MonoBehaviour
     private void LoseGame()
     {
         if (lost || win) return;
+        GameManager.instance.puppetMaster.state = PuppetMaster.State.Dead;
+        GameManager.instance.finished = true;
         losePanel.SetActive(true);
         lost = true;
         GameManager.instance.AddDepthOfField();
