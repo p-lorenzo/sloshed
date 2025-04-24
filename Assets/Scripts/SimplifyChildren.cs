@@ -7,6 +7,7 @@ using System.Linq;
 [RequireComponent(typeof(MeshCollider))]
 public class SimplifyChildren : MonoBehaviour
 {
+    private float quality = 1f;
     void Start()
     {
         MeshFilter[] meshFilters = GetComponentsInChildren<MeshFilter>()
@@ -21,7 +22,7 @@ public class SimplifyChildren : MonoBehaviour
         {
             combine[i].mesh = meshFilters[i].sharedMesh;
             combine[i].transform = transform.worldToLocalMatrix * meshFilters[i].transform.localToWorldMatrix;
-            meshFilters[i].gameObject.SetActive(false);
+            Destroy(meshFilters[i].gameObject);
 
             i++;
         }
@@ -32,5 +33,23 @@ public class SimplifyChildren : MonoBehaviour
         transform.GetComponent<MeshCollider>().sharedMesh = mesh;
         transform.GetComponent<MeshRenderer>().materials = childMeshRenderers[0].materials;
         transform.gameObject.SetActive(true);
+        SimplifyMeshFilter(transform.GetComponent<MeshFilter>());
+    }
+    
+    private void SimplifyMeshFilter(MeshFilter meshFilter)
+    {
+        Mesh sourceMesh = meshFilter.sharedMesh;
+        if (sourceMesh == null) // verify that the mesh filter actually has a mesh
+            return;
+
+        // Create our mesh simplifier and setup our entire mesh in it
+        var meshSimplifier = new UnityMeshSimplifier.MeshSimplifier();
+        meshSimplifier.Initialize(sourceMesh);
+
+        // This is where the magic happens, lets simplify!
+        meshSimplifier.SimplifyMesh(quality);
+
+        // Create our final mesh and apply it back to our mesh filter
+        meshFilter.sharedMesh = meshSimplifier.ToMesh();
     }
 }
