@@ -32,7 +32,7 @@ public class HunterBehavior : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("PlayerController").transform;
         animator = GetComponent<Animator>();
         animator.applyRootMotion = false;
         agent = GetComponent<NavMeshAgent>();
