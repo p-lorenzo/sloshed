@@ -49,9 +49,6 @@ public class DrunkEffectController : MonoBehaviour
     
     [Header("Dizzimeter powerup")]
     [SerializeField] bool dizzimeterPowerup = false;
-    
-    [Header("Flashlight Powerup")]
-    [SerializeField] public bool flashlightActive;
 
     private void Awake()
     {
@@ -203,12 +200,6 @@ public class DrunkEffectController : MonoBehaviour
         drunkGainRate = 0.03f;
         drunkDecayRate = 0.1f;
         dizzimeterPowerup = false;
-        flashlightActive = false;
-    }
-    
-    public void FlashlightPowerup()
-    {
-        flashlightActive = true;
     }
 
     public void DizzimeterPowerup()

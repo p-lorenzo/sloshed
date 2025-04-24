@@ -5,12 +5,11 @@ public class FlashlightManager : MonoBehaviour
     [SerializeField] private GameObject flashlight;
     void Start()
     {
-        flashlight.SetActive(false);
+        flashlight.SetActive(PowerupManager.instance.HasAtLeastOnePowerUpOfType(PowerupManager.PowerupType.Flashlight));
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ActivateFlashlight()
     {
-        flashlight.SetActive(DrunkEffectController.instance.flashlightActive);
+        flashlight.SetActive(true);
     }
 }

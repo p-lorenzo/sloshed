@@ -25,7 +25,7 @@ public class PlayerFinishTracker : MonoBehaviour
         if (other.CompareTag("Finish"))
         {
             activeFinishTriggers.Add(other);
-            if (GameManager.instance.isFallen)
+            if (GameManager.instance.isFallen && !losePanel.activeSelf)
             {
                 CheckWin();
             }

@@ -3397,6 +3397,54 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dd3d6ec3cc432643806506adc343417, type: 3}
+--- !u!1 &1232807332
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1232807334}
+  - component: {fileID: 1232807333}
+  m_Layer: 0
+  m_Name: HooverSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1232807333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232807332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5236391e8b0f45aab9f85f104fcee852, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runtimeDungeon: {fileID: 286003757}
+  hooverPrefab: {fileID: 1204399040171649096, guid: db6118a4db8aba94fbfeb08b9a64b4d4, type: 3}
+  player: {fileID: 411051100}
+  enemyHasSpawned: 0
+--- !u!4 &1232807334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232807332}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1234781072 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6567495367519417321, guid: bec8d211216c8774e93920dc04e7a1cc, type: 3}
@@ -3642,9 +3690,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5913949458806742698, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
-      propertyPath: m_TagString
-      value: PlayerController
+    - target: {fileID: 723220468233523137, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6320376429870600677, guid: e667b0431e6739e4f9c4a837d4712c98, type: 3}
       propertyPath: hud
@@ -4580,7 +4628,6 @@ MonoBehaviour:
   drunkDecayRate: 0.1
   driftMagnitude: 1.5
   dizzimeterPowerup: 0
-  flashlightActive: 0
 --- !u!4 &1480486971
 Transform:
   m_ObjectHideFlags: 0
@@ -7617,3 +7664,4 @@ SceneRoots:
   - {fileID: 2118252682}
   - {fileID: 563079170}
   - {fileID: 1553137630}
+  - {fileID: 1232807334}

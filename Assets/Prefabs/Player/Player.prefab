@@ -3885,7 +3885,7 @@ GameObject:
   - component: {fileID: 3151012209968573707}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Player
+  m_TagString: PlayerController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4178,6 +4178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c496c32344bf64479e5e4b32dedf9c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPowerupActive: 0
   guideLightPrefab: {fileID: 1071804643518410059, guid: 22e7d24fd9f045b4dbc894e3cba6b9ac, type: 3}
 --- !u!1 &6275049859208572037
 GameObject:
@@ -5636,6 +5637,10 @@ PrefabInstance:
     - target: {fileID: 6724826694222100079, guid: ab889d9db54658a4e91d2d94b29f299a, type: 3}
       propertyPath: m_Name
       value: PocketLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 6724826694222100079, guid: ab889d9db54658a4e91d2d94b29f299a, type: 3}
+      propertyPath: m_TagString
+      value: Flashlight
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

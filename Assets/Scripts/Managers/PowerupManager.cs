@@ -8,6 +8,7 @@ public class PowerupManager : MonoBehaviour
     public enum PowerupType {Flashlight, GetterUpper, Water, Dizzimeter, GuideLight};
 
     private GuideLightSpawner guideLightSpawner;
+    private FlashlightManager flashlight;
     
     private ParticleSystem pickupEffect;
 
@@ -47,11 +48,12 @@ public class PowerupManager : MonoBehaviour
     {
         pickupEffect = GameObject.Find("PowerupEffect").GetComponent<ParticleSystem>();
         guideLightSpawner = GameObject.FindWithTag("PlayerController").GetComponent<GuideLightSpawner>();
+        flashlight = GameObject.FindWithTag("Flashlight").GetComponent<FlashlightManager>();
     }
 
     public void FlashlightPowerup()
     {
-        DrunkEffectController.instance.FlashlightPowerup();
+        flashlight.ActivateFlashlight();
         AddPowerup(PowerupType.Flashlight);
     }
 
