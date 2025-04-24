@@ -35,9 +35,7 @@ public class GameManager : MonoBehaviour
     [Header("Progression")] 
     public int currentLevel = 0;
 
-    [Header("Get ups")] 
-    [SerializeField] public int getUpsCount = 0;
-    [SerializeField] public bool isFallen = false;
+    public bool isFallen = false;
 
     private void Awake()
     {
@@ -50,6 +48,11 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        LoadState();
     }
     
     private void OnEnable()
@@ -73,6 +76,11 @@ public class GameManager : MonoBehaviour
         runtimeDungeon.Generator.LengthMultiplier = 1f + (currentLevel * 0.25f);
         runtimeDungeon.Generator.DungeonFlow.BranchCount = new IntRange(1, Mathf.RoundToInt(1 + (currentLevel * 0.25f)));
         runtimeDungeon.Generator.Generate();
+    }
+
+    private void LoadState()
+    {
+        Debug.Log("Loading State");
     }
     
     private void RebindReferences()
@@ -120,7 +128,7 @@ public class GameManager : MonoBehaviour
         if (isFallen) return;
         isFallen = true;
         Debug.Log("Fallen");
-        if (getUpsCount > 0)
+        if (PowerupManager.instance.HowManyPowerupsOfType(PowerupManager.PowerupType.GetterUpper) > 0)
         {
             if (_playerFinishTracker.CheckWin())
             {
@@ -151,7 +159,7 @@ public class GameManager : MonoBehaviour
     public void GetUp()
     {
         PowerupManager.instance.UseGetterUpperPowerup();
-        getUpsCount -= 1;
+        PowerupManager.instance.UsePowerup(PowerupManager.PowerupType.GetterUpper);
         UpdateGetterUpperCounter();
         isFallen = false;
         thirdPersonController.UnDive();
@@ -176,24 +184,23 @@ public class GameManager : MonoBehaviour
     public void Retry()
     {
         currentLevel = 1;
-        getUpsCount = 0;
         isFallen = false;
     }
 
     public void AddGetterUpper()
     {
-        getUpsCount += 1;
         UpdateGetterUpperCounter();
     }
 
     private void UpdateGetterUpperCounter()
     {
-        if (getUpsCount == 0)
+        var getterUppers = PowerupManager.instance.HowManyPowerupsOfType(PowerupManager.PowerupType.GetterUpper);
+        if (getterUppers == 0)
         {
             getterUpperCounter.text = "";
             return;
         }
         
-        getterUpperCounter.text = $"Getter uppers: {getUpsCount.ToString()}";
+        getterUpperCounter.text = $"Getter uppers: {getterUppers}";
     }
 }

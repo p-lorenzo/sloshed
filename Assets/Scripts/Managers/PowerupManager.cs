@@ -59,8 +59,8 @@ public class PowerupManager : MonoBehaviour
 
     public void GetterUpperPowerup()
     {
-        GameManager.instance.AddGetterUpper();
         AddPowerup(PowerupType.GetterUpper);
+        GameManager.instance.AddGetterUpper();
     }
 
     public void UseGetterUpperPowerup()
@@ -100,7 +100,7 @@ public class PowerupManager : MonoBehaviour
         }
     }
     
-    private void UsePowerup(PowerupType type)
+    public void UsePowerup(PowerupType type)
     {
         if (activePowerups.ContainsKey(type))
         {
@@ -126,5 +126,10 @@ public class PowerupManager : MonoBehaviour
     {
         if (activePowerups.TryGetValue(powerupType, out var powerup)) return powerup > 0;
         return false;
+    }
+
+    public int HowManyPowerupsOfType(PowerupType powerupType)
+    {
+        return activePowerups.GetValueOrDefault(powerupType, 0);
     }
 }
