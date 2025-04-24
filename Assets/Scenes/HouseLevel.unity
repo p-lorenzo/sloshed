@@ -1046,7 +1046,6 @@ MonoBehaviour:
   finished: 0
   started: 0
   currentLevel: 1
-  getUpsCount: 0
   isFallen: 0
 --- !u!4 &411051100 stripped
 Transform:
@@ -3446,7 +3445,7 @@ MonoBehaviour:
   runtimeDungeon: {fileID: 286003757}
   hooverPrefab: {fileID: 1204399040171649096, guid: db6118a4db8aba94fbfeb08b9a64b4d4, type: 3}
   player: {fileID: 411051100}
-  enemyHasSpawned: 0
+  enemyHasTriedSpawning: 0
 --- !u!4 &1232807334
 Transform:
   m_ObjectHideFlags: 0
@@ -3621,7 +3620,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1270028554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3639,6 +3638,7 @@ MonoBehaviour:
   camera: {fileID: 927993929}
   rawImage: {fileID: 193849393}
   pixelatedTexture: {fileID: 8400000, guid: 3d5c2c9fd93ed7b4aa21d421de3d495d, type: 2}
+  pixelatedToggle: {fileID: 1744558939}
 --- !u!114 &1270028555
 MonoBehaviour:
   m_ObjectHideFlags: 0

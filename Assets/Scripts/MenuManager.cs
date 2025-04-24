@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
@@ -7,13 +8,21 @@ public class MenuManager : MonoBehaviour
     
     public bool isPaused = false;
     [SerializeField] private GameObject hud;
+    
+    [Header("Stuff for pixelated setting")]
     [SerializeField] private Camera camera;
     [SerializeField] private GameObject rawImage;
     [SerializeField] private RenderTexture pixelatedTexture;
+    [SerializeField] private Toggle pixelatedToggle;
+    private bool pixelated = true;
     
     public void Awake()
     {
         if (instance == null) instance = this;
+        pixelated = PlayerPrefs.GetInt("pixelated") == 1;
+        pixelatedToggle.isOn = pixelated;
+        if (!pixelated) RemovePixelatedEffect();
+        gameObject.SetActive(false);
     }
 
     public void TogglePause()
@@ -53,12 +62,16 @@ public class MenuManager : MonoBehaviour
     {
         camera.targetTexture = null;
         rawImage.SetActive(false);
+        pixelated = false;
+        PlayerPrefs.SetInt("pixelated", pixelated ? 1 : 0);
     }
 
     public void EnablePixelatedEffect()
     {
         rawImage.SetActive(true);
         camera.targetTexture = pixelatedTexture;
+        pixelated = true;
+        PlayerPrefs.SetInt("pixelated", pixelated ? 1 : 0);
     }
 
     public void TogglePixelatedEffect(bool state)
