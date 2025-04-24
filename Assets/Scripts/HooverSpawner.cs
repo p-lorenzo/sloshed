@@ -36,7 +36,7 @@ public class HooverSpawner : MonoBehaviour
         if (!CheckSpawnConditions()) return;
         if (enemyHasTriedSpawning) return;
         enemyHasTriedSpawning = true;
-        if (RandomSpawn()) SpawnHoover(OrderSpawnPoints().LastOrDefault());
+        if (RandomSpawn()) SpawnHoover(OrderSpawnPoints().FirstOrDefault());
     }
 
     private bool RandomSpawn()
