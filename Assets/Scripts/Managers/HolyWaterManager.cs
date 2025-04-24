@@ -10,6 +10,7 @@ public class HolyWaterManager : MonoBehaviour
     
     private SphereCollider sphereCollider;
     private ParticleSystem holyWaterParticle;
+    private AudioSource audioSource;
     private bool isEnabled;
     private float elapsedTime;
     
@@ -19,6 +20,8 @@ public class HolyWaterManager : MonoBehaviour
             sphereCollider = gameObject.GetComponent<SphereCollider>();
         if (holyWaterParticle == null)
             holyWaterParticle = gameObject.GetComponentInChildren<ParticleSystem>();
+        if (audioSource == null)
+            audioSource = gameObject.GetComponent<AudioSource>();
         ResetGameObject();
     }
 
@@ -44,6 +47,7 @@ public class HolyWaterManager : MonoBehaviour
     public void OnEnable()
     {
         holyWaterParticle.Play();
+        audioSource.Play();
         sphereCollider.radius = startingSize;
         isEnabled = true;
     }
