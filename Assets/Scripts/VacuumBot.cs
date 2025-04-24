@@ -48,8 +48,11 @@ public class VacuumBot : MonoBehaviour
         
         Vector3 toPlayer = (player.position - transform.position).normalized;
         float angleToPlayer = Vector3.SignedAngle(transform.forward, toPlayer, Vector3.up); // Z-axis for 2D
-        float randomOffset = Random.Range(-randomAngleRange, randomAngleRange);
+        float randomOffset = Vector3.Distance(transform.position, player.position) > 2f || rb.linearVelocity.magnitude < 0.2f ? 
+            Random.Range(-360f,360f) : 
+            Random.Range(-randomAngleRange, randomAngleRange);
         float finalAngle = angleToPlayer + randomOffset;
+        if (GameManager.instance.isFallen) finalAngle = -finalAngle;
 
         transform.Rotate(0f, finalAngle, 0f);
 
