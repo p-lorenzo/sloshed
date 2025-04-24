@@ -52,7 +52,6 @@ public class ThirdPersonController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
-        CheckPowerups();
     }
 
     void Update()
@@ -89,7 +88,7 @@ public class ThirdPersonController : MonoBehaviour
         animator.SetFloat(InputMovement, speedParam * moveSpeedModifier, 0.1f, Time.deltaTime);
     }
 
-    private void CheckPowerups()
+    public void CheckPowerups()
     {
         if (PowerupManager.instance.HasAtLeastOnePowerUpOfType(PowerupManager.PowerupType.StickyFeet)) SetStickyFeet();
         SetSpeedDemon();

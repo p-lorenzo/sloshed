@@ -74,6 +74,7 @@ public class GameManager : MonoBehaviour
         SaveGame();
         UpdateGetterUpperCounter();
         UpdateHolyWaterCounter();
+        thirdPersonController.CheckPowerups();
 
         switch (currentLevel)
         {
