@@ -20,7 +20,7 @@ public class SimplifyChildren : MonoBehaviour
         while (i < meshFilters.Length)
         {
             combine[i].mesh = meshFilters[i].sharedMesh;
-            combine[i].transform = meshFilters[i].transform.localToWorldMatrix;
+            combine[i].transform = transform.worldToLocalMatrix * meshFilters[i].transform.localToWorldMatrix;
             meshFilters[i].gameObject.SetActive(false);
 
             i++;
