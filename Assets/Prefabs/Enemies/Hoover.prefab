@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6593809388763690549}
   - component: {fileID: 7641734938809443405}
   - component: {fileID: 6003434458476176117}
-  - component: {fileID: 439793293104386154}
   m_Layer: 3
   m_Name: VisualAndTrip
   m_TagString: Untagged
@@ -111,21 +110,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5128174586724928902, guid: 7069a5975f7b54041b34fd671f5332f1, type: 3}
---- !u!114 &439793293104386154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 362683985237309753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f42e5db23ea71534b93b4197e04cb2eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  behaviourPuppet: {fileID: 0}
-  legPinDecreaseRate: 0.02
-  minLegPinWeight: 0
 --- !u!1 &1204399040171649096
 GameObject:
   m_ObjectHideFlags: 0

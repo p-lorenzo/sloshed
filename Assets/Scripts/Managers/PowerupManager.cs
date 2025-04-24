@@ -5,16 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class PowerupManager : MonoBehaviour
 {
-    public enum PowerupType {Flashlight, GetterUpper, Water, Dizzimeter, GuideLight};
+    public enum PowerupType {Flashlight, GetterUpper, Water, Dizzimeter, GuideLight, StickyFeet, HolyCross};
 
     private GuideLightSpawner guideLightSpawner;
+    private ThirdPersonController thirdPersonController;
     private FlashlightManager flashlight;
-    
     private ParticleSystem pickupEffect;
-
     public static PowerupManager instance;
-
-    public Dictionary<PowerupType, int> activePowerups = new Dictionary<PowerupType, int>();
+    private Dictionary<PowerupType, int> activePowerups = new();
     
     private void Awake()
     {
@@ -28,7 +26,6 @@ public class PowerupManager : MonoBehaviour
             Destroy(gameObject);
         }
         LoadPowerups();
-
     }
     
     private void LoadPowerups()
@@ -68,9 +65,11 @@ public class PowerupManager : MonoBehaviour
     
     private void RebindReferences()
     {
+        var playerController = GameObject.FindWithTag("PlayerController");
         pickupEffect = GameObject.Find("PowerupEffect").GetComponent<ParticleSystem>();
-        guideLightSpawner = GameObject.FindWithTag("PlayerController").GetComponent<GuideLightSpawner>();
+        guideLightSpawner = playerController.GetComponent<GuideLightSpawner>();
         flashlight = GameObject.FindWithTag("Flashlight").GetComponent<FlashlightManager>();
+        thirdPersonController = playerController.GetComponent<ThirdPersonController>();
     }
 
     public void FlashlightPowerup()
@@ -106,6 +105,12 @@ public class PowerupManager : MonoBehaviour
     {
         guideLightSpawner.isPowerupActive = true;
         AddPowerup(PowerupType.GuideLight);
+    }
+
+    public void StickyFeetPowerup()
+    {
+        thirdPersonController.SetStickyFeet();
+        AddPowerup(PowerupType.StickyFeet);
     }
 
     private void AddPowerup(PowerupType type)

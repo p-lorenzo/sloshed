@@ -15,12 +15,12 @@ MonoBehaviour:
   globalPropGroupID_obsolete: 
   globalPropRanges_obsolete: []
   Length:
-    Min: 2
-    Max: 3
+    Min: 4
+    Max: 7
   BranchMode: 1
   BranchCount:
     Min: 1
-    Max: 1
+    Max: 3
   GlobalProps: []
   KeyManager: {fileID: 0}
   DoorwayConnectionChance: 0

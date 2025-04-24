@@ -3930,8 +3930,8 @@ MonoBehaviour:
   gravity: -9.81
   launchForce: 8
   InputOffset: {x: 0, y: 0, z: 0}
-  LandingAudioClip: {fileID: 8300000, guid: ff697d3070687ce4583faa0561a145a2, type: 3}
-  FootstepAudioClips:
+  landingAudioClip: {fileID: 0}
+  footstepAudioClips:
   - {fileID: 8300000, guid: 366d177ef3e58d043b0aa3b3c2fc94b0, type: 3}
   - {fileID: 8300000, guid: 793f046683907be489e7eafe76d96341, type: 3}
   - {fileID: 8300000, guid: ce67369983962c144b4b56fa8df74e9b, type: 3}
@@ -3943,7 +3943,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 91f2aaff94f1be64eb23de5a24e588bb, type: 3}
   - {fileID: 8300000, guid: f8c0003689a06614f96cbca71e678a13, type: 3}
   - {fileID: 8300000, guid: a272a0fc2c0bb5d47b00d7a5328ad43e, type: 3}
-  FootstepAudioVolume: 0.4
+  footstepAudioVolume: 0.5
+  stickyFeetAudioClips:
+  - {fileID: 8300000, guid: 6bac267a73872bf4dbbb15148691829e, type: 3}
+  - {fileID: 8300000, guid: 75b308a34602de34aa3ca4dfa7661479, type: 3}
+  - {fileID: 8300000, guid: 097e6a46921235c4faf5a0a0f6b0df8c, type: 3}
+  - {fileID: 8300000, guid: ae90358eabc63ef4fb9d042695d63b62, type: 3}
+  - {fileID: 8300000, guid: 6f9aa01bdf52b3d47807118a14e829ff, type: 3}
+  - {fileID: 8300000, guid: da7ef09ed6ca897419aaedc49d8293b1, type: 3}
+  stickyFeetAudioVolume: 0.05
 --- !u!95 &8242605174557178696
 Animator:
   serializedVersion: 7
@@ -4006,7 +4014,6 @@ MonoBehaviour:
   hud: {fileID: 0}
   winPanel: {fileID: 0}
   winText: {fileID: 0}
-  win: 0
   losePanel: {fileID: 0}
 --- !u!114 &9017968559273691758
 MonoBehaviour:
@@ -5633,6 +5640,10 @@ PrefabInstance:
     - target: {fileID: 5995227293379531509, guid: ab889d9db54658a4e91d2d94b29f299a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 174.098
+      objectReference: {fileID: 0}
+    - target: {fileID: 6618235032618614512, guid: ab889d9db54658a4e91d2d94b29f299a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6724826694222100079, guid: ab889d9db54658a4e91d2d94b29f299a, type: 3}
       propertyPath: m_Name

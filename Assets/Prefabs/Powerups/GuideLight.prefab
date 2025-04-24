@@ -230,7 +230,7 @@ MonoBehaviour:
   bobbingFrequency: 1
   visualObject: {fileID: 912207200399813999}
   pickupSound: {fileID: 8300000, guid: 7fc2007137b0c1f45ab2e062dd6c240d, type: 3}
-  volume: 1
+  volume: 0.5
   pickupName: Guide Light
   pickupDescription: Let it guide you
 --- !u!1001 &8209684972586903736

@@ -1,7 +1,9 @@
 using System.Collections;
+using RootMotion;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using RootMotion.Dynamics;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(CharacterController))]
@@ -37,14 +39,17 @@ public class ThirdPersonController : MonoBehaviour
     private bool isRunning = false;
     
     [Header("Sounds")]
-    [SerializeField] private AudioClip LandingAudioClip;
-    [SerializeField] private AudioClip[] FootstepAudioClips;
-    [Range(0, 1)] [SerializeField] private float FootstepAudioVolume = 0.5f;
+    [SerializeField] private AudioClip landingAudioClip;
+    [SerializeField] private AudioClip[] footstepAudioClips;
+    [Range(0, 1)] [SerializeField] private float footstepAudioVolume = 0.5f;
+    [SerializeField] private AudioClip[] stickyFeetAudioClips;
+    [Range(0,1)] [SerializeField] private float stickyFeetAudioVolume = 0.2f;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
+        CheckPowerups();
     }
 
     void Update()
@@ -73,39 +78,55 @@ public class ThirdPersonController : MonoBehaviour
             IsMoving = false;
         }
 
-        if (IsMoving)
-        {
-            float targetSpeed = isRunning ? runSpeed : moveSpeed;
-            float speedParam = inputMagnitude * (targetSpeed / runSpeed);
-            animator.SetFloat(InputMovement, speedParam, 0.1f, Time.deltaTime);
-        }
+        if (!IsMoving) return;
+        
+        var targetSpeed = isRunning ? runSpeed : moveSpeed;
+        var speedParam = inputMagnitude * (targetSpeed / runSpeed);
+        
+        animator.SetFloat(InputMovement, speedParam * GetMoveSpeedModifier(), 0.1f, Time.deltaTime);
     }
 
-    void OnAnimatorMove()
+    private void CheckPowerups()
+    {
+        if (PowerupManager.instance.HasAtLeastOnePowerUpOfType(PowerupManager.PowerupType.StickyFeet)) SetStickyFeet();
+        //add others
+    }
+
+    private float GetMoveSpeedModifier()
+    {
+        var speedModifier = 1f;
+        if (PowerupManager.instance.HasAtLeastOnePowerUpOfType(PowerupManager.PowerupType.StickyFeet)) speedModifier *= .8f;
+        return speedModifier;
+    }
+
+    public void SetStickyFeet()
+    {
+        behaviourPuppet.collisionLayers = 0;
+    }
+
+    private void OnAnimatorMove()
     {
         if (!animator) return;
-        if (animator.applyRootMotion)
+        if (!animator.applyRootMotion) return;
+        
+        Vector3 rootMotion = animator.deltaPosition;
+        
+        rootMotion.y = 0f;
+
+        if (controller.isGrounded)
         {
-            Vector3 rootMotion = animator.deltaPosition;
-            rootMotion.y = 0f;
-
-            if (controller.isGrounded)
-            {
-                verticalVelocity.y = -1f;
-            }
-            else
-            {
-                verticalVelocity.y += gravity * Time.deltaTime;
-            }
-
-            Vector3 finalMotion = rootMotion + verticalVelocity * Time.deltaTime;
-            controller.Move(finalMotion);
+            verticalVelocity.y = -1f;
         }
+        else
+        {
+            verticalVelocity.y += gravity * Time.deltaTime;
+        }
+
+        Vector3 finalMotion = rootMotion + verticalVelocity * Time.deltaTime;
+        controller.Move(finalMotion);
     }
-    
 
-
-    public void LaunchPuppet(Vector3 direction, float force)
+    private void LaunchPuppet(Vector3 direction, float force)
     {
         foreach (var muscle in puppetMaster.muscles)
         {
@@ -174,9 +195,14 @@ public class ThirdPersonController : MonoBehaviour
     private void OnFootstep(AnimationEvent animationEvent)
     {
         if (!(animationEvent.animatorClipInfo.weight > 0.5f)) return;
-        if (FootstepAudioClips.Length <= 0) return;
+        if (footstepAudioClips.Length <= 0) return;
         
-        var index = Random.Range(0, FootstepAudioClips.Length);
-        SoundFXManager.instance.PlaySoundFxClip(FootstepAudioClips[index], transform, FootstepAudioVolume);
+        var index = Random.Range(0, footstepAudioClips.Length);
+        SoundFXManager.instance.PlaySoundFxClip(footstepAudioClips[index], transform, footstepAudioVolume);
+
+        if (!PowerupManager.instance.HasAtLeastOnePowerUpOfType(PowerupManager.PowerupType.StickyFeet)) return;
+        
+        var index2 = Random.Range(0, stickyFeetAudioClips.Length);
+        SoundFXManager.instance.PlaySoundFxClip(stickyFeetAudioClips[index2], transform, stickyFeetAudioVolume);
     }
 }
