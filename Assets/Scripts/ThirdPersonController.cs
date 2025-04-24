@@ -97,7 +97,7 @@ public class ThirdPersonController : MonoBehaviour
 
     public void SetMoveSpeedModifier()
     {
-        moveSpeedModifier *= (1f + .2f * speedDemonCount);
+        moveSpeedModifier = (1f + .2f * speedDemonCount);
         if (stickyFeet) moveSpeedModifier *= .8f;
     }
 
