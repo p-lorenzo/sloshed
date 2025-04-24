@@ -159,7 +159,6 @@ public class GameManager : MonoBehaviour
     public void GetUp()
     {
         PowerupManager.instance.UseGetterUpperPowerup();
-        PowerupManager.instance.UsePowerup(PowerupManager.PowerupType.GetterUpper);
         UpdateGetterUpperCounter();
         isFallen = false;
         thirdPersonController.UnDive();
