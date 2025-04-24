@@ -10,6 +10,7 @@ TagManager:
   - PlayerHead
   - PlayerController
   - Flashlight
+  - EvilBanisher
   layers:
   - Default
   - TransparentFX

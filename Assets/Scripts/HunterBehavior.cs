@@ -39,19 +39,28 @@ public class HunterBehavior : MonoBehaviour
         thirdPersonController = FindFirstObjectByType<ThirdPersonController>();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.gameObject.CompareTag("EvilBanisher")) return;
+        agent.isStopped = true;
+        dissolveDuration = 0.5f;
+        StartCoroutine(Dissolve());
+    }
+
     private void OnCollisionEnter(Collision other)
     {
         if (!other.gameObject.CompareTag("Player")) return;
         if (hasHitPlayer) return;
-        hasHitPlayer = true;
         SoundFXManager.instance.PlaySoundFxClip(playerHitSound, transform, playerHitVolume);
-        animator.SetBool(IsPunching, true);
         StartCoroutine(Dissolve());
         thirdPersonController.puppetMaster.state = PuppetMaster.State.Dead;
     }
 
     private IEnumerator Dissolve()
     {
+        hasHitPlayer = true;
+        animator.SetBool(IsPunching, true);
+        
         Transform meshTransform = transform.Find("casual_Male_K");
         if (!meshTransform)
         {

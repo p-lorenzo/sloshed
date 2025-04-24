@@ -9,6 +9,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,7 +22,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private RuntimeDungeon runtimeDungeon;
     [SerializeField] private TextMeshProUGUI levelCounter;
     [SerializeField] private TextMeshProUGUI getterUpperCounter;
+    [SerializeField] private TextMeshProUGUI holyWaterCounter;
     [SerializeField] private ThirdPersonController thirdPersonController;
+    [SerializeField] private HolyWaterManager holyWaterManager;
 
     [Header("Game Timer")] 
     public bool finished = false;
@@ -70,6 +73,7 @@ public class GameManager : MonoBehaviour
         levelCounter.text = currentLevel.ToString();
         SaveGame();
         UpdateGetterUpperCounter();
+        UpdateHolyWaterCounter();
 
         switch (currentLevel)
         {
@@ -137,6 +141,12 @@ public class GameManager : MonoBehaviour
         
         if (getterUpperCounter == null)
             getterUpperCounter = GameObject.Find("GetterUppers").GetComponent<TextMeshProUGUI>();
+        
+        if (holyWaterCounter == null)
+            holyWaterCounter = GameObject.Find("HolyWaters").GetComponent<TextMeshProUGUI>();
+
+        if (holyWaterManager == null)
+            holyWaterManager = GameObject.Find("HolyWaterGameObject").GetComponent<HolyWaterManager>();
     }
 
     public void Fallen()
@@ -180,6 +190,14 @@ public class GameManager : MonoBehaviour
         thirdPersonController.UnDive();
     }
 
+    public void UseHolyWater()
+    {
+        if (!PowerupManager.instance.HasAtLeastOnePowerUpOfType(PowerupManager.PowerupType.HolyWater)) return;
+        PowerupManager.instance.UseHolyWaterPowerup();
+        UpdateHolyWaterCounter();
+        holyWaterManager.OnEnable();
+    }
+    
     public void AddDepthOfField()
     {
         _depthOfField.active = true;
@@ -223,5 +241,22 @@ public class GameManager : MonoBehaviour
         }
         
         getterUpperCounter.text = $"Getter uppers: {getterUppers}";
+    }
+    
+    public void AddHolyWater()
+    {
+        UpdateHolyWaterCounter();
+    }
+
+    private void UpdateHolyWaterCounter()
+    {
+        var holyWaters = PowerupManager.instance.HowManyPowerupsOfType(PowerupManager.PowerupType.HolyWater);
+        if (holyWaters == 0)
+        {
+            holyWaterCounter.text = "";
+            return;
+        }
+        
+        holyWaterCounter.text = $"Holy water: {holyWaters}";
     }
 }

@@ -200,6 +200,14 @@ public class ThirdPersonController : MonoBehaviour
             Dive();
         }
     }
+
+    public void OnHolyWaterUse(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            GameManager.instance.UseHolyWater();
+        }
+    }
     
     private void OnFootstep(AnimationEvent animationEvent)
     {

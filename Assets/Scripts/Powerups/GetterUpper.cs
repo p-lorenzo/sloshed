@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class GetterUpper : Powerup
 {
-    override public void Pickup()
+    public override void Pickup()
     {
         PowerupManager.instance.GetterUpperPowerup();
         Destroy(gameObject);

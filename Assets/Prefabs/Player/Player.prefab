@@ -1616,6 +1616,7 @@ Transform:
   - {fileID: 5408383385867065466}
   - {fileID: 207877967366579140}
   - {fileID: 5927104752972962261}
+  - {fileID: 8418305297708699063}
   m_Father: {fileID: 6980197836163067232}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &6666654413132255710
@@ -4065,7 +4066,19 @@ MonoBehaviour:
     m_ActionId: 6c2ab1b8-8984-453a-af3d-a3c78ae1679a
     m_ActionName: 'Player/Attack[/XInputControllerWindows/buttonWest,/Mouse/leftButton,/Keyboard/enter]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7149130971690745151}
+        m_TargetAssemblyTypeName: ThirdPersonController, Assembly-CSharp
+        m_MethodName: OnHolyWaterUse
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 852140f2-7766-474d-8707-702459ba45f3
     m_ActionName: 'Player/Interact[/Keyboard/e,/XInputControllerWindows/buttonNorth]'
   - m_PersistentCalls:
@@ -5592,6 +5605,76 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6315672695823576869, guid: b21d155ec7ea5a349a0e36106f913148, type: 3}
   m_PrefabInstance: {fileID: 424614366525601520}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1444166976860135769
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8713112257175830773}
+    m_Modifications:
+    - target: {fileID: 257900297474263514, guid: 0f3b3cf4fabe4054b982b3bc40b2cccf, type: 3}
+      propertyPath: finalSize
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 257900297474263514, guid: 0f3b3cf4fabe4054b982b3bc40b2cccf, type: 3}
+      propertyPath: shieldDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5326105499302813207, guid: 0f3b3cf4fabe4054b982b3bc40b2cccf, type: 3}
+      propertyPath: m_Name
+      value: HolyWaterGameObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978717013819419886, guid: 0f3b3cf4fabe4054b982b3bc40b2cccf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978717013819419886, guid: 0f3b3cf4fabe4054b982b3bc40b2cccf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978717013819419886, guid: 0f3b3cf4fabe4054b982b3bc40b2cccf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978717013819419886, guid: 0f3b3cf4fabe4054b982b3bc40b2cccf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978717013819419886, guid: 0f3b3cf4fabe4054b982b3bc40b2cccf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978717013819419886, guid: 0f3b3cf4fabe4054b982b3bc40b2cccf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978717013819419886, guid: 0f3b3cf4fabe4054b982b3bc40b2cccf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978717013819419886, guid: 0f3b3cf4fabe4054b982b3bc40b2cccf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978717013819419886, guid: 0f3b3cf4fabe4054b982b3bc40b2cccf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978717013819419886, guid: 0f3b3cf4fabe4054b982b3bc40b2cccf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0f3b3cf4fabe4054b982b3bc40b2cccf, type: 3}
+--- !u!4 &8418305297708699063 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6978717013819419886, guid: 0f3b3cf4fabe4054b982b3bc40b2cccf, type: 3}
+  m_PrefabInstance: {fileID: 1444166976860135769}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5895727159592284465
 PrefabInstance:

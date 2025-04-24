@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PowerupManager : MonoBehaviour
 {
-    public enum PowerupType {Flashlight, GetterUpper, Water, Dizzimeter, GuideLight, StickyFeet, SpeedDemon, HolyCross};
+    public enum PowerupType {Flashlight, GetterUpper, Water, Dizzimeter, GuideLight, StickyFeet, SpeedDemon, HolyWater};
 
     private GuideLightSpawner guideLightSpawner;
     private ThirdPersonController thirdPersonController;
@@ -83,10 +83,21 @@ public class PowerupManager : MonoBehaviour
         AddPowerup(PowerupType.GetterUpper);
         GameManager.instance.AddGetterUpper();
     }
+    
+    public void HolyWaterPowerup()
+    {
+        AddPowerup(PowerupType.HolyWater);
+        GameManager.instance.AddHolyWater();
+    }
 
     public void UseGetterUpperPowerup()
     {
         UsePowerup(PowerupType.GetterUpper);
+    }
+
+    public void UseHolyWaterPowerup()
+    {
+        UsePowerup(PowerupType.HolyWater);
     }
 
     public void WaterPowerup()
@@ -136,7 +147,7 @@ public class PowerupManager : MonoBehaviour
         }
     }
     
-    public void UsePowerup(PowerupType type)
+    private void UsePowerup(PowerupType type)
     {
         if (activePowerups.ContainsKey(type))
         {
