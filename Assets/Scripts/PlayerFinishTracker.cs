@@ -35,7 +35,6 @@ public class PlayerFinishTracker : MonoBehaviour
             if (GameManager.instance.isFallen && !win && !lost)
             {
                 WinGame();
-                GameManager.instance.puppetMaster.state = PuppetMaster.State.Dead;
             }
         }
     }
@@ -44,6 +43,7 @@ public class PlayerFinishTracker : MonoBehaviour
     {
         if (win || lost) return;
         GameManager.instance.puppetMaster.state = PuppetMaster.State.Dead;
+        CursorManager.instance.UnlockCursor();
         GameManager.instance.finished = true;
         winPanel.SetActive(true);
         win = true;
@@ -58,6 +58,7 @@ public class PlayerFinishTracker : MonoBehaviour
     {
         if (lost || win) return;
         GameManager.instance.puppetMaster.state = PuppetMaster.State.Dead;
+        CursorManager.instance.UnlockCursor();
         GameManager.instance.finished = true;
         losePanel.SetActive(true);
         lost = true;
