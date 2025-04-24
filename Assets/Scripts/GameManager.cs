@@ -74,14 +74,13 @@ public class GameManager : MonoBehaviour
         switch (currentLevel)
         {
             case 1:
-                runtimeDungeon.Generator.DungeonFlow.Length = new IntRange(0, 0);
-                runtimeDungeon.Generator.DungeonFlow.BranchCount = new IntRange(0, 0);
+                runtimeDungeon.Generator.DungeonFlow.Length = new IntRange(3, 3);
+                runtimeDungeon.Generator.DungeonFlow.BranchCount = new IntRange(0, 1);
                 break;
             case > 1:
-                runtimeDungeon.Generator.LengthMultiplier = 1f + currentLevel * 0.25f;
-                var dungeonRange =  new IntRange(1, Mathf.Clamp(Mathf.RoundToInt(1 + currentLevel * 0.25f), 1, 3));
-                runtimeDungeon.Generator.DungeonFlow.Length = dungeonRange;
-                runtimeDungeon.Generator.DungeonFlow.BranchCount = dungeonRange;
+                var dungeonMax = Mathf.RoundToInt(3 + currentLevel * 0.25f);
+                runtimeDungeon.Generator.DungeonFlow.Length = new IntRange(dungeonMax, dungeonMax + 3);
+                runtimeDungeon.Generator.DungeonFlow.BranchCount = new IntRange(1, 3);
                 break;
         }
         
