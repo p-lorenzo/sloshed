@@ -1,21 +1,22 @@
 using System;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Serialization;
 
-public class TeddySoundPlayer : MonoBehaviour
+public class PlaysSoundOnTrigger : MonoBehaviour
 {
-    [SerializeField] private AudioSource teddySound;
+    [SerializeField] private AudioSource audioSource;
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Player")) return;
-        if (teddySound.isPlaying) return;
-        teddySound.Play();
+        if (audioSource.isPlaying) return;
+        audioSource.Play();
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (!other.CompareTag("Player")) return;
-        if (!teddySound.isPlaying) return;
-        teddySound.Stop();
+        if (!audioSource.isPlaying) return;
+        audioSource.Stop();
     }
 }

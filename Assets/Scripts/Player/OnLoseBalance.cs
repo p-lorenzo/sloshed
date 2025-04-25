@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class OnLooseBalance : MonoBehaviour
+public class OnLoseBalance : MonoBehaviour
 {
     public void Fallen()
     {

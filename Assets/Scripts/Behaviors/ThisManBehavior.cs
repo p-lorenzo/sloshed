@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class ThisMan : MonoBehaviour
+public class ThisManBehavior : MonoBehaviour
 {
     [SerializeField] private float spawnTimer;
     

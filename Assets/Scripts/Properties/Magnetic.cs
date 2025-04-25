@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MagneticBed : MonoBehaviour
+public class Magnetic : MonoBehaviour
 {
     [SerializeField] private float attractionForce = 3f;
     private void OnTriggerStay(Collider other)
