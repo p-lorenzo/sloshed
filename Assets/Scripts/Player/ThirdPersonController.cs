@@ -51,10 +51,9 @@ public class ThirdPersonController : MonoBehaviour
     [Range(0,1)] [SerializeField] private float stickyFeetAudioVolume = 0.2f;
     
     [Header("Item cooldown")]
-    private float elapsedTime = 0f;
-    private bool itemIsOnCooldown;
-    [SerializeField] private float itemUseCooldown = 3f;
-    //[SerializeField] private float guideLightCooldown = 10f; 
+    public float elapsedTime = 0f;
+    public bool itemIsOnCooldown;
+    [SerializeField] public float itemUseCooldown = 3f;
 
     void Start()
     {
@@ -228,11 +227,10 @@ public class ThirdPersonController : MonoBehaviour
     public void OnHolyWaterUse(InputAction.CallbackContext context)
     {
         if (itemIsOnCooldown) return;
-        if (context.started)
-        {
-            GameManager.instance.UseHolyWater();
-            itemIsOnCooldown = true;
-        }
+        if (!context.started) return;
+        if (!PowerupManager.instance.HasAtLeastOnePowerUpOfType(PowerupManager.PowerupType.HolyWater)) return;
+        GameManager.instance.UseHolyWater();
+        itemIsOnCooldown = true;
     }
     
     private void OnFootstep(AnimationEvent animationEvent)
