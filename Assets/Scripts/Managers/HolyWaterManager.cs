@@ -44,7 +44,7 @@ public class HolyWaterManager : MonoBehaviour
         if (elapsedTime >= shieldDuration) ResetGameObject();
     }
 
-    public void OnEnable()
+    public void OnItemUsed()
     {
         holyWaterParticle.Play();
         audioSource.Play();

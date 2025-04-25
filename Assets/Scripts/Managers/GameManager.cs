@@ -196,7 +196,7 @@ public class GameManager : MonoBehaviour
         if (!PowerupManager.instance.HasAtLeastOnePowerUpOfType(PowerupManager.PowerupType.HolyWater)) return;
         PowerupManager.instance.UseHolyWaterPowerup();
         UpdateHolyWaterCounter();
-        holyWaterManager.OnEnable();
+        holyWaterManager.OnItemUsed();
     }
     
     public void AddDepthOfField()
