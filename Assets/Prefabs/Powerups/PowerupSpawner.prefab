@@ -45,25 +45,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerups:
-  - powerupType: 3
-    powerupPrefab: {fileID: 4834748704090441111, guid: 1222c88dc172c7c40b0feda9865dc664, type: 3}
-    weight: 1
-    canSpawnOnlyOnce: 1
-  - powerupType: 2
-    powerupPrefab: {fileID: 4834748704090441111, guid: e24f672c1b2346d4686018a5ccc19fa6, type: 3}
-    weight: 1
+  - powerupType: 1
+    powerupPrefab: {fileID: 4834748704090441111, guid: 71f845092eba74143bd7a6b4c4afa7df, type: 3}
+    weight: 4
     canSpawnOnlyOnce: 0
   - powerupType: 0
     powerupPrefab: {fileID: 4834748704090441111, guid: 32c8a2902bb11ee4cb2f67ed9bafc101, type: 3}
-    weight: 1
+    weight: 4
     canSpawnOnlyOnce: 1
-  - powerupType: 1
-    powerupPrefab: {fileID: 4834748704090441111, guid: 71f845092eba74143bd7a6b4c4afa7df, type: 3}
-    weight: 2
+  - powerupType: 2
+    powerupPrefab: {fileID: 4834748704090441111, guid: e24f672c1b2346d4686018a5ccc19fa6, type: 3}
+    weight: 3
     canSpawnOnlyOnce: 0
+  - powerupType: 7
+    powerupPrefab: {fileID: 4834748704090441111, guid: f7f5035fe555df245aeb73e09cff2784, type: 3}
+    weight: 3
+    canSpawnOnlyOnce: 0
+  - powerupType: 3
+    powerupPrefab: {fileID: 4834748704090441111, guid: 1222c88dc172c7c40b0feda9865dc664, type: 3}
+    weight: 2
+    canSpawnOnlyOnce: 1
   - powerupType: 4
     powerupPrefab: {fileID: 4834748704090441111, guid: a28ce090a4169634fa07638224920804, type: 3}
-    weight: 1
+    weight: 2
     canSpawnOnlyOnce: 1
   - powerupType: 5
     powerupPrefab: {fileID: 4834748704090441111, guid: 6549727e4f84be9469c1e4067ae87c03, type: 3}
@@ -71,9 +75,5 @@ MonoBehaviour:
     canSpawnOnlyOnce: 1
   - powerupType: 6
     powerupPrefab: {fileID: 4834748704090441111, guid: 6549727e4f84be9469c1e4067ae87c03, type: 3}
-    weight: 1
-    canSpawnOnlyOnce: 0
-  - powerupType: 7
-    powerupPrefab: {fileID: 4834748704090441111, guid: f7f5035fe555df245aeb73e09cff2784, type: 3}
     weight: 1
     canSpawnOnlyOnce: 0
