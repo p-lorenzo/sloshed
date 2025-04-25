@@ -38,12 +38,12 @@ public class PowerupCounterManager : MonoBehaviour
     private void CountPowerups()
     {
         powerupCounter = GameObject.FindGameObjectsWithTag("Powerup").Length;
-        Debug.Log($"Found {powerupCounter} powerups");
         powerupCounterText.text = $"Powerup left: {powerupCounter}";
     }
 
     public void UpdateCounter()
     {
+        StartCoroutine(WaitSeconds(.5f));
         if (!isCounterActive) return;
         CountPowerups();
         powerupCounterText.text = $"Powerup left: {powerupCounter}";

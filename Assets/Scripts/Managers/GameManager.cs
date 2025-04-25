@@ -95,13 +95,11 @@ public class GameManager : MonoBehaviour
     private void SaveGame()
     {
         PlayerPrefs.SetInt("currentLevel", currentLevel);
-        Debug.Log($"Saved level: {PlayerPrefs.GetInt("currentLevel")}");
     }
 
     private void LoadSave()
     {
         currentLevel = PlayerPrefs.GetInt("currentLevel", 1);
-        Debug.Log($"Loaded level: {PlayerPrefs.GetInt("currentLevel")}");
     }
     
     private void RebindReferences()
@@ -154,7 +152,6 @@ public class GameManager : MonoBehaviour
     {
         if (isFallen) return;
         isFallen = true;
-        Debug.Log("Fallen");
         if (PowerupManager.instance.HowManyPowerupsOfType(PowerupManager.PowerupType.GetterUpper) > 0)
         {
             if (_playerFinishTracker.CheckWin())
@@ -164,7 +161,6 @@ public class GameManager : MonoBehaviour
             thirdPersonController.UnDive();
             return;
         }
-        Debug.Log("Fallen for good");
         behaviourPuppet.canGetUp = false;
         FinishRound();
     }

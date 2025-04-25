@@ -33,7 +33,6 @@ public class PowerupManager : MonoBehaviour
         foreach (PowerupType powerupType in System.Enum.GetValues(typeof(PowerupType)))
         {
             activePowerups.Add(powerupType, PlayerPrefs.GetInt(powerupType.ToString(), 0));
-            Debug.Log($"Load {powerupType}: {PlayerPrefs.GetInt(powerupType.ToString())}");
         }
     }
 
@@ -59,7 +58,6 @@ public class PowerupManager : MonoBehaviour
         {
             if (!activePowerups.ContainsKey(powerupType)) return;
             PlayerPrefs.SetInt(powerupType.ToString(), activePowerups[powerupType]);
-            Debug.Log($"Save {powerupType}: {PlayerPrefs.GetInt(powerupType.ToString())}");
         }
     }
     
