@@ -156,6 +156,92 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &2688100676955636504
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6377739338214241330}
+  - component: {fileID: 8771543625997869336}
+  - component: {fileID: 1006689230420014572}
+  m_Layer: 10
+  m_Name: acc_intelect_glasses
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6377739338214241330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2688100676955636504}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.8197416, y: -0, z: -0, w: 0.5727336}
+  m_LocalPosition: {x: -0.017, y: 0.128, z: -0.073}
+  m_LocalScale: {x: 3.2539, y: 3.2539, z: 3.2539}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2956989414722031017}
+  m_LocalEulerAnglesHint: {x: -110.118, y: 0, z: 0}
+--- !u!33 &8771543625997869336
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2688100676955636504}
+  m_Mesh: {fileID: -1009796000979665624, guid: e9603e7a3938b4e47abbb7121bcbae61, type: 3}
+--- !u!23 &1006689230420014572
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2688100676955636504}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: c2de9ee12d731e14e93392e0a8046454, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &4834748704090441111
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,9 +252,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2554456244367713454}
   - component: {fileID: 6268091302554478204}
-  - component: {fileID: -7681465364820426948}
+  - component: {fileID: 1746820828954600885}
   m_Layer: 10
-  m_Name: SpeedDemon
+  m_Name: PowerupCounter
   m_TagString: Powerup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -187,9 +273,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 855705773955902212}
   - {fileID: 5559474542172088431}
   - {fileID: 6000047580265713966}
+  - {fileID: 2956989414722031017}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &6268091302554478204
@@ -213,7 +299,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-7681465364820426948
+--- !u!114 &1746820828954600885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -222,100 +308,49 @@ MonoBehaviour:
   m_GameObject: {fileID: 4834748704090441111}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 266bafb44a104fde9f72b2b336cfbbcb, type: 3}
+  m_Script: {fileID: 11500000, guid: a7bc7c0885f04d318411914a2a497cc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: {x: 0, y: 90, z: 0}
   bobbingAmplitude: 0.25
   bobbingFrequency: 1
-  visualObject: {fileID: 48347118537290174}
+  visualObject: {fileID: 6894476298761034443}
   pickupSound: {fileID: 8300000, guid: 7fc2007137b0c1f45ab2e062dd6c240d, type: 3}
   volume: 0.5
-  pickupName: Speed Demon
-  pickupDescription: Gotta go fast
---- !u!1001 &276314064808392633
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 2554456244367713454}
-    m_Modifications:
-    - target: {fileID: 251754486812182023, guid: 39774a4652b15304f91fd6278ba48c73, type: 3}
-      propertyPath: m_Name
-      value: SM_Ampoule_With_Solution_01
-      objectReference: {fileID: 0}
-    - target: {fileID: 251754486812182023, guid: 39774a4652b15304f91fd6278ba48c73, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 591583382345702589, guid: 39774a4652b15304f91fd6278ba48c73, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.3976
-      objectReference: {fileID: 0}
-    - target: {fileID: 591583382345702589, guid: 39774a4652b15304f91fd6278ba48c73, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 6.3976
-      objectReference: {fileID: 0}
-    - target: {fileID: 591583382345702589, guid: 39774a4652b15304f91fd6278ba48c73, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 6.3976
-      objectReference: {fileID: 0}
-    - target: {fileID: 591583382345702589, guid: 39774a4652b15304f91fd6278ba48c73, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.116
-      objectReference: {fileID: 0}
-    - target: {fileID: 591583382345702589, guid: 39774a4652b15304f91fd6278ba48c73, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.224
-      objectReference: {fileID: 0}
-    - target: {fileID: 591583382345702589, guid: 39774a4652b15304f91fd6278ba48c73, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.046
-      objectReference: {fileID: 0}
-    - target: {fileID: 591583382345702589, guid: 39774a4652b15304f91fd6278ba48c73, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9914449
-      objectReference: {fileID: 0}
-    - target: {fileID: 591583382345702589, guid: 39774a4652b15304f91fd6278ba48c73, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 591583382345702589, guid: 39774a4652b15304f91fd6278ba48c73, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 591583382345702589, guid: 39774a4652b15304f91fd6278ba48c73, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.13052624
-      objectReference: {fileID: 0}
-    - target: {fileID: 591583382345702589, guid: 39774a4652b15304f91fd6278ba48c73, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 591583382345702589, guid: 39774a4652b15304f91fd6278ba48c73, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 591583382345702589, guid: 39774a4652b15304f91fd6278ba48c73, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -15
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 39774a4652b15304f91fd6278ba48c73, type: 3}
---- !u!1 &48347118537290174 stripped
+  pickupName: Powerup Counter
+  pickupDescription: Get me those sweet powerups
+--- !u!1 &6894476298761034443
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 251754486812182023, guid: 39774a4652b15304f91fd6278ba48c73, type: 3}
-  m_PrefabInstance: {fileID: 276314064808392633}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &855705773955902212 stripped
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2956989414722031017}
+  m_Layer: 10
+  m_Name: Visual
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2956989414722031017
 Transform:
-  m_CorrespondingSourceObject: {fileID: 591583382345702589, guid: 39774a4652b15304f91fd6278ba48c73, type: 3}
-  m_PrefabInstance: {fileID: 276314064808392633}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6894476298761034443}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6377739338214241330}
+  m_Father: {fileID: 2554456244367713454}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8209684972586903736
 PrefabInstance:
   m_ObjectHideFlags: 0

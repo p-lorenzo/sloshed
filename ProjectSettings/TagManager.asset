@@ -12,6 +12,7 @@ TagManager:
   - Flashlight
   - EvilBanisher
   - Powerup
+  - HooverSpawner
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Door
   - HooverLimits
   - Player
-  - 
+  - Powerup
   - 
   - 
   - 
