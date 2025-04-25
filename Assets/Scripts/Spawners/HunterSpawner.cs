@@ -4,6 +4,7 @@ using System.Linq;
 using DunGen;
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.Pool;
 using Random = UnityEngine.Random;
 
 public class HunterSpawner : MonoBehaviour
@@ -13,12 +14,15 @@ public class HunterSpawner : MonoBehaviour
     [SerializeField] private RuntimeDungeon runtimeDungeon;
     [SerializeField] private AudioClip spawnCue;
     [SerializeField] private float spawnCueVolume = 1f;
-    [SerializeField] private GameObject hunterPrefab;
     [SerializeField] private Transform player;
 
+    [SerializeField] private HunterBehavior hunterPrefab;
+    private IObjectPool<HunterBehavior> hunterPool;
+    
     private List<GameObject> spawnPoints = new();
     private float timeSinceSessionStart;
     public bool enemyHasSpawned;
+    private Vector3 currentSpawnPoint;
     
     private void Awake()
     {
@@ -27,6 +31,27 @@ public class HunterSpawner : MonoBehaviour
         {
             runtimeDungeon.Generator.RegisterPostProcessStep(OnPostProcess, 0, PostProcessPhase.AfterBuiltIn);
         }
+        hunterPool = new ObjectPool<HunterBehavior>(CreateEnemy, OnGet, OnRelease);
+        var hunter = CreateEnemy();
+        hunterPool.Release(hunter);
+    }
+
+    private HunterBehavior CreateEnemy()
+    {
+        HunterBehavior hunter = Instantiate(hunterPrefab, player.position, Quaternion.identity);
+        hunter.SetPool(hunterPool);
+        return hunter;
+    }
+
+    private void OnGet(HunterBehavior enemy)
+    {
+        enemy.gameObject.SetActive(true);
+        enemy.transform.position = currentSpawnPoint;
+    }
+
+    private void OnRelease(HunterBehavior enemy)
+    {
+        enemy.gameObject.SetActive(false);
     }
 
     private void OnPostProcess(DungeonGenerator dungeonGenerator)
@@ -69,7 +94,8 @@ public class HunterSpawner : MonoBehaviour
     {
         if (!spawnPoint) return;
         SoundFXManager.instance.PlaySoundFxClip(spawnCue, player.transform, spawnCueVolume);
-        Instantiate(hunterPrefab, spawnPoint.transform.position, Quaternion.identity);
+        currentSpawnPoint = spawnPoint.transform.position;
+        hunterPool.Get();
         enemyHasSpawned = true;
     }
     

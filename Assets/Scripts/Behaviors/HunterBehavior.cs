@@ -4,6 +4,7 @@ using RootMotion.Dynamics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Pool;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
@@ -29,6 +30,13 @@ public class HunterBehavior : MonoBehaviour
     [Range(0, 1)] [SerializeField] private float playerHitVolume = 0.5f;
     [SerializeField] private AudioClip hunterDeathSound;
     [Range(0, 1)] [SerializeField] private float hunterDeathVolume = 0.5f;
+    
+    private IObjectPool<HunterBehavior> hunterPool;
+
+    public void SetPool(IObjectPool<HunterBehavior> pool)
+    {
+        hunterPool = pool;
+    }
 
     private void Start()
     {
@@ -53,7 +61,7 @@ public class HunterBehavior : MonoBehaviour
         if (hasHitPlayer) return;
         SoundFXManager.instance.PlaySoundFxClip(playerHitSound, transform, playerHitVolume);
         StartCoroutine(Dissolve());
-        thirdPersonController.puppetMaster.state = PuppetMaster.State.Dead;
+        //thirdPersonController.puppetMaster.state = PuppetMaster.State.Dead;
     }
 
     private IEnumerator Dissolve()
@@ -78,8 +86,7 @@ public class HunterBehavior : MonoBehaviour
         Material mat = meshRenderer.material; // Creates a runtime instance
         float dissolveValue = 0f;
         float elapsed = 0f;
-
-        deathParticles.transform.parent = null;
+        
         deathParticles.Play();
         
         while (elapsed < dissolveDuration)
@@ -91,14 +98,14 @@ public class HunterBehavior : MonoBehaviour
         }
 
         mat.SetFloat("_Dissolve", 1f);
-        Destroy(gameObject);
+        mat.SetFloat("_Dissolve", 0f);
         SoundFXManager.instance.PlaySoundFxClip(hunterDeathSound, transform, hunterDeathVolume);
         
         thirdPersonController.puppetMaster.state = PuppetMaster.State.Alive;
-        
-        var totalDuration = deathParticles.main.duration + deathParticles.main.startLifetime.constantMax;
-        Destroy(deathParticles.gameObject, totalDuration);
+        hasHitPlayer = false;
+        hunterPool.Release(this);
     }
+    
 
     private void Update()
     {

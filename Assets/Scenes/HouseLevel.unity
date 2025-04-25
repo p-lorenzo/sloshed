@@ -4722,8 +4722,8 @@ MonoBehaviour:
   runtimeDungeon: {fileID: 286003757}
   spawnCue: {fileID: 8300000, guid: a7e9ee8734e9f9a4798c8dac03b089fc, type: 3}
   spawnCueVolume: 0.2
-  hunterPrefab: {fileID: 0}
   player: {fileID: 411051100}
+  hunterPrefab: {fileID: 8381947343029570909, guid: e20ab2515fabcc6479fa4886192c536e, type: 3}
   enemyHasSpawned: 0
 --- !u!4 &1553137630
 Transform:
