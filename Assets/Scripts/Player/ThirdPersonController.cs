@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using RootMotion;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using RootMotion.Dynamics;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(CharacterController))]
@@ -47,6 +49,12 @@ public class ThirdPersonController : MonoBehaviour
     [Range(0, 1)] [SerializeField] private float footstepAudioVolume = 0.5f;
     [SerializeField] private AudioClip[] stickyFeetAudioClips;
     [Range(0,1)] [SerializeField] private float stickyFeetAudioVolume = 0.2f;
+    
+    [Header("Item cooldown")]
+    private float elapsedTime = 0f;
+    private bool itemIsOnCooldown;
+    [SerializeField] private float itemUseCooldown = 3f;
+    //[SerializeField] private float guideLightCooldown = 10f; 
 
     void Start()
     {
@@ -80,12 +88,29 @@ public class ThirdPersonController : MonoBehaviour
             IsMoving = false;
         }
 
+        CheckCooldown();
+        
         if (!IsMoving) return;
         
         var targetSpeed = isRunning ? runSpeed : moveSpeed;
         var speedParam = inputMagnitude * (targetSpeed / runSpeed);
         
         animator.SetFloat(InputMovement, speedParam * moveSpeedModifier, 0.1f, Time.deltaTime);
+    }
+
+    private void CheckCooldown()
+    {
+        if (!itemIsOnCooldown) return;
+        
+        elapsedTime += Time.deltaTime;
+        
+        if (elapsedTime >= itemUseCooldown) ResetItemCooldown();
+    }
+
+    private void ResetItemCooldown()
+    {
+        elapsedTime = 0f;
+        itemIsOnCooldown = false;
     }
 
     public void CheckPowerups()
@@ -202,9 +227,11 @@ public class ThirdPersonController : MonoBehaviour
 
     public void OnHolyWaterUse(InputAction.CallbackContext context)
     {
+        if (itemIsOnCooldown) return;
         if (context.started)
         {
             GameManager.instance.UseHolyWater();
+            itemIsOnCooldown = true;
         }
     }
     
