@@ -62,8 +62,8 @@ public class HunterSpawner : MonoBehaviour
         return spawnPoints.Where(x => x).OrderBy(x => Vector3.Distance(x.transform.position, player.position));
     } 
     
-    public void TeddySpawn() => SpawnHunter(OrderSpawnPoints().LastOrDefault());
-    private void TimeSpawn() =>  SpawnHunter(OrderSpawnPoints().FirstOrDefault());
+    public void TeddySpawn() => SpawnHunter(OrderSpawnPoints().FirstOrDefault());
+    private void TimeSpawn() => SpawnHunter(OrderSpawnPoints().LastOrDefault()); 
 
     private void SpawnHunter([CanBeNull] GameObject spawnPoint)
     {
