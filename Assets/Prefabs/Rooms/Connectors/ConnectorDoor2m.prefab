@@ -835,7 +835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2df8c3fa599a5ca4bb94bf633678ac2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundFxClip: {fileID: 8300000, guid: 93e3d6d603e51b54bb6e8e91bbaff787, type: 3}
+  audioClip: {fileID: 8300000, guid: 93e3d6d603e51b54bb6e8e91bbaff787, type: 3}
   clipVolume: 0.2
   clipCooldown: 5
 --- !u!1 &8641605804360763622
