@@ -49,19 +49,20 @@ public class HunterBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.gameObject.CompareTag("EvilBanisher")) return;
-        agent.isStopped = true;
-        dissolveDuration = 0.5f;
-        StartCoroutine(Dissolve());
-    }
+        if (other.gameObject.CompareTag("EvilBanisher"))
+        {
+            agent.isStopped = true;
+            dissolveDuration = 0.5f;
+            StartCoroutine(Dissolve());
+        }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if (!other.gameObject.CompareTag("Player")) return;
-        if (hasHitPlayer) return;
-        SoundFXManager.instance.PlaySoundFxClip(playerHitSound, transform, playerHitVolume);
-        StartCoroutine(Dissolve());
-        //thirdPersonController.puppetMaster.state = PuppetMaster.State.Dead;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            if (hasHitPlayer) return;
+            SoundFXManager.instance.PlaySoundFxClip(playerHitSound, transform, playerHitVolume);
+            StartCoroutine(Dissolve());
+            thirdPersonController.puppetMaster.state = PuppetMaster.State.Dead;
+        }
     }
 
     private IEnumerator Dissolve()
@@ -98,12 +99,12 @@ public class HunterBehavior : MonoBehaviour
         }
 
         mat.SetFloat("_Dissolve", 1f);
-        mat.SetFloat("_Dissolve", 0f);
         SoundFXManager.instance.PlaySoundFxClip(hunterDeathSound, transform, hunterDeathVolume);
         
         thirdPersonController.puppetMaster.state = PuppetMaster.State.Alive;
         hasHitPlayer = false;
         hunterPool.Release(this);
+        mat.SetFloat("_Dissolve", 0f);
     }
     
 

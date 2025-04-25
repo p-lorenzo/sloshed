@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -22,17 +23,21 @@ public class PowerupCounterManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        if (PowerupManager.instance.HasAtLeastOnePowerUpOfType(PowerupManager.PowerupType.PowerupCounter)) isCounterActive = true;
+    }
+
     public void OnDungeonComplete(DungeonGenerator generator)
     {        
         if (!isCounterActive) return;
-
         StartCoroutine(WaitSeconds(1f));
-        CountPowerups();
     }
 
     private IEnumerator WaitSeconds(float seconds)
     {
         yield return new WaitForSeconds(seconds);
+        CountPowerups();
     }
 
     private void CountPowerups()
@@ -45,7 +50,6 @@ public class PowerupCounterManager : MonoBehaviour
     {
         StartCoroutine(WaitSeconds(.5f));
         if (!isCounterActive) return;
-        CountPowerups();
         powerupCounterText.text = $"Powerup left: {powerupCounter}";
     }
 }
