@@ -83,9 +83,10 @@ public class GameManager : MonoBehaviour
                 runtimeDungeon.Generator.DungeonFlow.BranchCount = new IntRange(0, 1);
                 break;
             case > 1:
-                var dungeonMax = Mathf.RoundToInt(3 + currentLevel * 0.25f);
-                runtimeDungeon.Generator.DungeonFlow.Length = new IntRange(dungeonMax, dungeonMax + 3);
-                runtimeDungeon.Generator.DungeonFlow.BranchCount = new IntRange(1, 3);
+                var dungeonLength = Mathf.RoundToInt(3 + currentLevel * 0.25f);
+                runtimeDungeon.Generator.DungeonFlow.Length = new IntRange(dungeonLength, dungeonLength + 3);
+                var dungeonBranchCount = Mathf.RoundToInt(1f + currentLevel * 0.10f);
+                runtimeDungeon.Generator.DungeonFlow.BranchCount = new IntRange(dungeonBranchCount, dungeonBranchCount + 2);
                 break;
         }
         
