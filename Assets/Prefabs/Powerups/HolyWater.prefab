@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2554456244367713454}
   - component: {fileID: 6268091302554478204}
   - component: {fileID: 955838589066073415}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HolyWater
   m_TagString: Powerup
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 8031413676626558342}
   - component: {fileID: 5229144699647478092}
   - component: {fileID: 205944874159874794}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Tonic_Solution
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5407620314375352358}
   - component: {fileID: 4915421809258571883}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AudioLoop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,6 +354,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: vfx_LootDrop_01
       objectReference: {fileID: 0}
+    - target: {fileID: 1193953125369175018, guid: 7d39067bead4bc14aa0b451564aa5198, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093778772504465130, guid: 7d39067bead4bc14aa0b451564aa5198, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075590944164389794, guid: 7d39067bead4bc14aa0b451564aa5198, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4380190821754405079, guid: 7d39067bead4bc14aa0b451564aa5198, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -393,6 +405,14 @@ PrefabInstance:
     - target: {fileID: 4380190821754405079, guid: 7d39067bead4bc14aa0b451564aa5198, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180813692532357303, guid: 7d39067bead4bc14aa0b451564aa5198, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8219333140960049697, guid: 7d39067bead4bc14aa0b451564aa5198, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

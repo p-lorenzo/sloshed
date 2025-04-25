@@ -28,7 +28,7 @@ public class HooverSpawner : MonoBehaviour
 
     private void OnPostProcess(DungeonGenerator dungeonGenerator)
     {
-        spawnPoints.AddRange(GameObject.FindGameObjectsWithTag("EnemySpawner"));
+        spawnPoints.AddRange(GameObject.FindGameObjectsWithTag("HooverSpawner"));
     }
     
     void Update()
