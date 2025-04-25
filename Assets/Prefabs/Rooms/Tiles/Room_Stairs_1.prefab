@@ -5537,8 +5537,6 @@ MonoBehaviour:
     Weight: 6
   - GameObject: {fileID: 5540057530100336922, guid: 3bcc44bae87054f488895f95d1871422, type: 3}
     Weight: 3
-  - GameObject: {fileID: 5540057530100336922, guid: 0af46436dab692a468a5c42b3622dd6e, type: 3}
-    Weight: 1
   - GameObject: {fileID: 5540057530100336922, guid: ea291cba65c899640819f68ab65ead67, type: 3}
     Weight: 1
   AvoidRotatingDoorPrefab: 0
@@ -5854,10 +5852,6 @@ MonoBehaviour:
     Weight: 6
   - GameObject: {fileID: 5540057530100336922, guid: 3bcc44bae87054f488895f95d1871422, type: 3}
     Weight: 3
-  - GameObject: {fileID: 5540057530100336922, guid: 0af46436dab692a468a5c42b3622dd6e, type: 3}
-    Weight: 1
-  - GameObject: {fileID: 5540057530100336922, guid: ea291cba65c899640819f68ab65ead67, type: 3}
-    Weight: 1
   AvoidRotatingDoorPrefab: 0
   AvoidRotatingBlockerPrefab: 0
   ConnectorSceneObjects: []
