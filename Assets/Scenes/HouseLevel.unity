@@ -1250,7 +1250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runtimeDungeon: {fileID: 286003757}
   powerupCounterText: {fileID: 747812250}
-  isCounterActive: 1
+  isCounterActive: 0
   powerupCounter: 0
 --- !u!1 &468096617
 GameObject:
