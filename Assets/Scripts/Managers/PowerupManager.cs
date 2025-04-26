@@ -189,4 +189,9 @@ public class PowerupManager : MonoBehaviour
     {
         return activePowerups.GetValueOrDefault(powerupType, 0);
     }
+
+    public Dictionary<PowerupType, int> GetOwnedPowerups()
+    {
+        return activePowerups;
+    }
 }

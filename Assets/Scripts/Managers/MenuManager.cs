@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,9 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private RenderTexture pixelatedTexture;
     [SerializeField] private Toggle pixelatedToggle;
     private bool pixelated = true;
+
+    [Header("Owned Powerups stuff")] [SerializeField]
+    private GameObject powerupList;
     
     public void Awake()
     {
@@ -46,6 +50,7 @@ public class MenuManager : MonoBehaviour
         gameObject.SetActive(true);
         hud.SetActive(false);
         Time.timeScale = 0;
+        UpdatePowerupList();
     }
 
     public void ResumeGame()
@@ -78,5 +83,13 @@ public class MenuManager : MonoBehaviour
     {
         if (state) EnablePixelatedEffect();
         else RemovePixelatedEffect();
+    }
+
+    private void UpdatePowerupList()
+    {
+        foreach (var powerup in PowerupManager.instance.GetOwnedPowerups())
+        {
+            powerupList.transform.Find(powerup.Key.ToString()).GetComponent<TextMeshProUGUI>().text = $"{powerup.Key}: {powerup.Value}";
+        }
     }
 }
