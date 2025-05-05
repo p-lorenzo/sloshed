@@ -73,4 +73,8 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
+#Unity plugins
+/Assets/Plugins/RootMotion/
+/Assets/Plugins/DunGen/
+
 # End of https://www.toptal.com/developers/gitignore/api/unity
